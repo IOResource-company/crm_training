@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 // Daily CRM training email.
 //
-// Curriculum:
-//   - Most days: ONE module in focus (rotating through DATA.modules in order) —
+// Curriculum — working days only, nothing at the weekend:
+//   - Mon-Thu: ONE module in focus (rotating through DATA.modules in order) —
 //     what it covers, two how-tos as numbered steps, the fields that matter, a
 //     common mistake, a tip drawn from the whole guide, and a 4-question quiz.
-//   - Fridays: "weekly exam" — 8 questions drawn from every module, one
+//   - Friday: "weekly exam" — 8 questions drawn from every module, one
 //     scenario, and a mistake of the week.
+//   Four modules a week, so the 15 modules cycle just under once a month.
 //
 // Modules carry a track ("all" | "sales" | "ops"). Everyone receives every
 // module — the team is small and cross-training is the point — but the subject
@@ -39,6 +40,7 @@ const SITE_URL = process.env.SITE_URL || 'https://crm-training-eight.vercel.app/
 const DRY_RUN = process.argv.includes('--dry-run');
 const FORCE_EXAM = process.argv.includes('--force-exam');
 const FORCE_MODULE = (() => { const i = process.argv.indexOf('--module'); return i > -1 ? process.argv[i + 1] : null; })();
+const FORCE_SEND = process.argv.includes('--force-send');
 
 // ---------- extract DATA from the guide ----------
 
@@ -89,12 +91,19 @@ function pickN(arr, n) {
 // ---------- curriculum: which day is this? ----------
 
 // dayNum % 7: 0=Thu 1=Fri 2=Sat 3=Sun 4=Mon 5=Tue 6=Wed  (epoch was a Thursday)
-const isExamDay = FORCE_EXAM || (!FORCE_MODULE && dayNum % 7 === 1);
+const dow = dayNum % 7;
+const isExamDay = FORCE_EXAM || (!FORCE_MODULE && dow === 1);
 
-// Module rotation counts only study days (Fridays are exams and don't consume
-// a module), so every module gets equal airtime.
-const fridaysSoFar = Math.floor((dayNum - 1) / 7) + 1;
-const studyIndex = dayNum - fridaysSoFar;
+// We send on working days only. Mon-Thu are study days, Friday is the exam,
+// and nothing goes out at the weekend.
+const STUDY_DOW = [0, 4, 5, 6];   // Thu, Mon, Tue, Wed
+const isSendDay = dow !== 2 && dow !== 3;
+
+// Rotation counts study days only — not calendar days. If it counted calendar
+// days, Saturday and Sunday would each advance the pointer and two modules a
+// week would be skipped without ever being sent.
+const studyIndex = Math.floor(dayNum / 7) * STUDY_DOW.length
+  + STUDY_DOW.filter(d => d < dow).length;
 
 const DATA = extractData(fs.readFileSync(HTML_PATH, 'utf8'));
 const modules = DATA.modules;
@@ -477,6 +486,13 @@ fs.writeFileSync(path.join(ROOT, 'today.json'), JSON.stringify(quizData, null, 1
 
 if (DRY_RUN) {
   console.log(`Dry run — wrote out/preview.html\nSubject: ${subject}`);
+  process.exit(0);
+}
+
+// Working days only. The cron already skips weekends; this catches a manual
+// run on a Saturday, which would otherwise burn a module on an empty office.
+if (!isSendDay && !FORCE_SEND) {
+  console.log('Weekend — not a working day, nothing sent. Use --force-send to override.');
   process.exit(0);
 }
 

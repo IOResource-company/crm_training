@@ -2,12 +2,14 @@ name: Daily CRM training snippet
 
 on:
   schedule:
-    # Primary: 07:25 UTC = 08:25 Irish summer time / 07:25 winter.
-    # Offset from io_training (07:15) and the CRM Pulse sends so they don't collide.
-    # Retry: 08:55 UTC — GitHub cron is best-effort and sometimes skips a slot;
+    # Working days only, 13:30 Irish time.
+    # Primary: 12:30 UTC = 13:30 Irish summer time (13:30 UTC in winter — GitHub
+    # cron has no timezone, so it follows UTC and the local time shifts by an
+    # hour when the clocks change).
+    # Retry: 14:00 UTC — GitHub cron is best-effort and sometimes skips a slot;
     # the sent-today guard below makes a double-send impossible.
-    - cron: '25 7 * * *'
-    - cron: '55 8 * * *'
+    - cron: '30 12 * * 1-5'
+    - cron: '0 14 * * 1-5'
   workflow_dispatch: {}
 
 permissions:

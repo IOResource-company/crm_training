@@ -58,18 +58,28 @@ node scripts/daily-snippet.mjs --dry-run --module cases   # preview one module
 RESEND_API_KEY=re_xxx node scripts/daily-snippet.mjs      # send for real
 ```
 
-Most days it takes one module in rotation and sends its intro, two how-tos, four
-fields, a common mistake, a tip drawn from the whole guide, and a four-question
-quiz. Fridays it sends an exam across every module. Selection is seeded from the
-date, so re-running on the same day produces exactly the same email.
+**Working days only, 13:30 Irish time.** Monday to Thursday it takes one module
+in rotation and sends its intro, two how-tos, four fields, a common mistake, a
+tip drawn from the whole guide, and a four-question quiz. Friday it sends an exam
+across every module. Nothing goes out at the weekend. Four modules a week, so the
+15 modules cycle just under once a month.
+
+Rotation counts *study days*, not calendar days — otherwise Saturday and Sunday
+would each advance the pointer and two modules a week would never be sent.
+Selection is seeded from the date, so re-running on the same day produces exactly
+the same email.
 
 Modules are tagged `all`, `sales` or `ops`. **Everyone gets every module** — the
 team is small and cross-training is the point — but the subject line carries a
 `[Sales]` or `[Customer Ops]` prefix so the day's slant is obvious.
 
-`.github/workflows/daily-snippet.yml` runs it at 07:25 UTC with a retry at 08:55,
-guarded by `last-sent.txt` so a double-send is impossible. It publishes
+`.github/workflows/daily-snippet.yml` runs it Mon–Fri at 12:30 UTC with a retry
+at 14:00, guarded by `last-sent.txt` so a double-send is impossible. It publishes
 `today.json` *before* sending, so the quiz page is live when the email lands.
+
+GitHub cron has no timezone, so 12:30 UTC is 13:30 during Irish summer time and
+12:30 once the clocks go back. Shift the cron to `30 13 * * 1-5` in late October
+if the winter hour matters.
 
 ### Sending to the team
 
