@@ -35,7 +35,7 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const HTML_PATH = path.join(ROOT, 'IOR-CRM-Training.html');
-const SITE_URL = process.env.SITE_URL || 'https://crm-training.vercel.app/IOR-CRM-Training.html';
+const SITE_URL = process.env.SITE_URL || 'https://crm-training-eight.vercel.app/IOR-CRM-Training.html';
 const DRY_RUN = process.argv.includes('--dry-run');
 const FORCE_EXAM = process.argv.includes('--force-exam');
 const FORCE_MODULE = (() => { const i = process.argv.indexOf('--module'); return i > -1 ? process.argv[i + 1] : null; })();
