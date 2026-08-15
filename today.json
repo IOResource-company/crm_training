@@ -1,0 +1,56 @@
+{
+ "d": 20680,
+ "mode": "study",
+ "module": "The Pulse Emails",
+ "date": "Saturday 15 August 2026",
+ "questions": [
+  {
+   "q": "Which pulse button will not let you finish without picking a reason?",
+   "o": [
+    "Won",
+    "Lost",
+    "Snooze +3d",
+    "Handled - hide"
+   ],
+   "c": 1,
+   "e": "The Lost confirm page requires a reason from the list: price, lead time, lost to competitor, no budget, no decision, stalled or other. Free text is optional and is kept as a comment.",
+   "module": "The Pulse Emails"
+  },
+  {
+   "q": "Where does a comment left through a pulse actually end up?",
+   "o": [
+    "In a spreadsheet the automation keeps",
+    "Only in the next pulse email",
+    "As a CRM Note titled [Ops Pulse] or [Sales Pulse], attached to the record and its company",
+    "As a reply in the sales@ mailbox"
+   ],
+   "c": 2,
+   "e": "Comments are stored as CRM Notes with an [Ops Pulse] or [Sales Pulse] title prefix. The prefix is how the pulse reads them back and re-renders them under the item.",
+   "module": "The Pulse Emails"
+  },
+  {
+   "q": "Which of these is NOT a button on an Ops Pulse row?",
+   "o": [
+    "Create case",
+    "Handled - hide",
+    "Snooze +3d",
+    "Mark deal Won"
+   ],
+   "c": 3,
+   "e": "Won and Lost are Sales Pulse deal buttons. Ops rows carry Create case, Handled - hide, Comment, Open in CRM, and on overdue cases Resolve and Snooze +3d.",
+   "module": "The Pulse Emails"
+  },
+  {
+   "q": "Which edition of the Sales Pulse carries the data-quality audit and a pipeline attachment?",
+   "o": [
+    "Monday's",
+    "Wednesday's",
+    "Friday's",
+    "Every edition"
+   ],
+   "c": 0,
+   "e": "Monday's Sales Pulse adds the weekly data check: a line-by-line pipeline file attached, a per-stage reconciliation, and AI timing proposals with a one-tap Apply.",
+   "module": "The Pulse Emails"
+  }
+ ]
+}
