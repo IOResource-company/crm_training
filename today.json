@@ -1,9 +1,68 @@
 {
  "d": 20680,
- "mode": "study",
- "module": "Common Mistakes",
+ "mode": "exam",
  "date": "Saturday 15 August 2026",
  "questions": [
+  {
+   "q": "What does a blank accountCode on a company mean in practice?",
+   "o": [
+    "The account is dormant",
+    "The account cannot be reconciled against real orders in Intact",
+    "The account has no contacts",
+    "Nothing — it is optional metadata"
+   ],
+   "c": 1,
+   "e": "accountCode is the Intact join key. Without it the company cannot be matched to actual trading history.",
+   "module": "Data Quality Rules"
+  },
+  {
+   "q": "Someone asks for the value of the pipeline for a board pack. What should you do first?",
+   "o": [
+    "Read the tile and send the number",
+    "Check how many open deals carry no amount, and whether the sweep is fresh",
+    "Add up the deals by hand",
+    "Use the weighted figure instead, since it is smaller"
+   ],
+   "c": 1,
+   "e": "Sanity-check before you quote. Deals without an amount are simply absent from the total, and a stale pipeline sweep means the CRM amounts have drifted from the reps' sheets.",
+   "module": "The Weekly Picture"
+  },
+  {
+   "q": "You think someone else may have seen your credential. What do you do?",
+   "o": [
+    "Watch for anything odd and report it if it happens",
+    "Tell Stephen straight away",
+    "Change your CRM password",
+    "Nothing, it is probably fine"
+   ],
+   "c": 1,
+   "e": "Report it immediately so it can be withdrawn and replaced. Nobody minds a false alarm; waiting for evidence is the expensive option.",
+   "module": "CRM in Claude"
+  },
+  {
+   "q": "Which view do Customer Operations start the day on?",
+   "o": [
+    "Open Pipeline",
+    "All Open (SLA)",
+    "Resolved - Last 30 Days",
+    "Recently Added"
+   ],
+   "c": 1,
+   "e": "All Open (SLA) is the live case worklist, sorted by due date so the most urgent sits at the top. Unowned and Overdue are then driven to zero.",
+   "module": "Search, Filters & Views"
+  },
+  {
+   "q": "What does putting '(Sales Pipe mail)' in the subject of a forward to sales@ do?",
+   "o": [
+    "Nothing, it is just a label",
+    "The automation reads it and updates or creates the right deal or case, or raises a review task if unsure",
+    "It marks the email as urgent",
+    "It sends it to everyone in sales"
+   ],
+   "c": 1,
+   "e": "The automation matches the mail against open deals and cases. It can update an opportunity, resolve a case or create a new opportunity - and anything it cannot match confidently becomes a review task rather than a guess.",
+   "module": "Email & the CRM"
+  },
   {
    "q": "You are logging a deal where a reseller is supplying kit to a large grocery chain. What goes in Company?",
    "o": [
@@ -17,40 +76,41 @@
    "module": "Common Mistakes"
   },
   {
-   "q": "Why is a blank lostReason a real problem?",
+   "q": "Which of these is the safest way to avoid creating a duplicate company?",
    "o": [
-    "The deal cannot be reopened",
-    "The record will be deleted",
-    "We lose the pattern of why we lose — price, lead time, competitor",
-    "The stage will not save"
+    "Search the full legal name from their PO",
+    "Search a short distinctive fragment and a couple of variants",
+    "Scroll the Companies list alphabetically",
+    "Ask a colleague if they remember the customer"
+   ],
+   "c": 1,
+   "e": "Short fragments catch variants in spacing, plurals and capitalisation — which is exactly where every duplicate we carry came from.",
+   "module": "Common Mistakes"
+  },
+  {
+   "q": "A task is titled 'Sales mtg W28 #7 - Chase Urovo on DT50S lead times'. Where did it come from?",
+   "o": [
+    "A colleague typed it in",
+    "The weekly sales meeting action register, ingested automatically",
+    "The cadence engine",
+    "The Ops Pulse auto-case creation"
+   ],
+   "c": 1,
+   "e": "Weekly sales-meeting minutes are turned into Tasks automatically. The W-number is the meeting week and the #number is that action's permanent id, kept for its whole life even when it is carried forward.",
+   "module": "Tasks, Notes & Follow-Ups"
+  },
+  {
+   "scenario": "You search Companies for a customer and get two hits: STL Technology Solutions with three open opportunities and a Sales Rep set, and a second STL Technology Solutions with nothing on it. You need to log a new enquiry today.",
+   "q": "What do you do?",
+   "o": [
+    "Use the empty record — it is cleaner",
+    "Create a third record with a clearer name",
+    "Work in the record that holds the open opportunities and flag the duplicate for cleanup",
+    "Log the enquiry against both so it is not missed"
    ],
    "c": 2,
-   "e": "Lost reasons are the cheapest market research we get. Patterns in Price and Lead Time go straight into supplier conversations.",
-   "module": "Common Mistakes"
-  },
-  {
-   "q": "Where does an order live once it is placed?",
-   "o": [
-    "The CRM opportunity record",
-    "Intact ERP",
-    "The sales@ inbox",
-    "A note on the company"
-   ],
-   "c": 1,
-   "e": "Intact is the system of record for orders, stock and invoicing. The CRM holds the pursuit; quoteRef and accountCode are how the two tie together.",
-   "module": "Common Mistakes"
-  },
-  {
-   "q": "A customer email contains the delivery date they have committed to their own client. What must you do?",
-   "o": [
-    "Nothing — the synced email carries the body onto the record",
-    "Type it into a Note or the deal's next step",
-    "Forward it to sales@ and rely on the sync",
-    "Flag the email in your mailbox"
-   ],
-   "c": 1,
-   "e": "The CRM shows subject and participants only. If it is in the body, it does not exist in the CRM until somebody types it in.",
-   "module": "Common Mistakes"
+   "e": "Always work in the record with the history and an owner, so one customer's deals do not get split across twins. Then flag the empty duplicate rather than silently leaving it to catch the next person.",
+   "module": "Data Quality Rules"
   }
  ]
 }

@@ -247,7 +247,7 @@ if (isExamDay) {
   const scenario = allScenarios.length ? pick(allScenarios) : null;
   const mistake = allMistakes.length ? pick(allMistakes) : null;
 
-  subject = `IOR CRM Weekly Exam (${shortDate})`;
+  subject = `CRM Guide — Weekly Exam (${shortDate})`;
   headline = 'Weekly CRM Exam';
 
   sections.push(card('This week&rsquo;s exam',
@@ -316,7 +316,7 @@ if (isExamDay) {
   const trackColour = TRACK_COLOUR[focus.track] || BLUE;
   const prefix = focus.track && focus.track !== 'all' ? `[${trackLabel}] ` : '';
 
-  subject = `${prefix}IOR CRM Training — ${focus.name} (${shortDate})`;
+  subject = `${prefix}CRM Guide — ${focus.name} (${shortDate})`;
   headline = `CRM Focus — ${focus.name}`;
 
   sections.push(card('Today&rsquo;s module',
@@ -455,7 +455,7 @@ const emailHtml = `<!DOCTYPE html>
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
 <meta name="supported-color-schemes" content="light">
-<title>IO Resource — Daily CRM Training</title>
+<title>IO Resource — CRM Guide</title>
 <style>${darkModeCss}</style></head>
 <body style="margin:0;padding:0;">
 <div class="page" style="${bg(CLOUD)}padding:24px 12px;font-family:${FONT};">
@@ -500,7 +500,7 @@ const apiKey = process.env.RESEND_API_KEY;
 if (!apiKey) { console.error('RESEND_API_KEY not set'); process.exit(1); }
 
 const to = (process.env.SNIPPET_TO || 'stephen.browne@ioresource.com').split(',').map(s => s.trim()).filter(Boolean);
-const from = process.env.SNIPPET_FROM || 'IO Resource CRM Training <onboarding@resend.dev>';
+const from = process.env.SNIPPET_FROM || 'IO Resource CRM Guide <onboarding@resend.dev>';
 
 const res = await fetch('https://api.resend.com/emails', {
   method: 'POST',
