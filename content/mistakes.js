@@ -122,7 +122,7 @@
     "Whether the CRM has a merge tool for duplicate companies and people, or whether duplicates can only be retired by hand.",
     "Whether the CRM prevents you saving an opportunity with no company linked, or whether it simply allows it and the deal disappears from rep-scoped reporting.",
     "Whether anything enforces a lost reason when a deal is moved to Closed Lost.",
-    "Which saved views still filter on a hardcoded date, and which have been rebuilt as sort-based views that cannot go stale.",
+    "Which saved views still filter on a hardcoded date. Checked in the CRM on 17 August 2026: the default Open Pipeline view filters on stage and lost reason with no date in it, so that one cannot rot, and a Closing This Quarter view does exist. The stale-deals view — listed in the picker as Sales - Stale ... — has not been opened and read.",
     "Whether a won deal should also get a forecast category or a linked Sales Transaction, given the Intact backfill is still outstanding.",
     "Whether the known duplicate company pairs will be merged before sales go live, or whether we work around them from day one."
   ],

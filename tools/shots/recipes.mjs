@@ -9,15 +9,41 @@
 //   source  'crm'   a page inside crm.ioresource.com (default)
 //           'email' comes out of a Pulse email, not the CRM — assist only
 //           'login' the sign-in gates, captured during --login
-//   path    appended to --base. Twenty's standard object routes are used here;
-//           they are UNVERIFIED against our instance, so treat them as a
-//           starting point. If a path lands somewhere wrong, fix the page by
-//           hand and press Enter — the capture still gets the right filename.
+//   path    appended to --base. Checked against our instance on 17 Aug 2026:
+//           /objects/companies, /objects/people, /objects/opportunities,
+//           /objects/cases, /objects/tasks, /objects/notes, /objects/dashboards,
+//           /objects/actions and /objects/salesActions all resolve. Individual
+//           records are /object/<type>/<uuid>. The routes marked UNCONFIRMED
+//           below were not reachable from the sidebar without expanding a group,
+//           so treat those as a guess: if a path lands somewhere wrong, fix the
+//           page by hand and press Enter — the capture still gets the right
+//           filename and size either way.
 //   view    a saved view to select by its visible name. capture.mjs clicks it
 //           by text, which survives UI changes far better than a CSS selector.
 //   hide    columns to switch off before capturing, by visible header text.
 //           These are the commercial figures. This repo is public.
 //   note    what to do that a script cannot do for you.
+//
+// READ THIS BEFORE YOUR FIRST RUN — checked live on 17 Aug 2026:
+//
+// 1. The default views carry money. Companies opens on "All Companies" with an
+//    IOR Annual Spend column and a summed total in the footer. Opportunities
+//    opens on "Open Pipeline" with an Amount column and a Weighted Value sort
+//    chip. Neither can be captured as-is for a public repo. Switch the column
+//    off — do not rely on the frame edge.
+// 2. The CRM is dark-themed and the guide is light. Screenshots will read as
+//    dark panels on a light page. That is honest, just expect it.
+// 3. View names in the picker are truncated in the UI, and ours are prefixed
+//    more than the guide's prose suggests: the stale-deals view shows as
+//    "Sales — Stale d…", and there is a separate "Stale / No Activi…". The
+//    names below are the fragments actually seen, which is what capture.mjs
+//    matches on.
+// 4. Opportunities views seen: All Opportunities, Sales — Pipelin…,
+//    Sales — Stale d…, Open Pipeline, Closing This Qu…, Quotes Needing…,
+//    Open Opps — N…, Stale / No Activi…, Quotes — Missi…, Next Actions,
+//    Sales — Quote f…  Companies views seen: All Companies, Customers (by …,
+//    Data Quality …, Customers, Book of Busines…, MM — My Acco…,
+//    RMC — To Reas…, HOUSE — Unas…, Going Quiet (90…, Prospects, Win-Back (Dor…
 
 export const RECIPES = {
   'crm-login': {
@@ -32,7 +58,7 @@ export const RECIPES = {
 
   'global-search': {
     path: '/objects/companies',
-    note: 'Open global search and type a partial name that returns several similar companies — mclern is the honest one.',
+    note: 'Search mclern. It really does return two company records — McLernons and McLernon Computers (McLernon\'s Ireland) — which is the whole point of the shot. Close or scroll the underlying list first so the IOR Annual Spend column is not behind the panel.',
   },
 
   'views-sidebar': {
@@ -57,8 +83,8 @@ export const RECIPES = {
 
   'house-unassigned': {
     path: '/objects/companies',
-    view: 'HOUSE — Unassigned',
-    note: 'Sales Rep column must be visible so the reader can see it is empty.',
+    view: 'HOUSE — Unas',
+    note: 'Confirmed to exist. Sales Rep column must be visible so the reader can see it is empty. Switch off IOR Annual Spend first.',
   },
 
   'dq-no-account-code': {
@@ -83,15 +109,14 @@ export const RECIPES = {
 
   'end-customer-record': {
     path: '/objects/endCustomers',
-    note: 'Opportunities tab open, showing more than one reseller chasing the same site.',
+    note: 'UNCONFIRMED route — End Customers sits inside a collapsible "End Customers & Projects" sidebar group, so the object name was not visible. Expand that group and navigate by hand if this 404s. Opportunities tab open, showing more than one reseller chasing the same site.',
     hide: ['Amount'],
   },
 
   'opp-kanban': {
     path: '/objects/opportunities',
-    view: 'By Stage',
-    hide: ['Amount'],
-    note: 'All six columns must be in frame: New, Screening, Meeting, Proposal, Customer, Closed Lost.',
+    hide: ['Amount', 'Weighted Value'],
+    note: 'UNCONFIRMED: no view called "By Stage" appeared in the picker. The kanban may be a view-type toggle rather than a saved view — switch the Opportunities view to Kanban yourself. All six columns must be in frame: New, Screening, Meeting, Proposal, Customer, Closed Lost.',
   },
 
   'opp-record': {
@@ -118,9 +143,9 @@ export const RECIPES = {
 
   'opp-filters': {
     path: '/objects/opportunities',
-    view: 'Stale Deals',
-    hide: ['Amount'],
-    note: 'The filter and sort chips must be readable — this is the shot that proves a hardcoded date is sitting in the filter.',
+    view: 'Sales — Stale',
+    hide: ['Amount', 'Weighted Value'],
+    note: 'The filter and sort chips must be readable — this is the shot about what a view is really filtering on. Note the default Open Pipeline view filters on Stage and Lost Reason with no date in it, so it cannot rot; the stale-deals view is the one to check.',
   },
 
   'opp-cadence': {
@@ -130,15 +155,14 @@ export const RECIPES = {
 
   'dq-data-gaps': {
     path: '/objects/opportunities',
-    view: 'Data Gaps — no amount',
-    note: 'The Amount column is mostly empty here, which is the point — nothing to hide.',
+    note: 'UNCONFIRMED: no view called "Data Gaps — no amount" appeared in the picker. The nearest candidates seen were "Open Opps — N…" and "Quotes — Missi…". Pick whichever actually shows the gap and tell me which, so the guide can be corrected.',
   },
 
   'dq-stale-deals': {
     path: '/objects/opportunities',
-    view: 'Stale Deals',
-    hide: ['Amount'],
-    note: 'Sorted by last activity date, oldest at the top.',
+    view: 'Sales — Stale',
+    hide: ['Amount', 'Weighted Value'],
+    note: 'Sorted by last activity date, oldest at the top. Do not confuse it with the separate "Stale / No Activi…" view.',
   },
 
   'forecast-categories': {
@@ -165,7 +189,7 @@ export const RECIPES = {
 
   'aftercare-record': {
     path: '/objects/aftercares',
-    note: 'Service type, RMA number, Serial number, Opened date and Warranty end date.',
+    note: 'UNCONFIRMED route — not visible in the sidebar top level; likely inside one of the collapsible groups. Service type, RMA number, Serial number, Opened date and Warranty end date.',
   },
 
   'task-list': {
@@ -174,7 +198,8 @@ export const RECIPES = {
   },
 
   'command-centre': {
-    note: 'Not a Twenty page. Open the Command Centre dashboard yourself, then press Enter. Crop or hide the value tiles; leave the case and next-action widgets readable.',
+    path: '/object/dashboard/8517ad5f-ff01-4c52-aec3-22e705c11f7d',
+    note: 'It IS a CRM page — the IOR Command Centre dashboard, pinned in the sidebar. Hide or crop the value tiles; leave the case and next-action widgets readable.',
   },
 
   'sales-pulse-email': {
