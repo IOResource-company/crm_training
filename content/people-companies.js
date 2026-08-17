@@ -24,7 +24,7 @@
         "Found a new duplicate? Flag it rather than working around it &mdash; a split account is a split history."
       ],
       shot: {key:"global-search", cap:"Global search returning two similar company records for the same customer"},
-      important: "Those duplicate pairs are <strong>real records in our CRM today</strong>, not a hypothetical. Never split one rep's deals across twins &mdash; put everything on the record that already carries the open work.",
+      important: "Those duplicate pairs are <strong>real records in the CRM today</strong>, not a hypothetical &mdash; they arrived with the data load and have not been merged yet. Never split one rep's deals across twins &mdash; put everything on the record that already carries the open work.",
       mistake: "Typing the full legal name into search, getting nothing back, and creating a second record for a customer we have traded with for years.",
       confirm: "Whether the known duplicate pairs have been merged yet, and who to report a newly spotted duplicate to."
     },

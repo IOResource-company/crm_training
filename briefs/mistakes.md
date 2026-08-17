@@ -1,8 +1,32 @@
 # Brief — mistakes
 
 Module: `content/mistakes.js` · slug `mistakes` · track `all` ·
-Covers section 10 of the authoring brief. Deliberately mistake-heavy
-(11 `mistakes` entries) and field-light (5 `fields`), per the module brief.
+Displayed as **Getting It Right First Time**. Covers section 10 of the authoring
+brief. Deliberately trap-heavy (11 `mistakes` entries) and field-light
+(5 `fields`), per the module brief.
+
+## Framing (changed 17 Aug 2026)
+
+Sales have not gone live on the CRM, so the module must not read as a
+retrospective on errors the team has made — there are none. Rewritten so that:
+
+- the module is named forward (**Getting It Right First Time**) and the intro
+  says plainly that nothing here is anybody's error;
+- every trap is stated as a trap, with the habit that avoids it beside it —
+  rendered as *Easy to get wrong* / *The trap* / *The habit*;
+- every how-to carries a **worked example** in its `tip` (a real search, a real
+  next step, a five-edit won-close, a lost-reason judgement call, a rotten view);
+- inferred causes are gone. Previous wording claimed the existing duplicates
+  came from people typing long names — the sweep skill lists the pairs, it does
+  not say how they got there. The shapes (plural / capital / straight repeat) are
+  described instead, which is observable from the pairs themselves;
+- state-of-the-data facts are kept but attributed to the data load rather than to
+  behaviour, and a sixth `confirm` asks whether the pairs get merged before
+  go-live.
+
+A ninth quiz question and a fifth how-to ("Write a next step somebody else could
+act on") were added — the next-step rule was already verified below but had no
+how-to of its own here.
 
 ## Verified facts and where they come from
 

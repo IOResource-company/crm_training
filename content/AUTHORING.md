@@ -41,7 +41,7 @@ evaluates it in a bare VM context:
 | `howtos` | array | mixed | the core of the module — see below |
 | `fields` | `[{k,v}]` | `k` escaped, `v` **raw** | field name → what goes in it |
 | `tips` | `[HTML string]` | **raw** | standalone tips; also feeds the email's Tip of the Day |
-| `mistakes` | `[{m,fix}]` | `m` escaped, `fix` **raw** | what people do wrong → what to do instead |
+| `mistakes` | `[{m,fix}]` | `m` escaped, `fix` **raw** | the trap → the habit that avoids it (rendered as *The trap* / *The habit*) |
 | `confirms` | `[string]` | escaped | module-level open questions (see Needs confirmation) |
 | `quiz` | `[{q,o,c,e}]` | escaped | `o` = 4 options, `c` = 0-based correct index, `e` = explanation |
 | `flashcards` | `[{q,a}]` | escaped | short prompt → short answer |
@@ -61,6 +61,9 @@ evaluates it in a bare VM context:
   confirm: "Exact label of the button that adds a related opportunity."
 }
 ```
+
+`mistake` renders under the heading **Easy to get wrong** — it names a trap, not
+something a colleague has done.
 
 `title`, `when` and `confirm` are escaped — **plain text only**.
 `steps[]`, `tip`, `important` and `mistake` are rendered raw — HTML is allowed
@@ -93,6 +96,18 @@ Confirm** section. Never soften an unknown into a confident instruction.
 
 - Plain English, task-first, aimed at a salesperson or ops colleague — not a
   developer. Short sentences. Second person.
+- **Nobody has made a mistake yet.** Sales have not gone live on the CRM, so
+  never write as if the team has already got something wrong: no "this keeps
+  happening", no "the most common mistake we see", no invented war stories.
+  Write traps forward — *easy to get wrong*, *the trap*, *watch for* — and put
+  the habit that avoids it right next to it.
+- State-of-the-data facts *are* fair game, because they are verifiable and came
+  in with the load: duplicate company pairs, blank close dates, saved views with
+  a fixed date in the filter. Say where they came from ("arrived with the data
+  load") so they don't read as somebody's error.
+- **Teach with worked examples.** Every how-to should show the thing being done
+  on a real, named example — real customer and product names are fine; a weak
+  version next to a strong one teaches faster than a rule.
 - Use our real names for things: stage names, field names, view names, `salesRep`
   codes. Never substitute generic Twenty behaviour for ours.
 - **This repo is public.** Real customer names are fine as examples; spend,

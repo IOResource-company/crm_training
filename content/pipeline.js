@@ -103,7 +103,7 @@
     {k:"stage", v:"New &middot; Screening &middot; Meeting &middot; Proposal &middot; <strong>Customer</strong> (won) &middot; <strong>Closed Lost</strong>. Move it when the thing has actually happened, not when you hope it will."},
     {k:"amount (+ currency)", v:"Best estimate of the total deal value to IOR, <strong>ex-VAT</strong>. Check the currency &mdash; EUR or GBP. A rough number now beats a precise blank forever."},
     {k:"amountBasis", v:"<strong>ESTIMATED</strong> = your judgement. <strong>QUOTED</strong> = a real quotation exists. Flip it to QUOTED the moment the quote goes out, so leadership can tell soft pipeline from hard."},
-    {k:"closeDate", v:"When the order will realistically land, not when you would like it to. Slipped? Move the date and explain it in the next step. This is the single biggest gap in our data today."},
+    {k:"closeDate", v:"When the order will realistically land, not when you would like it to. Slipped? Move the date and explain it in the next step. Most of the deals that came in with the data load have no close date at all, so yours is doing real work."},
     {k:"probability", v:"Win probability as a percentage. Keep it honest &mdash; 100% belongs on a won deal, not a hopeful one."},
     {k:"weightedValue", v:"<code>amount &times; probability</code>. It feeds the Weighted Pipeline tile on the Command Centre. Treat it as a stored number that has to keep up with the amount and probability you set."},
     {k:"nextStep + nextStepDate", v:"One concrete action and the day you will do it: <em>Site survey w/c 14 Jul</em>. When it is done, write the next one. Overdue and undated next steps are the first thing the Sales Pulse shouts about."},

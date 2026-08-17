@@ -3,10 +3,15 @@
 //
 // Curriculum — working days only, nothing at the weekend:
 //   - Mon-Thu: ONE module in focus (rotating through DATA.modules in order) —
-//     what it covers, two how-tos as numbered steps, the fields that matter, a
-//     common mistake, a tip drawn from the whole guide, and a 4-question quiz.
+//     what it covers, two how-tos as numbered steps, the fields that matter, one
+//     thing that's easy to get wrong, a tip drawn from the whole guide, and a
+//     4-question quiz.
 //   - Friday: "weekly exam" — 8 questions drawn from every module, one
-//     scenario, and a mistake of the week.
+//     scenario, and the trap of the week.
+//
+// Framing: sales have not gone live on the CRM yet, so nothing here is written
+// as something anyone has done wrong. Traps are described as traps — "easy to
+// get wrong", not "common mistake".
 //   Four modules a week, so the 15 modules cycle just under once a month.
 //
 // Modules carry a track ("all" | "sales" | "ops"). Everyone receives every
@@ -189,11 +194,11 @@ function howtoBox(ht) {
     ${steps}
     ${note('Tip', ht.tip, BLUE)}
     ${note('Important', ht.important, '#8a6d1a')}
-    ${note('Common mistake', ht.mistake, '#C0392B')}
+    ${note('Easy to get wrong', ht.mistake, '#C0392B')}
   </div>`;
 }
 
-// Two labelled rows — reads on a phone, mirrors the guide's mistake callouts.
+// Two labelled rows — reads on a phone, mirrors the guide's trap callouts.
 const mistakeBox = (mk, showModule) => {
   const row = (label, value, colour) =>
     `<div style="margin:0 0 6px;">
@@ -201,7 +206,7 @@ const mistakeBox = (mk, showModule) => {
       <div class="txt" style="font-size:13px;color:${TEXT};line-height:1.55;">${flattenHtml(value)}</div></div>`;
   const tag = showModule ? `<div class="muted" style="font-size:11px;color:${STEEL};margin-bottom:8px;">${esc(mk.module)}</div>` : '';
   return `<div class="tint" style="margin:0 0 10px;padding:12px 14px;${bg(TINT)}border-radius:6px;">
-    ${tag}${row('What happens', mk.m, '#C0392B')}${row('What to do instead', mk.fix, GREEN)}</div>`;
+    ${tag}${row('The trap', mk.m, '#C0392B')}${row('The habit', mk.fix, GREEN)}</div>`;
 };
 
 const fieldRow = (f) =>
@@ -257,8 +262,8 @@ if (isExamDay) {
   sections.push(card('Questions', exam.map((q, i) => quizBlock(q, i, true)).join('')));
 
   if (mistake) {
-    sections.push(card('Mistake of the week',
-      `<div class="txt" style="font-size:13px;color:${TEXT};line-height:1.6;margin-bottom:10px;">The one that costs the most time when it slips through.</div>
+    sections.push(card('Trap of the week',
+      `<div class="txt" style="font-size:13px;color:${TEXT};line-height:1.6;margin-bottom:10px;">The one that costs the most time to unpick if it slips through.</div>
        ${mistakeBox(mistake, true)}`, AMBER));
   }
 
@@ -295,9 +300,9 @@ if (isExamDay) {
     scenario.o.forEach((o, j) => T(`  ${letters[j]}. ${plain(o)}`)); T();
   }
   if (mistake) {
-    T(`MISTAKE OF THE WEEK (${mistake.module})`);
-    T(`  What happens:  ${plain(mistake.m)}`);
-    T(`  Do instead:    ${plain(mistake.fix)}`); T();
+    T(`TRAP OF THE WEEK (${mistake.module})`);
+    T(`  The trap:   ${plain(mistake.m)}`);
+    T(`  The habit:  ${plain(mistake.fix)}`); T();
   }
   T(RULE); T();
   T('ANSWERS');
@@ -334,7 +339,7 @@ if (isExamDay) {
   }
 
   if (mistake) {
-    sections.push(card('Common mistake', mistakeBox(mistake, false), AMBER));
+    sections.push(card('Easy to get wrong', mistakeBox(mistake, false), AMBER));
   }
 
   if (tip) {
@@ -384,7 +389,7 @@ if (isExamDay) {
       (ht.steps || []).forEach((s, i) => T(`  ${i + 1}. ${plain(s)}`));
       if (ht.tip) T(`  Tip: ${plain(ht.tip)}`);
       if (ht.important) T(`  Important: ${plain(ht.important)}`);
-      if (ht.mistake) T(`  Common mistake: ${plain(ht.mistake)}`);
+      if (ht.mistake) T(`  Easy to get wrong: ${plain(ht.mistake)}`);
       T();
     }
   }
@@ -393,9 +398,9 @@ if (isExamDay) {
     fields.forEach(f => T(`  ${plain(f.k)} — ${plain(f.v)}`)); T();
   }
   if (mistake) {
-    T('COMMON MISTAKE');
-    T(`  What happens:  ${plain(mistake.m)}`);
-    T(`  Do instead:    ${plain(mistake.fix)}`); T();
+    T('EASY TO GET WRONG');
+    T(`  The trap:   ${plain(mistake.m)}`);
+    T(`  The habit:  ${plain(mistake.fix)}`); T();
   }
   if (tip) { T('TIP OF THE DAY'); T(`  ${plain(tip.t)}`); T(`  (from ${tip.module})`); T(); }
   if (quiz.length) {

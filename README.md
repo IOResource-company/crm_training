@@ -59,9 +59,9 @@ RESEND_API_KEY=re_xxx node scripts/daily-snippet.mjs      # send for real
 ```
 
 **Working days only, 13:30 Irish time.** Monday to Thursday it takes one module
-in rotation and sends its intro, two how-tos, four fields, a common mistake, a
-tip drawn from the whole guide, and a four-question quiz. Friday it sends an exam
-across every module. Nothing goes out at the weekend. Four modules a week, so the
+in rotation and sends its intro, two how-tos, four fields, one thing that is easy
+to get wrong, a tip drawn from the whole guide, and a four-question quiz. Friday
+it sends an exam across every module. Nothing goes out at the weekend. Four modules a week, so the
 15 modules cycle just under once a month.
 
 Rotation counts *study days*, not calendar days — otherwise Saturday and Sunday
@@ -103,6 +103,11 @@ view so amounts and margins are off screen, or blur them before saving.
 ## Content rules
 
 - Document **our** CRM. Never present stock Twenty behaviour as ours.
+- **Sales have not gone live yet, so nobody has made a mistake.** Never write as
+  if the team has already got something wrong. Traps are described forward —
+  *easy to get wrong* — with the habit that avoids them and a worked example
+  beside them. State-of-the-data facts (duplicates and blanks that arrived with
+  the load, views with a fixed date in the filter) are fine, said as such.
 - If something can't be verified, mark it `confirm` rather than guessing. Those
   surface in place *and* collect into the guide's **Items to Confirm** page.
 - Real customer names are fine as examples. Spend, margin and deal values are not.

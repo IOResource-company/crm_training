@@ -108,7 +108,7 @@
   ],
   tips: [
     "Update as you go, not on Fridays. Walking out of a meeting, thirty seconds on the phone: move the stage, write the next step, set the date.",
-    "Every flow starts with a <strong>search</strong>. Company, then contact, then create only what is genuinely missing. We already carry duplicate company records and every new one makes the pipeline harder to trust.",
+    "Every flow starts with a <strong>search</strong>. Company, then contact, then create only what is genuinely missing. The data already holds a few duplicate company pairs from the load, and every new one makes the pipeline harder to trust.",
     "Formal sales work goes through <strong>sales@</strong> with the document number in the subject line. That is what makes the email thread appear on the right company, contact and deal without anyone filing anything."
   ],
   mistakes: [

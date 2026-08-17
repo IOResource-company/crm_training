@@ -2,8 +2,8 @@ function quickStartHTML(){
   const actions = [
     ['Sign in', 'Go to <strong>crm.ioresource.com</strong> and sign in with your IO Resource Microsoft account. If you are told your account is not a member, you need to be added &mdash; ask Stephen rather than trying again.'],
     ['Start from your own view', 'Do not start from the full list of everything. Open <strong>My Accounts</strong> for your rep code, and the <strong>Open Pipeline</strong> and <strong>Next Actions</strong> views. Those three answer most of your day.'],
-    ['Always search before you create', 'Type the name into search first, and try a shortened version too. We already carry duplicate companies from before this rule existed &mdash; every one of them makes the numbers wrong.'],
-    ['Know which record you are on', 'A <strong>Company</strong> is who we sell to and invoice. An <strong>End Customer</strong> is who the kit is actually for. Getting these the wrong way round is the single most common modelling mistake.'],
+    ['Always search before you create', 'Type the name into search first, and try a shortened version too. The data arrived with a few duplicate companies already in it &mdash; every extra one makes the numbers wrong.'],
+    ['Know which record you are on', 'A <strong>Company</strong> is who we sell to and invoice. An <strong>End Customer</strong> is who the kit is actually for. Getting these the wrong way round is the easiest thing here to get wrong, and the most awkward to unpick later.'],
     ['Create the opportunity against the company', 'Never create a deal that is not linked to a company. Give it a name that reads at a glance, set the stage honestly, and put in a value and a close date even if both are estimates.'],
     ['Set a next step, every time', 'An opportunity with no <code>nextStep</code> and no <code>nextStepDate</code> is invisible to the follow-up views and will quietly rot. If you do nothing else on a deal, do this.'],
     ['Write it down or it did not happen', 'Synced email shows the subject and who it was to &mdash; <strong>not</strong> the message body. Anything that matters from a call or an email goes into a Note, in your words.'],

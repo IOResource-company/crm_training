@@ -38,8 +38,8 @@
         "Do not add the group, the region or the product to the name. <code>Qualcom</code> is a company; <code>Qualcom — scanners</code> is an opportunity name.",
         "If a genuinely different legal entity shares a trading name, disambiguate in the fewest words possible and record why in a Note on both records."
       ],
-      tip: "Names get typed from memory in a hurry — the plural, the space and the capital letter are where our real duplicates came from. Slow down for those three.",
-      important: "We currently carry real duplicates: <strong>STL Technology Solutions</strong> twice, <strong>Qualcom</strong> twice, <strong>McLernons</strong> alongside <strong>McLernon Computers</strong>, and <strong>Touchstore</strong> alongside <strong>TouchStore</strong>. Splitting one customer's deals across twins is how a big account looks small.",
+      tip: "Names get typed from memory in a hurry, and the plural, the space and the capital letter are the three shapes that slip through. Slow down for those three.",
+      important: "The loaded data already holds duplicate pairs: <strong>STL Technology Solutions</strong> twice, <strong>Qualcom</strong> twice, <strong>McLernons</strong> alongside <strong>McLernon Computers</strong>, and <strong>Touchstore</strong> alongside <strong>TouchStore</strong>. They came in with the load rather than from anybody's typing — but do not add to them. Splitting one customer's deals across twins is how a big account looks small.",
       mistake: "Typing the full legal name from a purchase order, so the CRM ends up with the everyday name and the Companies House name as two records.",
       confirm: "Whether the CRM warns you at creation time when a similar company name already exists, or whether the search-first habit is the only defence."
     },
