@@ -1,20 +1,20 @@
 {
  "d": 20682,
  "mode": "study",
- "module": "Common Mistakes",
+ "module": "Getting It Right First Time",
  "date": "Monday 17 August 2026",
  "questions": [
   {
-   "q": "Where does an order live once it is placed?",
+   "q": "A customer email contains the delivery date they have committed to their own client. What must you do?",
    "o": [
-    "The CRM opportunity record",
-    "Intact ERP",
-    "The sales@ inbox",
-    "A note on the company"
+    "Nothing — the synced email carries the body onto the record",
+    "Type it into a Note or the deal's next step",
+    "Forward it to sales@ and rely on the sync",
+    "Flag the email in your mailbox"
    ],
    "c": 1,
-   "e": "Intact is the system of record for orders, stock and invoicing. The CRM holds the pursuit; quoteRef and accountCode are how the two tie together.",
-   "module": "Common Mistakes"
+   "e": "The CRM shows subject and participants only. If it is in the body, it does not exist in the CRM until somebody types it in.",
+   "module": "Getting It Right First Time"
   },
   {
    "q": "Why is a blank lostReason a real problem?",
@@ -25,20 +25,20 @@
     "The stage will not save"
    ],
    "c": 2,
-   "e": "Lost reasons are the cheapest market research we get. Patterns in Price and Lead Time go straight into supplier conversations.",
-   "module": "Common Mistakes"
+   "e": "Lost reasons are the cheapest market research we get. Patterns in Price and Lead Time go straight into supplier conversations, and nothing else in the CRM records them.",
+   "module": "Getting It Right First Time"
   },
   {
-   "q": "You create a new company for a customer you just won. What are the two fields to fill before you move on?",
+   "q": "Which of these is the safest way to avoid creating a duplicate company?",
    "o": [
-    "Website and LinkedIn",
-    "Sales Rep and Account code",
-    "Annual revenue and staff count",
-    "Account Owner and vertical"
+    "Search the full legal name from their PO",
+    "Search a short distinctive fragment and a couple of variants",
+    "Scroll the Companies list alphabetically",
+    "Ask a colleague if they remember the customer"
    ],
    "c": 1,
-   "e": "salesRep so it is not unowned, and accountCode so it can be reconciled against Intact. Account Owner is the hidden, misleading field — do not use it.",
-   "module": "Common Mistakes"
+   "e": "Short fragments catch variants in spacing, plurals and capitalisation — which is where the duplicate pairs already in the data differ from each other.",
+   "module": "Getting It Right First Time"
   },
   {
    "q": "A saved view shows a suspiciously small number just before the Monday review. What do you do first?",
@@ -49,8 +49,8 @@
     "Ignore the view and count by hand every week"
    ],
    "c": 1,
-   "e": "Several of our views were built with fixed dates that rot over time. Check what the view is actually filtering on before you trust the count.",
-   "module": "Common Mistakes"
+   "e": "Some of our views were built with fixed dates that rot as the calendar moves. Check what the view is actually filtering on before you trust the count.",
+   "module": "Getting It Right First Time"
   }
  ]
 }
