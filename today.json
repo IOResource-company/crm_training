@@ -1,19 +1,19 @@
 {
- "d": 20680,
+ "d": 20682,
  "mode": "study",
  "module": "Common Mistakes",
- "date": "Saturday 15 August 2026",
+ "date": "Monday 17 August 2026",
  "questions": [
   {
-   "q": "You are logging a deal where a reseller is supplying kit to a large grocery chain. What goes in Company?",
+   "q": "Where does an order live once it is placed?",
    "o": [
-    "The grocery chain",
-    "The reseller we invoice",
-    "Whichever is bigger",
-    "Both, separated by a slash"
+    "The CRM opportunity record",
+    "Intact ERP",
+    "The sales@ inbox",
+    "A note on the company"
    ],
    "c": 1,
-   "e": "Company is the trade account we invoice. The grocery chain goes in End Customer, which is what lets competing resellers chasing the same site roll up in one view.",
+   "e": "Intact is the system of record for orders, stock and invoicing. The CRM holds the pursuit; quoteRef and accountCode are how the two tie together.",
    "module": "Common Mistakes"
   },
   {
@@ -29,27 +29,27 @@
    "module": "Common Mistakes"
   },
   {
-   "q": "Where does an order live once it is placed?",
+   "q": "You create a new company for a customer you just won. What are the two fields to fill before you move on?",
    "o": [
-    "The CRM opportunity record",
-    "Intact ERP",
-    "The sales@ inbox",
-    "A note on the company"
+    "Website and LinkedIn",
+    "Sales Rep and Account code",
+    "Annual revenue and staff count",
+    "Account Owner and vertical"
    ],
    "c": 1,
-   "e": "Intact is the system of record for orders, stock and invoicing. The CRM holds the pursuit; quoteRef and accountCode are how the two tie together.",
+   "e": "salesRep so it is not unowned, and accountCode so it can be reconciled against Intact. Account Owner is the hidden, misleading field — do not use it.",
    "module": "Common Mistakes"
   },
   {
-   "q": "A customer email contains the delivery date they have committed to their own client. What must you do?",
+   "q": "A saved view shows a suspiciously small number just before the Monday review. What do you do first?",
    "o": [
-    "Nothing — the synced email carries the body onto the record",
-    "Type it into a Note or the deal's next step",
-    "Forward it to sales@ and rely on the sync",
-    "Flag the email in your mailbox"
+    "Quote it — the view is the system of record",
+    "Check the filter chips for a hardcoded date",
+    "Rebuild the view from scratch",
+    "Ignore the view and count by hand every week"
    ],
    "c": 1,
-   "e": "The CRM shows subject and participants only. If it is in the body, it does not exist in the CRM until somebody types it in.",
+   "e": "Several of our views were built with fixed dates that rot over time. Check what the view is actually filtering on before you trust the count.",
    "module": "Common Mistakes"
   }
  ]
