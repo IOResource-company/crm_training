@@ -5,7 +5,7 @@
   tagline: "How to read the CRM rather than just feed it - the dashboard, the monitoring views, the forecast, and the gaps you must know about before you quote a number.",
   intro: "<p>Everything else in this guide is about putting good data in. This module is about taking it out: where to look for the roll-up, what each number actually means, and - just as important - which numbers our CRM cannot yet tell you.</p><p>There are three places to look. The <strong>Command Centre</strong> dashboard answers 'am I on track, and what needs me now' in about five seconds. The <strong>monitoring views</strong> for pipeline and cases answer 'which record do I open'. And the <strong>forecast fields</strong> on each deal are what turn a list of opportunities into a view of the quarter.</p><p>Be careful with numbers. Our pipeline still has real gaps in amounts and close dates, and two objects that would carry targets and revenue actuals are empty. A figure from the CRM is a good starting point and a bad quote unless you have checked what is behind it.</p>",
   shots: [
-    {key:"command-centre", cap:"Command Centre dashboard - capture with value tiles cropped or blurred, leaving the widget titles, the case tiles and the action tables readable."},
+    {key:"command-centre", cap:"Command Centre dashboard - the three widgets it actually carries, with the pipeline chart's value labels hidden. Leave the widget titles, the stage names and the unowned-cases table readable."},
     {key:"forecast-categories", cap:"An opportunity record showing the Forecast category, Probability, Close date and Weighted value fields - crop or blur the amount and weighted value figures."}
   ],
   howtos: [
@@ -14,15 +14,16 @@
       when: "First thing in the morning, and before any conversation about how the business is doing",
       steps: [
         "Open the <strong>IOR Command Centre</strong> dashboard from the sidebar.",
-        "Read the <strong>tiles</strong> first: open pipeline value, weighted pipeline value, and unacknowledged cases. The case tile has a target of zero - that is the one that should make you act.",
-        "Then read <strong>Pipeline by Stage</strong>. You are looking at the shape, not the total: a stage that is piling up is where deals stall.",
-        "Then work the <strong>action tables</strong>. <strong>Next Actions</strong> lists open opportunities sorted by next-step date with overdue and undated deals floating to the top. <strong>Open Cases</strong> lists everything not resolved or closed, oldest first.",
-        "Open the record from the table. A chart tells you there is a problem; a table tells you which record to open."
+        "As built today it carries <strong>three widgets</strong>, not the fuller set this module once described: <strong>Pipeline by stage (EUR)</strong>, <strong>Cases by status</strong>, and <strong>Unowned cases (target 0)</strong>.",
+        "Go to <strong>Unowned cases (target 0)</strong> first. It is the only widget that tells you which record to open, and its target is zero.",
+        "Read <strong>Pipeline by stage</strong> for the shape, never the total. It sums <code>amount</code>, and a large share of open deals carry no amount, so every bar is understated by an unknown margin.",
+        "Treat <strong>Cases by status</strong> with care: Resolved dwarfs everything else, so the buckets that need you - New and Acknowledged - render as slivers a few pixels tall. The Cases views are a better worklist.",
+        "For the work itself, go to the monitoring views rather than the dashboard. A chart tells you there is a problem; a view tells you which record to open."
       ],
       shot: {key:"command-centre", cap:"Command Centre dashboard - capture with value tiles cropped or blurred, leaving the widget titles, the case tiles and the action tables readable."},
       important: "The action tables are <strong>sort-based</strong>, not date-filtered, so they never go stale. Any view built on a hard-coded date will quietly rot - if a view name mentions a specific date or quarter, check it before you trust it.",
       tip: "The dashboard is deliberately small. Every widget has to pass the test: what would I do differently because of this number? A widget nobody acts on is worse than no widget.",
-      confirm: "Whether the extra widgets from the design have since been added - the unowned-cases tile, the deals-with-no-amount tile, and the deals-created-per-month and cases-by-status charts."
+      confirm: "Checked in the CRM on 17 August 2026: the dashboard has three widgets only. The unowned-cases table and the cases-by-status chart exist; the open-pipeline-value tile, the weighted-pipeline-value tile, the unacknowledged-cases tile, the Next Actions table and the Open Cases table do not. Whether those are still intended, and whether a deals-with-no-amount tile will be added, is open."
     },
     {
       title: "Use the pipeline monitoring views",
@@ -107,7 +108,7 @@
   ],
   confirms: [
     "Whether the Sales Target and Sales Transaction objects are still empty, or whether monthly targets and an actuals feed have since been loaded - that is what would unlock a versus-target gauge and a pipeline coverage ratio.",
-    "Whether the Command Centre still carries exactly the six widgets described here, or whether the remaining planned tiles and charts have been added.",
+    "Whether the Command Centre is going to be rebuilt. As it stands two of its three widgets are status charts nobody can act on, and the only actionable one - Unowned cases (target 0) - was showing a single row that was an auto-reply turned into a case.",
     "Whether the unowned-cases widget still counts closed records, which would make a target-zero tile read high for a reason that is not a real problem.",
     "The current proportion of open deals carrying an amount and a close date - the honest denominator behind every value on the dashboard."
   ],
@@ -176,7 +177,7 @@
   flashcards: [
     {q:"The four forecast categories?", a:"Commit - would stake your reputation on it. Best Case - winnable this period. Pipeline - real but earlier. Omitted - tracked, not counted."},
     {q:"Raw versus weighted pipeline?", a:"Raw is the total value of open deals. Weighted is amount multiplied by probability - the risk-adjusted view. Never present one as the other."},
-    {q:"What is on the Command Centre?", a:"Pipeline by stage, a next-actions table, an open-cases table, open pipeline value, weighted pipeline value, and unacknowledged cases with a target of zero."},
+    {q:"What is on the Command Centre?", a:"Three widgets as built: Pipeline by stage (EUR), Cases by status, and Unowned cases (target 0). The unowned-cases table is the only one that names a record to open."},
     {q:"Why is there no revenue actuals reporting?", a:"The Sales Target and Sales Transaction objects exist but are empty. There are no actuals in the CRM at all."},
     {q:"What can't be built through the API on our version?", a:"Dashboards, favourites and sidebar order - all UI-only. They are built by hand in the browser."},
     {q:"Where do SLA medians live?", a:"In the Ops Pulse email, not on the dashboard - the dashboard widget types cannot compute differences between timestamps."},

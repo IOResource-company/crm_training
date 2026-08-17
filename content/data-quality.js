@@ -41,7 +41,7 @@
       tip: "Names get typed from memory in a hurry, and the plural, the space and the capital letter are the three shapes that slip through. Slow down for those three.",
       important: "The loaded data already holds duplicate pairs: <strong>STL Technology Solutions</strong> twice, <strong>Qualcom</strong> twice, <strong>McLernons</strong> alongside <strong>McLernon Computers</strong>, and <strong>Touchstore</strong> alongside <strong>TouchStore</strong>. They came in with the load rather than from anybody's typing — but do not add to them. Splitting one customer's deals across twins is how a big account looks small.",
       mistake: "Typing the full legal name from a purchase order, so the CRM ends up with the everyday name and the Companies House name as two records.",
-      confirm: "Whether the CRM warns you at creation time when a similar company name already exists, or whether the search-first habit is the only defence."
+      confirm: "Whether the CRM warns you at creation time when a similar company name already exists, or whether the search-first habit is the only defence. Also: the Sales Rep field presents as full names in the filter picker (Stephen Browne, Philip Murphy, Ross McClure, Conn Loy, Tara Keogh) rather than the SB / PM / CL / TK codes this guide documents - worth settling which is the value and which is the label."
     },
     {
       title: "Give the account an owner and an account code",
@@ -102,7 +102,7 @@
     {k: "amount &amp; amountBasis", v: "What the deal is worth to us, ex-VAT, and where that number came from: <em>Quoted</em> off a real quotation, <em>Estimated</em> off your judgement. Set both, and upgrade the basis when the quote firms up."},
     {k: "closeDate", v: "When the order will realistically land. It drives every forecast and close-month view — so an honest slipped date is a contribution, not an admission."},
     {k: "nextStep &amp; nextStepDate", v: "One concrete action and the date it is due. These two are what make a deal impossible to forget, and they feed the Next Actions widget and the Pulse."},
-    {k: "quoteRef", v: "The Intact quotation or PO reference. Expected on anything at <strong>Proposal</strong> — it is how a deal ties back to the paperwork."},
+    {k: "quoteRef", v: "The Intact quotation or PO reference. Labelled <strong>Quote / PO Ref</strong> on the opportunity record. Expected on anything at <strong>Proposal</strong> — it is how a deal ties back to the paperwork."},
     {k: "lostReason", v: "Why we lost: Price · Lead Time · Lost to Competitor · No Budget · No Decision · Stalled · Other. Required on everything Closed Lost. Ten seconds each, and it is the cheapest market research we will ever get."},
     {k: "lastActivityDate", v: "The date of the last real contact on the deal. Stale-deal detection reads it, so a deal with a blank one looks abandoned whether it is or not."}
   ],

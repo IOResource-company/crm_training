@@ -49,11 +49,11 @@
         "Move the <strong>Stage</strong> to <strong>Customer</strong>. That is our won stage; there is no separate Closed Won.",
         "Make the <strong>Amount</strong> match what was actually ordered, and set <strong>Amount basis</strong> to <em>Quoted</em>.",
         "Set the <strong>Close date</strong> to the date the order actually landed, not the date you originally hoped for.",
-        "Put the PO or quotation reference in <strong>Quote ref</strong> so the deal ties back to the paperwork.",
+        "Put the PO or quotation reference in <strong>Quote / PO Ref</strong> so the deal ties back to the paperwork.",
         "Check the <strong>Company</strong>, <strong>Contact</strong> and, where there is a deployment behind it, the <strong>End Customer</strong> are all linked.",
         "Write a short <strong>Note</strong> on the deal saying what was ordered and anything Customer Operations needs to know — the order itself lives in Intact, not here."
       ],
-      tip: "<strong>Worked example.</strong> A reseller confirms an order against quotation 2119 for a deal sitting at Proposal with last month's close date. Five edits and you are done: stage to <strong>Customer</strong>, amount to the ordered figure, basis <em>Quoted</em>, close date to today, quote ref <code>2119</code>. Then one note: what shipped, and the site it is going to.",
+      tip: "<strong>Worked example.</strong> A reseller confirms an order against quotation 2119 for a deal sitting at Proposal with last month's close date. Five edits and you are done: stage to <strong>Customer</strong>, amount to the ordered figure, basis <em>Quoted</em>, close date to today, <strong>Quote / PO Ref</strong> <code>2119</code>. Then one note: what shipped, and the site it is going to.",
       important: "Stage <strong>Customer</strong> is what records a win. Left at Proposal, the same deal inflates open pipeline, distorts the forecast, keeps appearing in quote follow-up lists, and the win is missing from the numbers.",
       mistake: "Recording the win by editing the company record or writing a note, and leaving the opportunity stage untouched.",
       confirm: "Whether anything else is expected on a won deal at close — a forecast category change, a linked Sales Transaction, or a handover Task to Customer Operations."
@@ -85,8 +85,8 @@
         "If a count looks wrong, open two or three records and check them by hand before you repeat the number to anyone.",
         "Tell whoever maintains the views rather than quietly working around a broken one."
       ],
-      tip: "<strong>Worked example.</strong> A view called <em>Stale Deals</em> reads as a rolling window, but the filter chip says a specific date. Everything that went stale after that date is missing from it. The fix is a sort-based version — same list, ordered by last activity with the oldest at the top — which cannot go out of date because there is no date in it.",
-      important: "A view is a saved question, not a fact. If the question has a fixed date in it, the answer is stale too — and it will look completely normal.",
+      tip: "<strong>Worked example, and it is a real one.</strong> The <strong>HOUSE &mdash; Unassigned</strong> view reads <strong>0 companies</strong>. It is not true. Its filter is <em>Sales Rep <strong>Is</strong> [list of reps]</em>, and an <em>Is</em> test can only match records that hold one of those values &mdash; so a company whose Sales Rep is <strong>blank</strong> is invisible to it. At least one is: the near-empty <strong>McLernons</strong> record has no Sales Rep at all. The worklist we drive to zero was already reading zero while the work sat outside it.",
+      important: "A view is a saved question, not a fact. Two ways the question goes wrong: a <strong>fixed date</strong> in the filter, which rots as the calendar moves; and an <strong><em>Is</em> test on a field that is sometimes blank</strong>, which silently drops every empty record. Both look completely normal, and the second one reads as good news.",
       mistake: "Reporting a number straight off a saved view in the Monday review without glancing at what the view is actually filtering on.",
       confirm: "Which of our current saved views still carry hardcoded date filters, and whether the Stale Deals view has been converted to a sort-based one."
     }
@@ -115,6 +115,7 @@
     {m: "Keeping the important detail in a personal inbox, or assuming the CRM captured an email body.", fix: "Synced email shows subject and participants only — you cannot read the body on the record. Type what matters into a <strong>Note</strong> on the company or the deal. Formal sales work goes through sales@ with you in cc."},
     {m: "Typing the customer's name whichever way it came out this time.", fix: "Use the trading name, keep the customer's own spelling and capitalisation, and leave off <code>Ltd</code> unless you need it to tell two businesses apart. Touchstore and TouchStore are one company."},
     {m: "Leaving a new account on HOUSE, or with a blank Sales Rep, for somebody else to claim.", fix: "Set <code>salesRep</code> the day the record exists. Unowned accounts show in no rep's Sales Pulse, so in practice a new customer is invisible until somebody claims it."},
+    {m: "Reading zero off a worklist and taking it as nothing to do.", fix: "Check what the filter actually tests. <strong>HOUSE &mdash; Unassigned</strong> reads 0 today because it filters <em>Sales Rep Is [reps]</em>, which cannot match a blank &mdash; and blank is exactly what an unowned account looks like. A zero you have not checked is a guess."},
     {m: "Quoting a number straight off a saved view without checking what it filters on.", fix: "Read the filter chips before you trust the count, prefer sort-based views where the oldest floats to the top, and get a fixed date filter replaced rather than working around it."},
     {m: "Looking for an order, a delivery date or an invoice in the CRM.", fix: "<strong>Intact is the system of record</strong> for orders, stock and invoicing. The CRM holds the pursuit and the relationship. Link them with <code>quoteRef</code> on the deal and <code>accountCode</code> on the company."}
   ],

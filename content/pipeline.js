@@ -105,7 +105,7 @@
     {k:"amountBasis", v:"<strong>ESTIMATED</strong> = your judgement. <strong>QUOTED</strong> = a real quotation exists. Flip it to QUOTED the moment the quote goes out, so leadership can tell soft pipeline from hard."},
     {k:"closeDate", v:"When the order will realistically land, not when you would like it to. Slipped? Move the date and explain it in the next step. Most of the deals that came in with the data load have no close date at all, so yours is doing real work."},
     {k:"probability", v:"Win probability as a percentage. Keep it honest &mdash; 100% belongs on a won deal, not a hopeful one."},
-    {k:"weightedValue", v:"<code>amount &times; probability</code>. It feeds the Weighted Pipeline tile on the Command Centre. Treat it as a stored number that has to keep up with the amount and probability you set."},
+    {k:"weightedValue", v:"<code>amount &times; probability</code>. Treat it as a stored number that has to keep up with the amount and probability you set. Note there is no Weighted Pipeline tile on the Command Centre as built - the field exists, the tile does not."},
     {k:"nextStep + nextStepDate", v:"One concrete action and the day you will do it: <em>Site survey w/c 14 Jul</em>. When it is done, write the next one. Overdue and undated next steps are the first thing the Sales Pulse shouts about."},
     {k:"lastActivityDate", v:"The date of your last real contact on this deal. It drives stale-deal detection (14+ days quiet). Blank means the deal reads as stale forever."},
     {k:"quoteRef", v:"The Intact quotation or PO number. Put it on the deal the day the quote goes out &mdash; it is also what links the email thread to the record when the number is in the subject line."},

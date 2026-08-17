@@ -84,7 +84,7 @@ export const RECIPES = {
   'house-unassigned': {
     path: '/objects/companies',
     view: 'HOUSE — Unas',
-    note: 'Confirmed to exist. Sales Rep column must be visible so the reader can see it is empty. Switch off IOR Annual Spend first.',
+    note: 'BLOCKED as at 17 Aug 2026: the view exists but returns 0 records, so there is nothing to photograph. Its filter is "Sales Rep Is [reps]", which cannot match a blank rep - see the mistakes module. Capture this once the filter is fixed and it lists real unowned accounts. Switch off IOR Annual Spend first.',
   },
 
   'dq-no-account-code': {
