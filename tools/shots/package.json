@@ -1,0 +1,15 @@
+{
+  "name": "crm-training-shots",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Screenshot capture for the CRM guide. Dev tool only — the guide itself has no dependencies.",
+  "scripts": {
+    "list": "node capture.mjs --list",
+    "login": "node capture.mjs --login",
+    "capture": "node capture.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.49.0"
+  }
+}

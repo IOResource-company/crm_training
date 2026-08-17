@@ -27,6 +27,7 @@ shots/*.png             screenshots, embedded at assemble time
 briefs/<slug>.md        harvest notes: which source said what, and what is unverified
 build/assemble.mjs      content + screenshots -> IOR-CRM-Training.html
 scripts/daily-snippet.mjs   builds and sends the daily email
+tools/shots/            Playwright capture tool — dev only, see its README
 today.json              published quiz payload (committed by CI)
 last-sent.txt           send guard (committed by CI)
 ```
@@ -98,7 +99,18 @@ Until then the guide renders a labelled placeholder, so referencing a shot that
 doesn't exist yet is safe.
 
 **This repo is public.** Screenshots must not show commercial figures — stage the
-view so amounts and margins are off screen, or blur them before saving.
+view so amounts and margins are off screen. Switching the Amount column off beats
+blurring, because a hidden column cannot be un-blurred.
+
+To capture them in bulk, [tools/shots](tools/shots/README.md) drives your signed-in
+Edge session: it reads the wanted keys straight out of the assembled guide, so the
+plan can never drift from the content, and it checks each frame for figures before
+saving. It is a dev tool with its own `package.json` — the guide itself stays a
+single dependency-free file.
+
+```bash
+cd tools/shots && npm install && node capture.mjs --list
+```
 
 ## Content rules
 
