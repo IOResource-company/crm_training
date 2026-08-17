@@ -34,6 +34,11 @@
 //   --height <px>    default 900
 //   --full           full page instead of the viewport (usually too tall to read)
 //   --chromium       use Playwright's Chromium instead of your installed Edge
+//   --no-prompt      unattended: never wait for Enter. Runs headless, forces
+//                    --strict, and skips the shots that need a human. This is
+//                    the mode to use if you want someone else to run it for you
+//                    once the session is saved. --headed to watch it work.
+//   --no-strict      waive the money refusal under --no-prompt. Think first.
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -67,7 +72,14 @@ const OPT = {
   width: Number(val('--width', '1440')),
   height: Number(val('--height', '900')),
   only: (val('--only', '') || '').split(',').map(s => s.trim()).filter(Boolean),
+  noPrompt: has('--no-prompt'),
+  headed: has('--headed'),
 };
+
+// --no-prompt exists so an agent or a CI job can run this. Nobody is framing
+// the page, so the money guard becomes a refusal rather than a question unless
+// it is explicitly waived, and shots that need a human are skipped outright.
+if (OPT.noPrompt && !has('--no-strict')) OPT.strict = true;
 
 // ---------- the shot list comes from the guide, not from here ----------
 
@@ -132,16 +144,29 @@ const kb = (n) => `${(n / 1024).toFixed(0)}KB`;
 // anything. It reads what is on screen and tells you what it can see.
 
 const MONEY = [
-  /[€£$]\s?\d[\d,. ]*/g,
+  /[€£$]\s?\d[\d,. ]*[km]?/gi,
   /\b\d{1,3}(?:,\d{3})+(?:\.\d{2})?\b/g,
   /\b(?:EUR|GBP|USD)\s?\d[\d,. ]*/gi,
   /\b\d{1,3}(?:\.\d+)?\s?%\s?(?:margin|gp)\b/gi,
+  // Our lists render abbreviated totals with no symbol attached — the Companies
+  // footer reads "Sum of IOR Annual Spend  1.9m". Without this the loudest
+  // number on the page walks straight past the guard.
+  /\b\d{1,4}(?:\.\d+)?[km]\b/g,
 ];
 
+// A visible money column header is as disqualifying as a visible figure: it
+// means the column is switched on, and a row further down will have a value in
+// it even if nothing is on screen right now.
+const MONEY_COLUMNS = /\b(amount|weighted value|weighted|annual spend|ior annual|margin|gp|revenue|book value)\b/i;
+
 async function scanForFigures(page) {
-  const text = await page.evaluate(() => document.body ? document.body.innerText : '');
+  const found = await page.evaluate(() => ({
+    text: document.body ? document.body.innerText : '',
+    headers: [...document.querySelectorAll('th, [role="columnheader"]')].map(h => h.innerText.trim()).filter(Boolean),
+  }));
   const hits = new Set();
-  for (const re of MONEY) for (const m of text.matchAll(re)) hits.add(m[0].trim());
+  for (const re of MONEY) for (const m of found.text.matchAll(re)) hits.add(m[0].trim());
+  for (const h of found.headers) if (MONEY_COLUMNS.test(h)) hits.add(`[column: ${h}]`);
   return [...hits].slice(0, 12);
 }
 
@@ -152,7 +177,7 @@ let rl = null;
 // Checked before anything launches, so a non-interactive run does not leave an
 // orphaned browser window on someone's desktop.
 function requireTTY() {
-  if (process.stdin.isTTY) return;
+  if (OPT.noPrompt || process.stdin.isTTY) return;
   console.error(
     '\n  This needs a terminal — it waits for you to frame each page and press Enter.\n' +
     '  Run it in an interactive shell, or use --list to see the plan without a browser.\n'
@@ -161,6 +186,7 @@ function requireTTY() {
 }
 
 async function ask(question) {
+  if (OPT.noPrompt) { console.log(question.trimEnd() + '  [--no-prompt: continuing]'); return ''; }
   rl = rl || readline.createInterface({ input: process.stdin, output: process.stdout });
   return rl.question(question);
 }
@@ -168,7 +194,10 @@ async function ask(question) {
 // ---------- browser ----------
 
 async function launch(playwright, { withState }) {
-  const opts = { headless: false, args: [`--window-size=${OPT.width},${OPT.height + 120}`] };
+  const opts = {
+    headless: OPT.noPrompt && !OPT.headed,
+    args: [`--window-size=${OPT.width},${OPT.height + 120}`],
+  };
   if (OPT.edge) opts.channel = 'msedge';
   let browser;
   try {
@@ -280,12 +309,14 @@ async function doCapture(playwright, shots) {
     if (r.hide) console.log(`  HIDE:    ${r.hide.join(', ')}  <- switch these columns off before capturing`);
 
     if (r.source === 'email') {
+      if (OPT.noPrompt) { console.log('  Needs a human — not in the CRM. Skipped.'); continue; }
       console.log('  This one is not in the CRM — open the email or page yourself in this window.');
     } else if (r.path) {
       const url = OPT.base + r.path;
       console.log(`  Going to ${url}`);
       await page.goto(url, { waitUntil: 'domcontentloaded' }).catch(() => console.log('  ! navigation failed — get there by hand'));
-      await page.waitForTimeout(1200);
+      // The SPA paints well after domcontentloaded; unattended runs get longer.
+      await page.waitForTimeout(OPT.noPrompt ? 3000 : 1200);
       if (r.view) {
         const ok = await pickView(page, r.view);
         console.log(ok ? `  Selected the "${r.view}" view.` : `  ! Could not find the "${r.view}" view — open it by hand.`);
