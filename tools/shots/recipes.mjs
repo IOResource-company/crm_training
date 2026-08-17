@@ -24,6 +24,18 @@
 //           These are the commercial figures. This repo is public.
 //   note    what to do that a script cannot do for you.
 //
+// THE AMOUNT COLUMN CANNOT BE REDACTED IN THE DOM. Learned the hard way on
+// 17 Aug 2026: an opportunity's amount renders as a BARE NUMBER (the cell text
+// is literally " 300") with the euro sign drawn as decoration rather than text.
+// So no text pattern can identify it — searching for a currency symbol beside a
+// digit finds nothing, and a bare number is indistinguishable from Win
+// Probability or a unit count. Worse, a checker written the same way reports
+// clean, which is the dangerous kind of wrong.
+//
+// Before capturing ANY opportunity screen, switch the column off in the view:
+// Options -> Fields -> hide Amount (and Weighted Value). Do it in the UI. Do not
+// rely on a script, and do not rely on the frame edge.
+//
 // READ THIS BEFORE YOUR FIRST RUN — checked live on 17 Aug 2026:
 //
 // 1. The default views carry money. Companies opens on "All Companies" with an
@@ -63,7 +75,7 @@ export const RECIPES = {
 
   'views-sidebar': {
     path: '/objects/companies',
-    note: 'Expand the view picker so the per-rep My Accounts views are visible, with one starred.',
+    note: 'Expand the view picker so the per-rep My Accounts views are visible, with one starred. NOTE the Companies list carries the IOR Annual Spend column behind the picker - switch it off first (Options -> Fields). The Cases picker is a money-free stand-in if you would rather not touch the Companies view, and reads the same for teaching purposes.',
   },
 
   'companies-list': {

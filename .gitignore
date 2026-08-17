@@ -1,4 +1,5 @@
 node_modules/
 out/
 shots/raw/
+shots/*.png.bak
 tools/shots/storage-state.json

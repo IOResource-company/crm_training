@@ -9,6 +9,24 @@ correctly sized files.
 `package.json` so the guide stays a single dependency-free HTML file. Nothing
 here ships.
 
+## How this actually works today
+
+Cloudflare Access blocks the Playwright browser at the gate with a bot-check
+failure, and that is not something to work around. So captures are taken **by
+hand in a real signed-in Chrome**:
+
+1. Get the page looking right, and switch off any money column
+   (**Options → Fields**) — see the warning at the top of `recipes.mjs`.
+2. Snip the whole window with `Win+Shift+S`.
+3. `.\save-clip.ps1 <key>` files it under the right name.
+4. **Open the saved file and look at it.** The script refuses a stale clipboard
+   but it cannot tell a wrong image from a right one — that already put a snip
+   of the public website in `person-record.png` once.
+5. `python to-webp.py`, then `node build/assemble.mjs` from the repo root.
+
+`capture.mjs` is still the source of truth for the key list (`--list`) and would
+work unchanged if the gate is ever opened to a service token.
+
 ## Once
 
 ```bash
@@ -80,9 +98,11 @@ cost is roughly 4/3 of what is on disk. The guide is ~354KB today; 32 PNGs at
 1440px wide will take it to a few MB. The run prints the running total and says
 when it is getting heavy.
 
-Levers, in order of preference: `--width 1280`, then `--format jpeg`
-(`assemble.mjs` also accepts `.webp` if you convert them yourself, which is the
-best of both — but nothing here writes WebP, because Playwright cannot).
+Run `python to-webp.py` before assembling. It halves the bytes with no visible
+loss on flat UI screenshots, keeps a `.png.bak` of each original (gitignored)
+until you have eyeballed the result, and `--clean` removes those afterwards.
+Needs `python -m pip install pillow` once — there is no other image tooling on
+this machine.
 
 The daily email does not embed screenshots at all, so none of this affects
 deliverability.
