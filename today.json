@@ -1,56 +1,56 @@
 {
- "d": 20682,
+ "d": 20683,
  "mode": "study",
- "module": "Getting It Right First Time",
- "date": "Monday 17 August 2026",
+ "module": "The Weekly Picture",
+ "date": "Tuesday 18 August 2026",
  "questions": [
   {
-   "q": "A customer email contains the delivery date they have committed to their own client. What must you do?",
+   "q": "What does the Kill the Zebra view track?",
    "o": [
-    "Nothing — the synced email carries the body onto the record",
-    "Type it into a Note or the deal's next step",
-    "Forward it to sales@ and rely on the sync",
-    "Flag the email in your mailbox"
+    "Deals about to be lost",
+    "Live competitor-displacement deals",
+    "Deals with no amount",
+    "Cases waiting on a supplier"
    ],
    "c": 1,
-   "e": "The CRM shows subject and participants only. If it is in the body, it does not exist in the CRM until somebody types it in.",
-   "module": "Getting It Right First Time"
+   "e": "It collects live displacement plays, tagged with the competitor displaced. It is a strategic scoreboard rather than a revenue view.",
+   "module": "The Weekly Picture"
   },
   {
-   "q": "Why is a blank lostReason a real problem?",
+   "q": "Why are the dashboard's action tables built on sorts rather than date filters?",
    "o": [
-    "The deal cannot be reopened",
-    "The record will be deleted",
-    "We lose the pattern of why we lose — price, lead time, competitor",
-    "The stage will not save"
+    "Sorts are faster",
+    "Date filters rot - a hard-coded date quietly stops being right",
+    "The API cannot write filters",
+    "So the tables can be exported"
+   ],
+   "c": 1,
+   "e": "A view filtered on a hard-coded date keeps returning a confident, wrong answer as time passes. A sort-based table always floats the most urgent record to the top with no maintenance.",
+   "module": "The Weekly Picture"
+  },
+  {
+   "q": "A case has no Received at value. What does that mean for the SLA numbers?",
+   "o": [
+    "It counts as a breach",
+    "It counts as passing",
+    "It is counted as unmeasurable",
+    "It is excluded from the case queue entirely"
    ],
    "c": 2,
-   "e": "Lost reasons are the cheapest market research we get. Patterns in Price and Lead Time go straight into supplier conversations, and nothing else in the CRM records them.",
-   "module": "Getting It Right First Time"
+   "e": "Without a start time there is no clock, so the case is counted as unmeasurable rather than as a pass or a fail. It still appears in the queue and still needs working.",
+   "module": "The Weekly Picture"
   },
   {
-   "q": "Which of these is the safest way to avoid creating a duplicate company?",
+   "q": "Why is there no versus-target gauge on the dashboard?",
    "o": [
-    "Search the full legal name from their PO",
-    "Search a short distinctive fragment and a couple of variants",
-    "Scroll the Companies list alphabetically",
-    "Ask a colleague if they remember the customer"
+    "The widget type is not supported",
+    "The Sales Target and Sales Transaction objects are empty",
+    "Targets are confidential",
+    "It was removed for being a vanity metric"
    ],
    "c": 1,
-   "e": "Short fragments catch variants in spacing, plurals and capitalisation — which is where the duplicate pairs already in the data differ from each other.",
-   "module": "Getting It Right First Time"
-  },
-  {
-   "q": "A saved view shows a suspiciously small number just before the Monday review. What do you do first?",
-   "o": [
-    "Quote it — the view is the system of record",
-    "Check the filter chips for a hardcoded date",
-    "Rebuild the view from scratch",
-    "Ignore the view and count by hand every week"
-   ],
-   "c": 1,
-   "e": "Some of our views were built with fixed dates that rot as the calendar moves. Check what the view is actually filtering on before you trust the count.",
-   "module": "Getting It Right First Time"
+   "e": "Both objects exist but hold no data, so there is nothing to compare against. Seeding targets is what would unlock a versus-target gauge and a pipeline coverage ratio.",
+   "module": "The Weekly Picture"
   }
  ]
 }
