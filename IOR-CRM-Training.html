@@ -1537,10 +1537,13 @@ const DATA = { modules: [
       mistake: "Leaving the important detail in the thread on the basis that 'it is in the CRM' - the subject line is in the CRM; the agreement is not."
     },
     {
-      title: "Push an email into the pipeline with (Sales Pipe mail)",
-      when: "An email contains a pipeline update - a new enquiry, a quote decision, a stage change, an order - and you want it in the CRM without doing it by hand",
+      title: "Email a lead, an update or a task straight into the CRM",
+      when: "Anything belongs in the pipeline - a new enquiry, a quote decision, a stage change, an order, a job for later - and you do not want to open the CRM to put it there",
       steps: [
-        "Forward the email to <strong>sales@ioresource.com</strong> with <strong>(Sales Pipe mail)</strong> in the subject. The matching is tolerant &mdash; <em>sales pipe</em> or <em>Sales-Pipe</em> will do &mdash; and it can sit anywhere in the subject line.",
+        "Forward the email to <strong>sales@ioresource.com</strong> and type <strong>one word at the top of your forward: <code>Sales</code></strong>. Nothing else is needed. That is the whole notation.",
+        "Say what you want if you already know: <code>Sales lead</code> creates a new opportunity, <code>Sales task</code> creates a task for you, <code>Sales note</code> just files the mail against the record. Leave it as plain <code>Sales</code> and the automation decides for itself.",
+        "It goes in the <strong>body</strong>, not the subject, and it must be the first thing in your forward &mdash; above the quoted original. Subject lines are left alone deliberately: customer mail regularly carries words like <em>SALES ORDER</em>, and a subject trigger would hijack it.",
+        "The older form still works: <strong>(Sales Pipe mail)</strong> anywhere in the subject, with tolerant matching for <em>sales pipe</em> or <em>Sales-Pipe</em>.",
         "The automation reads the full email, compares it against every open opportunity, case and company, and decides what to do. It only acts when it is confident.",
         "What it can do: <strong>update an opportunity</strong> (advance the stage or the next step), <strong>resolve a case</strong>, or <strong>create a new opportunity</strong> where the mail is genuinely new pipeline.",
         "Anything it cannot match confidently becomes a <strong>review task</strong> titled <em>Review: Sales Pipe mail &mdash; ...</em>. That is the deliberate fallback: the automation never guesses.",
@@ -1548,9 +1551,9 @@ const DATA = { modules: [
         "Check the outcome. If it created a review task, do the filing yourself &mdash; the task is a prompt, not a completed job."
       ],
       tip: "Forwarding a customer's own words is often better than retyping them. The note the automation leaves quotes the mail, which is exactly the context the next person needs.",
-      important: "Mail tagged <strong>(Sales Pipe mail)</strong> is deliberately excluded from automatic case creation, so tagging a forward will not also spawn a spurious case.",
-      mistake: "Forwarding with the tag and then assuming the job is done. Always check whether it produced a real update or a review task.",
-      confirm: "Whether every member of the team can use (Sales Pipe mail), or whether the resulting review tasks and notes are only surfaced to some people."
+      important: "<strong>One word decides whether it is Sales or Ops.</strong> A customer emailing sales@ becomes a <strong>Case</strong> for Customer Operations. A forward from you starting with <strong>Sales</strong> becomes <strong>pipeline</strong> instead, and is deliberately skipped by case creation &mdash; so you cannot spawn a spurious case by filing something.",
+      mistake: "Forwarding it and then assuming the job is done. Always glance at the outcome: it may have produced a review task rather than a real update.",
+      confirm: "The one-word <code>Sales</code> trigger was agreed on 18 August 2026 and reads the body rather than the subject. Confirm it has shipped in the routing engine before relying on it &mdash; until then the working form is <strong>(Sales Pipe mail)</strong> in the subject. Also still open: whether every member of the team can use it, or whether the review tasks and notes only surface to some people."
     },
     {
       title: "Put the document number in the subject line",
@@ -3364,6 +3367,7 @@ function quickStartHTML(){
     ['Create the opportunity against the company', 'Never create a deal that is not linked to a company. Give it a name that reads at a glance, set the stage honestly, and put in a value and a close date even if both are estimates.'],
     ['Set a next step, every time', 'An opportunity with no <code>nextStep</code> and no <code>nextStepDate</code> is invisible to the follow-up views and will quietly rot. If you do nothing else on a deal, do this.'],
     ['Write it down or it did not happen', 'Synced email shows the subject and who it was to &mdash; <strong>not</strong> the message body. Anything that matters from a call or an email goes into a Note, in your words.'],
+    ['Email it in when that is easier', 'The quickest way to get a lead, an update or a task into the CRM is to <strong>forward the email to sales@ioresource.com and type one word: <code>Sales</code></strong>. The automation reads the whole mail and files it against the right deal, or raises a review task if it is not certain. Add <code>Sales lead</code>, <code>Sales task</code> or <code>Sales note</code> to say exactly what you want. No browser, no fields &mdash; it works from a phone.'],
     ['Answer the Pulse email', 'The daily Pulse lists what needs you. The buttons in it update the CRM directly &mdash; won, lost, push the next step, or leave a comment &mdash; without opening a browser.'],
     ['Close deals properly', 'Won moves to <strong>Customer</strong>. Lost moves to <strong>Closed Lost</strong> <em>and</em> needs a <code>lostReason</code>. A blank lost reason teaches us nothing.'],
     ['Remember what the CRM is not', 'Orders, invoices and credit notes live in <strong>Intact</strong>. The CRM holds the relationship, the pipeline and the control layer. The two are tied together by the account code and by the document number in the email subject.']

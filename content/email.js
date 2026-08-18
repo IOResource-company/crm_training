@@ -43,10 +43,13 @@
       mistake: "Leaving the important detail in the thread on the basis that 'it is in the CRM' - the subject line is in the CRM; the agreement is not."
     },
     {
-      title: "Push an email into the pipeline with (Sales Pipe mail)",
-      when: "An email contains a pipeline update - a new enquiry, a quote decision, a stage change, an order - and you want it in the CRM without doing it by hand",
+      title: "Email a lead, an update or a task straight into the CRM",
+      when: "Anything belongs in the pipeline - a new enquiry, a quote decision, a stage change, an order, a job for later - and you do not want to open the CRM to put it there",
       steps: [
-        "Forward the email to <strong>sales@ioresource.com</strong> with <strong>(Sales Pipe mail)</strong> in the subject. The matching is tolerant &mdash; <em>sales pipe</em> or <em>Sales-Pipe</em> will do &mdash; and it can sit anywhere in the subject line.",
+        "Forward the email to <strong>sales@ioresource.com</strong> and type <strong>one word at the top of your forward: <code>Sales</code></strong>. Nothing else is needed. That is the whole notation.",
+        "Say what you want if you already know: <code>Sales lead</code> creates a new opportunity, <code>Sales task</code> creates a task for you, <code>Sales note</code> just files the mail against the record. Leave it as plain <code>Sales</code> and the automation decides for itself.",
+        "It goes in the <strong>body</strong>, not the subject, and it must be the first thing in your forward &mdash; above the quoted original. Subject lines are left alone deliberately: customer mail regularly carries words like <em>SALES ORDER</em>, and a subject trigger would hijack it.",
+        "The older form still works: <strong>(Sales Pipe mail)</strong> anywhere in the subject, with tolerant matching for <em>sales pipe</em> or <em>Sales-Pipe</em>.",
         "The automation reads the full email, compares it against every open opportunity, case and company, and decides what to do. It only acts when it is confident.",
         "What it can do: <strong>update an opportunity</strong> (advance the stage or the next step), <strong>resolve a case</strong>, or <strong>create a new opportunity</strong> where the mail is genuinely new pipeline.",
         "Anything it cannot match confidently becomes a <strong>review task</strong> titled <em>Review: Sales Pipe mail &mdash; ...</em>. That is the deliberate fallback: the automation never guesses.",
@@ -54,9 +57,9 @@
         "Check the outcome. If it created a review task, do the filing yourself &mdash; the task is a prompt, not a completed job."
       ],
       tip: "Forwarding a customer's own words is often better than retyping them. The note the automation leaves quotes the mail, which is exactly the context the next person needs.",
-      important: "Mail tagged <strong>(Sales Pipe mail)</strong> is deliberately excluded from automatic case creation, so tagging a forward will not also spawn a spurious case.",
-      mistake: "Forwarding with the tag and then assuming the job is done. Always check whether it produced a real update or a review task.",
-      confirm: "Whether every member of the team can use (Sales Pipe mail), or whether the resulting review tasks and notes are only surfaced to some people."
+      important: "<strong>One word decides whether it is Sales or Ops.</strong> A customer emailing sales@ becomes a <strong>Case</strong> for Customer Operations. A forward from you starting with <strong>Sales</strong> becomes <strong>pipeline</strong> instead, and is deliberately skipped by case creation &mdash; so you cannot spawn a spurious case by filing something.",
+      mistake: "Forwarding it and then assuming the job is done. Always glance at the outcome: it may have produced a review task rather than a real update.",
+      confirm: "The one-word <code>Sales</code> trigger was agreed on 18 August 2026 and reads the body rather than the subject. Confirm it has shipped in the routing engine before relying on it &mdash; until then the working form is <strong>(Sales Pipe mail)</strong> in the subject. Also still open: whether every member of the team can use it, or whether the review tasks and notes only surface to some people."
     },
     {
       title: "Put the document number in the subject line",

@@ -218,21 +218,58 @@
   <section class="slide cloud">
     <div class="kicker">The one-minute model</div>
     <div class="body">
-      <h2>Two systems. One join.</h2>
-      <div class="vs">
+      <h2>Three places. One thread.</h2>
+      <div class="cols c3">
         <div class="card">
-          <h3>The CRM holds the pursuit</h3>
+          <h3>sales@ &mdash; the front door</h3>
+          <p>Where customer email arrives and leaves. Keep it in the loop and the CRM can see the relationship. Send from your own mailbox only and the CRM sees nothing at all.</p>
+        </div>
+        <div class="card">
+          <h3>The CRM &mdash; the pursuit</h3>
           <p>The relationship, the opportunity, the next step, the reason we won or lost. Everything before the order.</p>
         </div>
         <div class="card" style="border-left-color:var(--navy)">
-          <h3>Intact holds the order</h3>
-          <p>Orders, stock, delivery, invoicing. It is the system of record. When the two disagree about what was ordered, Intact wins.</p>
+          <h3>Intact &mdash; the order</h3>
+          <p>Orders, stock, delivery, invoicing. The system of record. If the two disagree about what was ordered, Intact wins.</p>
         </div>
       </div>
-      <p style="margin-top:3.5vh"><strong>The join:</strong> <code>Quote / PO Ref</code> on the deal, <code>Account code</code> on the company. Fill those and the two systems can be reconciled against each other. Leave them blank and they cannot.</p>
-      <p style="margin-top:1.6vh;color:var(--steel)">So: do not go looking for a delivery date or an invoice in the CRM. It is not there, and it is not meant to be.</p>
+      <p style="margin-top:3.5vh"><strong>The thread that ties all three: the document number.</strong> In the email subject, in <code>Quote / PO Ref</code> on the deal, and on the Intact document. Same number in all three and anything can be traced end to end.</p>
+      <p style="margin-top:1.6vh;color:var(--steel);max-width:74ch">One limitation shapes everything else: the CRM stores the <strong>subject, who was on it and when</strong> &mdash; never the message body. If it mattered and it was in the body, a human has to put it in a note.</p>
     </div>
     <div class="foot"><span>Sales Kick-Off</span><span>03</span></div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">The easiest way to get anything in</div>
+    <div class="body">
+      <h2>Forward it to sales@ and type<br>one word: Sales</h2>
+      <div class="good" style="margin-bottom:2.6vh">
+        <div class="tag">No browser. No fields. From the car, from your phone.</div>
+        <p class="quote">To: sales@ioresource.com<br>&mdash;&mdash;&mdash;<br><strong>Sales</strong><br><br>&gt; From: Fiachra &hellip; (the forwarded mail)</p>
+      </div>
+      <div class="cols c2">
+        <div class="card">
+          <h3>Say nothing else and it decides</h3>
+          <ul style="margin-top:1.2vh">
+            <li>Reads the <strong>whole email</strong>, body included</li>
+            <li>Compares it against every open deal, case and company</li>
+            <li>Updates a deal, resolves a case, or creates a new one</li>
+            <li>Not sure? It raises a <strong>review task</strong>. It never guesses.</li>
+          </ul>
+        </div>
+        <div class="card" style="border-left-color:var(--green)">
+          <h3>Or tell it what you want</h3>
+          <ul style="margin-top:1.2vh">
+            <li><code>Sales lead</code> &mdash; make this a new opportunity</li>
+            <li><code>Sales task</code> &mdash; make this a task for me</li>
+            <li><code>Sales note</code> &mdash; just file it on the record</li>
+          </ul>
+        </div>
+      </div>
+      <p style="margin-top:2.6vh"><strong>Sales or Ops &mdash; that one word decides.</strong> Customer mail arriving at sales@ becomes a <strong>Case</strong> for Customer Operations. A forward from you starting with <strong>Sales</strong> becomes <strong>pipeline</strong> instead, and is deliberately skipped by case creation so you cannot spawn a spurious case.</p>
+      <p style="margin-top:1.4vh;color:var(--steel)">Every action writes a note on the record and appears in the next Pulse under <em>Actions taken</em> &mdash; nothing happens invisibly. Do glance at the outcome: a review task is a prompt, not a finished job.</p>
+    </div>
+    <div class="foot"><span>Sales Kick-Off</span><span>04</span></div>
   </section>
 
   <section class="slide">
@@ -251,7 +288,7 @@
       </div>
       <p style="margin-top:3.5vh;color:var(--steel);max-width:72ch">Get these the wrong way round and it is the most awkward thing in the CRM to unpick later. If a reseller is supplying a grocery chain, the reseller goes in Company and the chain goes in End Customer — not the other way round, and not both in one field.</p>
     </div>
-    <div class="foot"><span>Sales Kick-Off</span><span>04</span></div>
+    <div class="foot"><span>Sales Kick-Off</span><span>05</span></div>
   </section>
 
   <section class="slide cloud">
@@ -269,7 +306,7 @@
       <p style="margin-top:4vh"><strong>Customer means won.</strong> There is no separate Closed Won stage. A won deal left sitting at Proposal inflates open pipeline, distorts the forecast, and keeps appearing on quote follow-up lists — so somebody chases a customer who has already bought.</p>
       <p style="margin-top:1.6vh;color:var(--steel)">The stage is a fact about the deal, not a feeling about it.</p>
     </div>
-    <div class="foot"><span>Sales Kick-Off</span><span>05</span></div>
+    <div class="foot"><span>Sales Kick-Off</span><span>06</span></div>
   </section>
 
   <section class="slide">
@@ -285,13 +322,13 @@
         <tr><td><code>Quote / PO Ref</code></td><td class="d">Expected once a quotation is out. This is the tie back to Intact.</td></tr>
       </table>
     </div>
-    <div class="foot"><span>Sales Kick-Off</span><span>06</span></div>
+    <div class="foot"><span>Sales Kick-Off</span><span>07</span></div>
   </section>
 
   <section class="slide cloud">
     <div class="kicker">The one habit worth arguing about</div>
     <div class="body">
-      <h2>Write the next step for a stranger.</h2>
+      <h2>Write it for whoever picks it up.</h2>
       <div class="vs">
         <div class="bad">
           <div class="tag">Useless to anyone else</div>
@@ -302,10 +339,10 @@
           <p class="quote">Ring Fiachra to confirm DT50S quantities on quotation 2119 &mdash; Thursday</p>
         </div>
       </div>
-      <p style="margin-top:3.5vh">Name the <strong>person</strong>, the <strong>thing</strong>, the <strong>document</strong> and the <strong>date</strong>. The test: if a colleague picked the deal up cold tomorrow, could they do it without ringing you?</p>
+      <p style="margin-top:3.5vh">Name the <strong>person</strong>, the <strong>thing</strong>, the <strong>document</strong> and the <strong>date</strong>. The test is not whether a stranger could read it &mdash; there are six of us. It is whether somebody covering your accounts next week could act on it without ringing you.</p>
       <p style="margin-top:1.6vh;color:var(--steel)">And if the honest answer is that there is no next step, the deal is not open. Close it with a reason.</p>
     </div>
-    <div class="foot"><span>Sales Kick-Off</span><span>07</span></div>
+    <div class="foot"><span>Sales Kick-Off</span><span>08</span></div>
   </section>
 
   <section class="slide">
@@ -336,7 +373,7 @@
       </div>
       <p style="margin-top:3vh;color:var(--steel);max-width:74ch">Lead Time losses are a supplier conversation. Price losses are a margin conversation. A blank reason is neither, and it cannot be reconstructed later. Closing a loss is not an admission — it is the raw material for win rate.</p>
     </div>
-    <div class="foot"><span>Sales Kick-Off</span><span>08</span></div>
+    <div class="foot"><span>Sales Kick-Off</span><span>09</span></div>
   </section>
 
   <section class="slide cloud">
@@ -356,7 +393,7 @@
       </div>
       <p style="margin-top:3vh">Three shapes to watch for: the <strong>plural</strong>, the <strong>capital letter</strong>, the <strong>straight repeat</strong>. Search a short fragment and the customer&rsquo;s email domain, and only create when it is genuinely absent. If you find twins, work the one holding the open deals and flag the other.</p>
     </div>
-    <div class="foot"><span>Sales Kick-Off</span><span>09</span></div>
+    <div class="foot"><span>Sales Kick-Off</span><span>10</span></div>
   </section>
 
   <section class="slide dark">
@@ -372,7 +409,7 @@
       <p style="margin-top:4vh;color:#C3D2EE;max-width:72ch">The full guide is online with how-tos, worked examples and a short quiz, and a five-minute training email lands each working day. If something in the CRM does not match the guide, say so &mdash; that has already caught four things this week.</p>
       <p style="margin-top:3vh;font-size:clamp(15px,1.5vw,23px);font-weight:700;color:#fff">Supply. Configure. Support.</p>
     </div>
-    <div class="foot"><span>Sales Kick-Off</span><span>10</span></div>
+    <div class="foot"><span>Sales Kick-Off</span><span>11</span></div>
   </section>
 
   <div class="bar" id="bar"></div>
@@ -380,7 +417,7 @@
     <button id="prev" aria-label="Previous slide">&#8249;</button>
     <button id="next" aria-label="Next slide">&#8250;</button>
   </div>
-  <div class="hint">Arrow keys, space, or click &middot; <b id="n">1</b>/10</div>
+  <div class="hint">Arrow keys, space, or click &middot; <b id="n">1</b>/11</div>
 </div>
 
 <script>
