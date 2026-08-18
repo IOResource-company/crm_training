@@ -74,6 +74,20 @@
   .cols { display: grid; gap: 22px; }
   .c2 { grid-template-columns: 1fr 1fr; }
   .c3 { grid-template-columns: repeat(3, 1fr); }
+  .c4 { grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .c4 .card { padding: 15px 16px; }
+  .c4 .card p { font-size: clamp(11px, .9vw, 14px); }
+  /* Four across needs room. Below that, wrap to 2x2 rather than squeeze. */
+  @media (max-width: 1000px) {
+    .c4 { grid-template-columns: 1fr 1fr; }
+    .c3 { grid-template-columns: 1fr; }
+  }
+  /* On a phone a dense slide will not fit however it is laid out. Scroll it
+     rather than clip it - a projector never hits this. */
+  @media (max-width: 760px) {
+    .wrap { overflow-y: auto; padding: 4vh 20px 7vh; }
+    .c4, .c2, .vs { grid-template-columns: 1fr; }
+  }
   .card { background: #fff; border: 1px solid var(--silver); border-left: 4px solid var(--blue); border-radius: 8px; padding: 18px 20px; }
   .card h3 { font-size: clamp(13px, 1.15vw, 17px); color: var(--navy); margin-bottom: 7px; font-weight: 700; }
   .card p { color: var(--steel); font-size: clamp(12px, .98vw, 15px); }
@@ -209,11 +223,15 @@
     <div class="wrap">
       <div class="body">
         <div class="kicker">Systems</div>
-        <h2>Three systems, and how they join</h2>
-        <div class="cols c3">
+        <h2>Four systems, and how they join</h2>
+        <div class="cols c4">
           <div class="card">
             <h3>sales@ioresource.com</h3>
-            <p>Shared mailbox. Customer email in and out. Synced to the CRM at subject, participants and date. Message bodies and attachments are not stored.</p>
+            <p>Shared mailbox. Customer email in and out. Synced to the CRM at subject, participants and date. Bodies and attachments are not stored.</p>
+          </div>
+          <div class="card">
+            <h3>Shared files</h3>
+            <p>The sales-meetings folder. Weekly meeting minutes are ingested as Tasks. The rep pipeline files are swept every Tuesday at 15:00.</p>
           </div>
           <div class="card">
             <h3>The CRM</h3>
@@ -224,8 +242,18 @@
             <p>Orders, stock, delivery and invoicing. System of record for anything ordered. Where the two disagree, Intact is correct.</p>
           </div>
         </div>
-        <p style="margin-top:22px"><strong>Join points.</strong> The document number appears in the email subject, in <code>Quote / PO Ref</code> on the opportunity, and on the Intact document. <code>Account code</code> joins the company record to Intact.</p>
-        <p class="note">Because bodies are not stored, anything material in an email has to be entered as a note by hand. The CRM records that a conversation happened, not what was agreed.</p>
+        <div class="cols c2" style="margin-top:20px">
+          <div class="good" style="padding:14px 18px">
+            <div class="tag">Your sheet wins on</div>
+            <p class="quote">amount &middot; probability &middot; next step</p>
+          </div>
+          <div class="card" style="padding:14px 18px;border-left-color:var(--navy)">
+            <div class="tag" style="color:var(--navy)">The CRM wins on</div>
+            <p class="quote">stage &middot; close date</p>
+          </div>
+        </div>
+        <p style="margin-top:18px"><strong>Join points.</strong> The document number appears in the email subject, in <code>Quote / PO Ref</code> on the opportunity, and on the Intact document. <code>Account code</code> joins the company record to Intact.</p>
+        <p class="note">The Tuesday sweep never marks a deal Won and never deletes anything &mdash; rows it cannot reconcile become a single review task. Meeting actions arrive as Tasks titled <code>Sales mtg W32 #14</code>; that number is permanent, so an unfinished action carries into the next week keeping it. Three carries and it is escalated: kill it or commit a date.</p>
       </div>
       <div class="foot"><span>Supply. Configure. Support.</span><span>03</span></div>
     </div>
@@ -306,8 +334,9 @@
           <div class="stage won"><b>Customer</b><span>won</span></div>
           <div class="stage lost"><b>Closed Lost</b><span>lost</span></div>
         </div>
-        <ul style="margin-top:26px">
-          <li><strong>Customer</strong> is the won stage. There is no separate Closed Won.</li>
+        <ul style="margin-top:24px">
+          <li><strong>Customer</strong> is the won stage. There is no separate Closed Won. The name describes the outcome of that one deal, not the status of the account.</li>
+          <li><strong>Stage belongs to the opportunity, not the account.</strong> A company we have sold to for years can carry a Closed Lost deal. That is a lost deal, not a lost customer. The relationship is held separately in <code>Account Status</code> and <code>Account Tier</code> on the company record, and closing a deal lost does not touch either.</li>
           <li><strong>Closed Lost</strong> requires a lost reason. It is a single click and there is no other record of it.</li>
           <li>A won deal left at Proposal counts in open pipeline, carries into the forecast, and stays on the quote follow-up views.</li>
           <li>A closed-lost deal is reopened by moving its stage. Do not create a second opportunity.</li>
