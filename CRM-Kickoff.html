@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IOResource — Sales CRM Kick-Off</title>
+<style>
+  :root {
+    --navy: #09246B;
+    --blue: #0073E6;
+    --tint: #E6F1FD;
+    --steel: #5A6B7C;
+    --silver: #D7DCE3;
+    --cloud: #F4F6F9;
+    --text: #1B2433;
+    --green: #2E8B57;
+    --red: #C0392B;
+    --sans: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+    --mono: 'Cascadia Mono', Consolas, 'JetBrains Mono', Menlo, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    font-family: var(--sans);
+    background: #0A1330;
+    color: var(--text);
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .deck { position: relative; width: 100vw; height: 100vh; }
+  .slide {
+    position: absolute; inset: 0;
+    display: none;
+    flex-direction: column;
+    padding: 5.5vh 6vw 8vh;
+    background: #fff;
+    animation: in .28s ease-out;
+  }
+  .slide.on { display: flex; }
+  @keyframes in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+  .slide.dark { background: var(--navy); color: #fff; }
+  .slide.cloud { background: var(--cloud); }
+
+  .kicker {
+    font-size: clamp(11px, 1.05vw, 15px);
+    font-weight: 700; letter-spacing: .18em; text-transform: uppercase;
+    color: var(--blue); margin-bottom: 2.2vh;
+  }
+  .dark .kicker { color: #7FB6F5; }
+  h1 {
+    font-size: clamp(30px, 4.4vw, 66px); line-height: 1.04;
+    letter-spacing: -.02em; color: var(--navy); font-weight: 800;
+  }
+  .dark h1 { color: #fff; }
+  h2 {
+    font-size: clamp(22px, 2.7vw, 42px); line-height: 1.12;
+    letter-spacing: -.015em; color: var(--navy); font-weight: 800;
+    margin-bottom: 2.6vh;
+  }
+  .dark h2 { color: #fff; }
+  .lede {
+    font-size: clamp(15px, 1.5vw, 23px); line-height: 1.5;
+    color: var(--steel); max-width: 62ch;
+  }
+  .dark .lede { color: #C3D2EE; }
+  p { font-size: clamp(13px, 1.15vw, 18px); line-height: 1.6; }
+  strong { font-weight: 700; color: var(--navy); }
+  .dark strong { color: #fff; }
+  em { font-style: italic; }
+  code {
+    font-family: var(--mono); font-size: .88em;
+    background: var(--tint); color: var(--navy);
+    padding: .1em .4em; border-radius: 4px;
+  }
+  .dark code { background: rgba(255,255,255,.14); color: #DCE8FB; }
+
+  .body { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+  .cols { display: grid; gap: 2.4vw; }
+  .c2 { grid-template-columns: 1fr 1fr; }
+  .c3 { grid-template-columns: repeat(3, 1fr); }
+  .card {
+    background: #fff; border: 1px solid var(--silver);
+    border-left: 4px solid var(--blue);
+    border-radius: 10px; padding: 2.2vh 1.6vw;
+  }
+  .card h3 {
+    font-size: clamp(14px, 1.3vw, 20px); color: var(--navy);
+    margin-bottom: .8vh; font-weight: 700;
+  }
+  .card p { color: var(--steel); font-size: clamp(12px, 1.02vw, 16px); }
+
+  ul { list-style: none; }
+  li {
+    font-size: clamp(13px, 1.22vw, 19px); line-height: 1.5;
+    padding-left: 1.5em; position: relative; margin-bottom: 1.5vh;
+    color: var(--text);
+  }
+  .dark li { color: #D6E2F7; }
+  li::before {
+    content: ''; position: absolute; left: 0; top: .58em;
+    width: 8px; height: 8px; background: var(--blue); border-radius: 2px;
+  }
+  .card li { font-size: clamp(12px, 1.05vw, 17px); margin-bottom: 1.1vh; }
+
+  .ladder { display: flex; align-items: stretch; gap: .5vw; flex-wrap: wrap; }
+  .stage {
+    flex: 1; min-width: 96px; text-align: center;
+    padding: 2.2vh .5vw; border-radius: 8px;
+    background: var(--cloud); border: 1px solid var(--silver);
+  }
+  .stage b { display: block; font-size: clamp(12px, 1.15vw, 18px); color: var(--navy); }
+  .stage span { font-size: clamp(10px, .82vw, 13px); color: var(--steel); }
+  .stage.won { background: #EAF6EF; border-color: #A9D8BE; }
+  .stage.won b { color: var(--green); }
+  .stage.lost { background: #FBEBE9; border-color: #EFC0BA; }
+  .stage.lost b { color: var(--red); }
+
+  .vs { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8vw; }
+  .bad, .good { border-radius: 10px; padding: 2.2vh 1.5vw; }
+  .bad { background: #FBEBE9; border: 1px solid #EFC0BA; }
+  .good { background: #EAF6EF; border: 1px solid #A9D8BE; }
+  .tag {
+    font-size: clamp(10px, .82vw, 13px); font-weight: 700;
+    letter-spacing: .12em; text-transform: uppercase; margin-bottom: 1.2vh;
+  }
+  .bad .tag { color: var(--red); }
+  .good .tag { color: var(--green); }
+  .quote { font-family: var(--mono); font-size: clamp(12px, 1.08vw, 17px); line-height: 1.7; color: var(--text); }
+
+  table { width: 100%; border-collapse: collapse; }
+  td { padding: 1.4vh .8vw; border-bottom: 1px solid var(--silver); vertical-align: top; font-size: clamp(12px, 1.05vw, 17px); }
+  td:first-child { width: 30%; }
+  td code { white-space: nowrap; }
+  td.d { color: var(--steel); }
+
+  .cover { justify-content: center; }
+  .mark { display: flex; align-items: center; gap: 1.1vw; margin-bottom: 5vh; }
+  .mark svg { width: clamp(38px, 3.6vw, 58px); height: auto; }
+  .wordmark { font-size: clamp(20px, 2vw, 32px); font-weight: 800; letter-spacing: -.01em; }
+  .wordmark .io { color: var(--blue); }
+  .wordmark .rs { color: #fff; }
+  .tagline {
+    font-size: clamp(9px, .78vw, 12px); font-weight: 700;
+    letter-spacing: .2em; color: #7FB6F5; margin-top: .4em;
+  }
+
+  .foot {
+    position: absolute; left: 6vw; right: 6vw; bottom: 3vh;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: clamp(10px, .82vw, 13px); color: var(--steel);
+    letter-spacing: .1em; text-transform: uppercase;
+  }
+  .dark .foot { color: #8AA3D0; }
+  .bar { position: absolute; left: 0; top: 0; height: 3px; background: var(--blue); transition: width .28s ease; }
+  .nav { position: absolute; bottom: 2.4vh; right: 6vw; display: flex; gap: .5vw; z-index: 10; }
+  .nav button {
+    font: inherit; font-size: 15px; width: 34px; height: 34px;
+    border: 1px solid var(--silver); background: #fff; color: var(--navy);
+    border-radius: 7px; cursor: pointer;
+  }
+  .dark .nav button { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.3); color: #fff; }
+  .nav button:hover { border-color: var(--blue); }
+  .hint { position: absolute; bottom: 2.9vh; left: 6vw; font-size: 12px; color: var(--steel); }
+  .dark .hint { color: #8AA3D0; }
+
+  @media print {
+    body { overflow: visible; background: #fff; }
+    .slide { display: flex !important; position: relative; height: 100vh; page-break-after: always; }
+    .nav, .hint { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="deck" id="deck">
+
+  <section class="slide dark cover on">
+    <div class="mark">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <circle cx="32" cy="36" r="20" fill="none" stroke="#F4F4F4" stroke-width="7"/>
+        <rect x="28.5" y="10" width="7" height="24" fill="#F4F4F4"/>
+        <rect x="28.5" y="2" width="7" height="6" fill="#0073E6"/>
+      </svg>
+      <div>
+        <div class="wordmark"><span class="io">IO</span><span class="rs">Resource</span></div>
+        <div class="tagline">SUPPLY. CONFIGURE. SUPPORT.</div>
+      </div>
+    </div>
+    <h1>The Sales CRM<br>goes live.</h1>
+    <p class="lede" style="margin-top:3vh">Ten minutes on what it is for, the handful of fields that carry the weight, and what we are asking of you from this week.</p>
+    <div class="foot"><span>Sales Kick-Off</span><span>01</span></div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">Why we are doing this</div>
+    <div class="body">
+      <h2>Nothing here is about admin.<br>It is about not losing work.</h2>
+      <div class="cols c3" style="margin-top:1vh">
+        <div class="card">
+          <h3>One place for the pursuit</h3>
+          <p>Who we are chasing, what stage it is at, and what happens next — visible to more than one person.</p>
+        </div>
+        <div class="card">
+          <h3>Nothing quietly dropped</h3>
+          <p>A deal with a next step and a date turns up on a list. A deal without one goes quiet by default rather than by decision.</p>
+        </div>
+        <div class="card">
+          <h3>Reasons, not just results</h3>
+          <p>Why we lose is the cheapest market research we get, and the CRM is the only place it is ever recorded.</p>
+        </div>
+      </div>
+      <p style="margin-top:4vh;color:var(--steel);max-width:68ch">Nobody has got any of this wrong yet — we have not been live. That is exactly why we are covering it now rather than in six months.</p>
+    </div>
+    <div class="foot"><span>Sales Kick-Off</span><span>02</span></div>
+  </section>
+
+  <section class="slide cloud">
+    <div class="kicker">The one-minute model</div>
+    <div class="body">
+      <h2>Two systems. One join.</h2>
+      <div class="vs">
+        <div class="card">
+          <h3>The CRM holds the pursuit</h3>
+          <p>The relationship, the opportunity, the next step, the reason we won or lost. Everything before the order.</p>
+        </div>
+        <div class="card" style="border-left-color:var(--navy)">
+          <h3>Intact holds the order</h3>
+          <p>Orders, stock, delivery, invoicing. It is the system of record. When the two disagree about what was ordered, Intact wins.</p>
+        </div>
+      </div>
+      <p style="margin-top:3.5vh"><strong>The join:</strong> <code>Quote / PO Ref</code> on the deal, <code>Account code</code> on the company. Fill those and the two systems can be reconciled against each other. Leave them blank and they cannot.</p>
+      <p style="margin-top:1.6vh;color:var(--steel)">So: do not go looking for a delivery date or an invoice in the CRM. It is not there, and it is not meant to be.</p>
+    </div>
+    <div class="foot"><span>Sales Kick-Off</span><span>03</span></div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">The distinction that matters most</div>
+    <div class="body">
+      <h2>Company is who we invoice.<br>End Customer is who the kit is for.</h2>
+      <div class="vs">
+        <div class="card">
+          <h3>Company</h3>
+          <p>The trade account — the reseller, integrator, VAR or IT team we raise the invoice to. We are trade-only, so this is almost never the site using the hardware.</p>
+        </div>
+        <div class="card">
+          <h3>End Customer</h3>
+          <p>The business the deployment is actually for. Fill this and you can see every reseller chasing the same site in one view.</p>
+        </div>
+      </div>
+      <p style="margin-top:3.5vh;color:var(--steel);max-width:72ch">Get these the wrong way round and it is the most awkward thing in the CRM to unpick later. If a reseller is supplying a grocery chain, the reseller goes in Company and the chain goes in End Customer — not the other way round, and not both in one field.</p>
+    </div>
+    <div class="foot"><span>Sales Kick-Off</span><span>04</span></div>
+  </section>
+
+  <section class="slide cloud">
+    <div class="kicker">The stage ladder</div>
+    <div class="body">
+      <h2>Six stages. Two of them are endings.</h2>
+      <div class="ladder">
+        <div class="stage"><b>New</b><span>in the door</span></div>
+        <div class="stage"><b>Screening</b><span>is it real</span></div>
+        <div class="stage"><b>Meeting</b><span>engaged</span></div>
+        <div class="stage"><b>Proposal</b><span>quote is out</span></div>
+        <div class="stage won"><b>Customer</b><span>won</span></div>
+        <div class="stage lost"><b>Closed Lost</b><span>lost</span></div>
+      </div>
+      <p style="margin-top:4vh"><strong>Customer means won.</strong> There is no separate Closed Won stage. A won deal left sitting at Proposal inflates open pipeline, distorts the forecast, and keeps appearing on quote follow-up lists — so somebody chases a customer who has already bought.</p>
+      <p style="margin-top:1.6vh;color:var(--steel)">The stage is a fact about the deal, not a feeling about it.</p>
+    </div>
+    <div class="foot"><span>Sales Kick-Off</span><span>05</span></div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">The fields that carry the weight</div>
+    <div class="body">
+      <h2>Six of them. That is the whole ask.</h2>
+      <table>
+        <tr><td><code>Sales Rep</code></td><td class="d">On the company. Ownership hangs off this — an unowned account shows in nobody&rsquo;s Pulse, so a new customer is invisible until somebody claims it.</td></tr>
+        <tr><td><code>Stage</code></td><td class="d">Where the deal actually is. Move it the day it moves.</td></tr>
+        <tr><td><code>Amount</code> + basis</td><td class="d">What was quoted, then what was ordered. A deal with no amount is simply absent from the pipeline total.</td></tr>
+        <tr><td><code>Close date</code></td><td class="d">When the order will realistically land — not when you would like it to. Slipped? Move it and say why in the next step.</td></tr>
+        <tr><td><code>Next step</code> + date</td><td class="d">The action and when it is due. Both, or the deal appears on no list at all.</td></tr>
+        <tr><td><code>Quote / PO Ref</code></td><td class="d">Expected once a quotation is out. This is the tie back to Intact.</td></tr>
+      </table>
+    </div>
+    <div class="foot"><span>Sales Kick-Off</span><span>06</span></div>
+  </section>
+
+  <section class="slide cloud">
+    <div class="kicker">The one habit worth arguing about</div>
+    <div class="body">
+      <h2>Write the next step for a stranger.</h2>
+      <div class="vs">
+        <div class="bad">
+          <div class="tag">Useless to anyone else</div>
+          <p class="quote">chase<br>follow up<br>waiting on customer<br>ongoing 2026</p>
+        </div>
+        <div class="good">
+          <div class="tag">Somebody could act on this</div>
+          <p class="quote">Ring Fiachra to confirm DT50S quantities on quotation 2119 &mdash; Thursday</p>
+        </div>
+      </div>
+      <p style="margin-top:3.5vh">Name the <strong>person</strong>, the <strong>thing</strong>, the <strong>document</strong> and the <strong>date</strong>. The test: if a colleague picked the deal up cold tomorrow, could they do it without ringing you?</p>
+      <p style="margin-top:1.6vh;color:var(--steel)">And if the honest answer is that there is no next step, the deal is not open. Close it with a reason.</p>
+    </div>
+    <div class="foot"><span>Sales Kick-Off</span><span>07</span></div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">Closing, both ways</div>
+    <div class="body">
+      <h2>Five edits for a win.<br>One click for a loss.</h2>
+      <div class="cols c2">
+        <div class="card" style="border-left-color:var(--green)">
+          <h3>The PO lands</h3>
+          <ul style="margin-top:1.2vh">
+            <li>Stage to <strong>Customer</strong>, the same day</li>
+            <li>Amount to what was actually ordered</li>
+            <li>Close date to the day it landed</li>
+            <li><code>Quote / PO Ref</code> filled</li>
+            <li>One note: what shipped, and where to</li>
+          </ul>
+        </div>
+        <div class="card" style="border-left-color:var(--red)">
+          <h3>They buy elsewhere</h3>
+          <ul style="margin-top:1.2vh">
+            <li>Stage to <strong>Closed Lost</strong></li>
+            <li><strong>Lost reason</strong> &mdash; never blank</li>
+            <li>Price &middot; Lead Time &middot; Competitor &middot; No Budget &middot; No Decision &middot; Stalled</li>
+            <li>If a competitor won it, name them</li>
+            <li>They come back? Reopen the same deal</li>
+          </ul>
+        </div>
+      </div>
+      <p style="margin-top:3vh;color:var(--steel);max-width:74ch">Lead Time losses are a supplier conversation. Price losses are a margin conversation. A blank reason is neither, and it cannot be reconstructed later. Closing a loss is not an admission — it is the raw material for win rate.</p>
+    </div>
+    <div class="foot"><span>Sales Kick-Off</span><span>08</span></div>
+  </section>
+
+  <section class="slide cloud">
+    <div class="kicker">Thirty seconds that saves an afternoon</div>
+    <div class="body">
+      <h2>Search short before you create anything.</h2>
+      <p style="max-width:72ch">The CRM holds the name somebody typed, not the name on the letterhead. A purchase order headed <em>McLernon Computers Limited</em> can come back empty if you search the full string.</p>
+      <div class="vs" style="margin-top:3vh">
+        <div class="bad">
+          <div class="tag">Comes back empty</div>
+          <p class="quote">McLernon Computers Limited</p>
+        </div>
+        <div class="good">
+          <div class="tag">Finds both records</div>
+          <p class="quote">mclern</p>
+        </div>
+      </div>
+      <p style="margin-top:3vh">Three shapes to watch for: the <strong>plural</strong>, the <strong>capital letter</strong>, the <strong>straight repeat</strong>. Search a short fragment and the customer&rsquo;s email domain, and only create when it is genuinely absent. If you find twins, work the one holding the open deals and flag the other.</p>
+    </div>
+    <div class="foot"><span>Sales Kick-Off</span><span>09</span></div>
+  </section>
+
+  <section class="slide dark">
+    <div class="kicker">What we are asking this week</div>
+    <div class="body">
+      <h2>Four things, and they are all small.</h2>
+      <ul style="max-width:74ch">
+        <li>Every deal you touch leaves with a <strong>next step and a date</strong>.</li>
+        <li>Stage moves the <strong>day</strong> the deal moves &mdash; especially on a win.</li>
+        <li><strong>Search before you create</strong> a company. Short fragment, then the email domain.</li>
+        <li>Anything you are unsure about, <strong>put it in a note</strong>. A note nobody needed costs nothing; a decision that lived only in one inbox costs a customer.</li>
+      </ul>
+      <p style="margin-top:4vh;color:#C3D2EE;max-width:72ch">The full guide is online with how-tos, worked examples and a short quiz, and a five-minute training email lands each working day. If something in the CRM does not match the guide, say so &mdash; that has already caught four things this week.</p>
+      <p style="margin-top:3vh;font-size:clamp(15px,1.5vw,23px);font-weight:700;color:#fff">Supply. Configure. Support.</p>
+    </div>
+    <div class="foot"><span>Sales Kick-Off</span><span>10</span></div>
+  </section>
+
+  <div class="bar" id="bar"></div>
+  <div class="nav">
+    <button id="prev" aria-label="Previous slide">&#8249;</button>
+    <button id="next" aria-label="Next slide">&#8250;</button>
+  </div>
+  <div class="hint">Arrow keys, space, or click &middot; <b id="n">1</b>/10</div>
+</div>
+
+<script>
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var i = 0;
+  function show(k) {
+    i = Math.max(0, Math.min(slides.length - 1, k));
+    slides.forEach(function (s, x) { s.classList.toggle('on', x === i); });
+    document.getElementById('bar').style.width = ((i + 1) / slides.length * 100) + '%';
+    document.getElementById('n').textContent = i + 1;
+    history.replaceState(null, '', '#' + (i + 1));
+  }
+  document.getElementById('next').onclick = function (e) { e.stopPropagation(); show(i + 1); };
+  document.getElementById('prev').onclick = function (e) { e.stopPropagation(); show(i - 1); };
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); show(i + 1); }
+    if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); show(i - 1); }
+    if (e.key === 'Home') show(0);
+    if (e.key === 'End') show(slides.length - 1);
+  });
+  document.getElementById('deck').addEventListener('click', function (e) {
+    if (e.target.closest('.nav')) return;
+    show(e.clientX < window.innerWidth * 0.28 ? i - 1 : i + 1);
+  });
+  show(Math.max(0, (parseInt(location.hash.slice(1), 10) || 1) - 1));
+</script>
+</body>
+</html>
