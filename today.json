@@ -1,56 +1,56 @@
 {
- "d": 20683,
+ "d": 20684,
  "mode": "study",
- "module": "The Weekly Picture",
- "date": "Tuesday 18 August 2026",
+ "module": "CRM in Claude",
+ "date": "Wednesday 19 August 2026",
  "questions": [
   {
-   "q": "What does the Kill the Zebra view track?",
+   "q": "How do you get CRM access inside Claude?",
    "o": [
-    "Deals about to be lost",
-    "Live competitor-displacement deals",
-    "Deals with no amount",
-    "Cases waiting on a supplier"
+    "Set it up yourself from the CRM settings",
+    "Ask Stephen - it is issued per person",
+    "Use a shared team login",
+    "It is switched on for everyone by default"
    ],
    "c": 1,
-   "e": "It collects live displacement plays, tagged with the competitor displaced. It is a strategic scoreboard rather than a revenue view.",
-   "module": "The Weekly Picture"
+   "e": "It is issued individually by the administrator, with the setup instructions supplied alongside it. There is no self-service and no shared login.",
+   "module": "CRM in Claude"
   },
   {
-   "q": "Why are the dashboard's action tables built on sorts rather than date filters?",
+   "q": "You have just been set up. What is a sensible first request?",
    "o": [
-    "Sorts are faster",
-    "Date filters rot - a hard-coded date quietly stops being right",
-    "The API cannot write filters",
-    "So the tables can be exported"
+    "A bulk tidy-up of your accounts",
+    "A read-only question, checked against the browser",
+    "Closing your stale opportunities",
+    "Deleting a duplicate company"
    ],
    "c": 1,
-   "e": "A view filtered on a hard-coded date keeps returning a confident, wrong answer as time passes. A sort-based table always floats the most urgent record to the top with no maintenance.",
-   "module": "The Weekly Picture"
+   "e": "Ask something read-only and confirm the answer matches what you see in the CRM. Be sure it is pointed at the right place before letting it write anything.",
+   "module": "CRM in Claude"
   },
   {
-   "q": "A case has no Received at value. What does that mean for the SLA numbers?",
+   "q": "What does this access cover?",
    "o": [
-    "It counts as a breach",
-    "It counts as passing",
-    "It is counted as unmeasurable",
-    "It is excluded from the case queue entirely"
+    "Only the accounts you own",
+    "Only what you can see in the CRM screens",
+    "The whole workspace, read and write",
+    "Read-only access to everything"
    ],
    "c": 2,
-   "e": "Without a start time there is no clock, so the case is counted as unmeasurable rather than as a pass or a fail. It still appears in the queue and still needs working.",
-   "module": "The Weekly Picture"
+   "e": "The whole workspace, both read and write. It is not narrowed by your role in the interface, which is why it is only given to people trusted with all of it.",
+   "module": "CRM in Claude"
   },
   {
-   "q": "Why is there no versus-target gauge on the dashboard?",
+   "q": "Claude offers to update the next step on twenty-three opportunities at once. What is the right move?",
    "o": [
-    "The widget type is not supported",
-    "The Sales Target and Sales Transaction objects are empty",
-    "Targets are confidential",
-    "It was removed for being a vanity metric"
+    "Let it run - that is the point of connecting it",
+    "Ask it to list the records and the exact change, then confirm",
+    "Refuse and do them all by hand",
+    "Run it and check the Sales Pulse tomorrow"
    ],
    "c": 1,
-   "e": "Both objects exist but hold no data, so there is nothing to compare against. Seeding targets is what would unlock a versus-target gauge and a pipeline coverage ratio.",
-   "module": "The Weekly Picture"
+   "e": "It has full write access, so a wrong bulk change is a real mess. Read the list first, then let it proceed.",
+   "module": "CRM in Claude"
   }
  ]
 }
