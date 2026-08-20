@@ -1,56 +1,56 @@
 {
- "d": 20684,
+ "d": 20685,
  "mode": "study",
- "module": "CRM in Claude",
- "date": "Wednesday 19 August 2026",
+ "module": "Getting Started",
+ "date": "Thursday 20 August 2026",
  "questions": [
   {
-   "q": "How do you get CRM access inside Claude?",
+   "q": "Why does an invitation email to the CRM never arrive?",
    "o": [
-    "Set it up yourself from the CRM settings",
-    "Ask Stephen - it is issued per person",
-    "Use a shared team login",
-    "It is switched on for everyone by default"
+    "It is caught by the spam filter",
+    "The CRM's own outbound email is not configured, so the invite link must be copied and sent by hand",
+    "Cloudflare blocks all mail from the CRM",
+    "The mailbox is unlicensed"
    ],
    "c": 1,
-   "e": "It is issued individually by the administrator, with the setup instructions supplied alongside it. There is no self-service and no shared login.",
-   "module": "CRM in Claude"
+   "e": "Admins use Settings, Members, Invite by link, then send the link themselves. Waiting for an automatic invitation is waiting forever.",
+   "module": "Getting Started"
   },
   {
-   "q": "You have just been set up. What is a sensible first request?",
+   "q": "What sits in front of the CRM login page?",
    "o": [
-    "A bulk tidy-up of your accounts",
-    "A read-only question, checked against the browser",
-    "Closing your stale opportunities",
-    "Deleting a duplicate company"
+    "Nothing, it is open to the internet",
+    "Cloudflare Access, which only admits identities ending in @ioresource.com",
+    "A VPN you must install",
+    "Intact single sign-on"
    ],
    "c": 1,
-   "e": "Ask something read-only and confirm the answer matches what you see in the CRM. Be sure it is pointed at the right place before letting it write anything.",
-   "module": "CRM in Claude"
+   "e": "There are two gates: Cloudflare Access first, then Twenty's own sign-in. A restricted-to-members message is the Cloudflare layer, not the CRM.",
+   "module": "Getting Started"
   },
   {
-   "q": "What does this access cover?",
+   "q": "What is the join key that ties the mailbox, the CRM and Intact together?",
    "o": [
-    "Only the accounts you own",
-    "Only what you can see in the CRM screens",
-    "The whole workspace, read and write",
-    "Read-only access to everything"
-   ],
-   "c": 2,
-   "e": "The whole workspace, both read and write. It is not narrowed by your role in the interface, which is why it is only given to people trusted with all of it.",
-   "module": "CRM in Claude"
-  },
-  {
-   "q": "Claude offers to update the next step on twenty-three opportunities at once. What is the right move?",
-   "o": [
-    "Let it run - that is the point of connecting it",
-    "Ask it to list the records and the exact change, then confirm",
-    "Refuse and do them all by hand",
-    "Run it and check the Sales Pulse tomorrow"
+    "The customer's company name",
+    "The quotation, pro forma or order number in the email subject",
+    "The account tier",
+    "The sales rep code"
    ],
    "c": 1,
-   "e": "It has full write access, so a wrong bulk change is a real mess. Read the list first, then let it proceed.",
-   "module": "CRM in Claude"
+   "e": "The document number in the subject line is how an email links itself to the right record. It is the cheapest integration we have.",
+   "module": "Getting Started"
+  },
+  {
+   "q": "You log in and see sample records about Google, Pets and Rockets. What has happened?",
+   "o": [
+    "The CRM has been reset",
+    "You are in a stray demo workspace; switch to IOResource from the workspace menu at the top-left",
+    "Somebody imported test data into our workspace",
+    "Your account has no permissions yet"
+   ],
+   "c": 1,
+   "e": "A stray Twenty demo workspace has appeared on first login before. Our workspace has Companies, People, Opportunities, End Customers and Cases in the sidebar.",
+   "module": "Getting Started"
   }
  ]
 }
