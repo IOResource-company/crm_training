@@ -1,56 +1,116 @@
 {
- "d": 20685,
- "mode": "study",
- "module": "Getting Started",
- "date": "Thursday 20 August 2026",
+ "d": 20686,
+ "mode": "exam",
+ "date": "Friday 21 August 2026",
  "questions": [
   {
-   "q": "Why does an invitation email to the CRM never arrive?",
+   "q": "Why is the built-in Account Owner field hidden on our record pages?",
    "o": [
-    "It is caught by the spam filter",
-    "The CRM's own outbound email is not configured, so the invite link must be copied and sent by hand",
-    "Cloudflare blocks all mail from the CRM",
-    "The mailbox is unlicensed"
+    "It costs extra to license",
+    "It reads as Stephen on nearly everything, so it is misleading",
+    "It was replaced by the Case owner field",
+    "It is only visible to administrators"
    ],
    "c": 1,
-   "e": "Admins use Settings, Members, Invite by link, then send the link themselves. Waiting for an automatic invitation is waiting forever.",
-   "module": "Getting Started"
+   "e": "It was deliberately hidden during the 1 July 2026 view overhaul so nobody derives ownership from it. Sales Rep is the truth.",
+   "module": "People & Companies"
   },
   {
-   "q": "What sits in front of the CRM login page?",
+   "q": "Claude offers to update the next step on twenty-three opportunities at once. What is the right move?",
    "o": [
-    "Nothing, it is open to the internet",
-    "Cloudflare Access, which only admits identities ending in @ioresource.com",
-    "A VPN you must install",
-    "Intact single sign-on"
+    "Let it run - that is the point of connecting it",
+    "Ask it to list the records and the exact change, then confirm",
+    "Refuse and do them all by hand",
+    "Run it and check the Sales Pulse tomorrow"
    ],
    "c": 1,
-   "e": "There are two gates: Cloudflare Access first, then Twenty's own sign-in. A restricted-to-members message is the Cloudflare layer, not the CRM.",
-   "module": "Getting Started"
+   "e": "It has full write access, so a wrong bulk change is a real mess. Read the list first, then let it proceed.",
+   "module": "CRM in Claude"
   },
   {
-   "q": "What is the join key that ties the mailbox, the CRM and Intact together?",
+   "q": "Where are comments typed into the daily Pulse emails stored?",
    "o": [
-    "The customer's company name",
-    "The quotation, pro forma or order number in the email subject",
-    "The account tier",
-    "The sales rep code"
+    "In the Pulse system only",
+    "As a Note on the record, titled with an [Ops Pulse] or [Sales Pulse] prefix",
+    "As a Task assigned to Stephen",
+    "In the case resolution note"
    ],
    "c": 1,
-   "e": "The document number in the subject line is how an email links itself to the right record. It is the cheapest integration we have.",
-   "module": "Getting Started"
+   "e": "Every Pulse comment becomes a CRM Note titled '[Ops Pulse] ...' or '[Sales Pulse] <date> - <record>', attached to the record and its company. The title prefix is how the Pulse reads them back, so it must not be edited.",
+   "module": "Tasks, Notes & Follow-Ups"
   },
   {
-   "q": "You log in and see sample records about Google, Pets and Rockets. What has happened?",
+   "q": "What are our opportunity stages, in order?",
    "o": [
-    "The CRM has been reset",
-    "You are in a stray demo workspace; switch to IOResource from the workspace menu at the top-left",
-    "Somebody imported test data into our workspace",
-    "Your account has no permissions yet"
+    "New, Qualified, Demo, Quote, Closed Won, Closed Lost",
+    "New, Screening, Meeting, Proposal, Customer, Closed Lost",
+    "Lead, Prospect, Opportunity, Customer",
+    "Enquiry, Quote, Order, Delivered, Invoiced"
    ],
    "c": 1,
-   "e": "A stray Twenty demo workspace has appeared on first login before. Our workspace has Companies, People, Opportunities, End Customers and Cases in the sidebar.",
-   "module": "Getting Started"
+   "e": "New, Screening, Meeting, Proposal, then Customer for a win or Closed Lost for a loss. Customer is our won stage - there is no Closed Won.",
+   "module": "Opportunities & Pipeline"
+  },
+  {
+   "q": "Someone asks for the value of the pipeline for a board pack. What should you do first?",
+   "o": [
+    "Read the tile and send the number",
+    "Check how many open deals carry no amount, and whether the sweep is fresh",
+    "Add up the deals by hand",
+    "Use the weighted figure instead, since it is smaller"
+   ],
+   "c": 1,
+   "e": "Sanity-check before you quote. Deals without an amount are simply absent from the total, and a stale pipeline sweep means the CRM amounts have drifted from the reps' sheets.",
+   "module": "The Weekly Picture"
+  },
+  {
+   "q": "What is weighted pipeline?",
+   "o": [
+    "The total value of all open deals",
+    "Amount multiplied by probability, summed across open deals",
+    "The value of deals in Commit only",
+    "Last quarter's revenue"
+   ],
+   "c": 1,
+   "e": "Weighted value is amount multiplied by probability. It is the risk-adjusted view and is always smaller than raw open pipeline - and it excludes any deal with no amount or no probability.",
+   "module": "The Weekly Picture"
+  },
+  {
+   "q": "Why does that limitation matter for how you work?",
+   "o": [
+    "It does not, you can always forward it",
+    "Anything important from an email body must be written into a Note",
+    "It means email is not useful",
+    "It means you should copy everyone on everything"
+   ],
+   "c": 1,
+   "e": "A Note is the only place the substance of an email can live in the CRM. Without it, the record proves a conversation happened but not what was agreed.",
+   "module": "Email & the CRM"
+  },
+  {
+   "q": "Where does a comment left through a pulse actually end up?",
+   "o": [
+    "In a spreadsheet the automation keeps",
+    "Only in the next pulse email",
+    "As a CRM Note titled [Ops Pulse] or [Sales Pulse], attached to the record and its company",
+    "As a reply in the sales@ mailbox"
+   ],
+   "c": 2,
+   "e": "Comments are stored as CRM Notes with an [Ops Pulse] or [Sales Pulse] title prefix. The prefix is how the pulse reads them back and re-renders them under the item.",
+   "module": "The Pulse Emails"
+  },
+  {
+   "scenario": "A supplier asks how much business you have in the pipeline for their product this quarter. The dashboard shows an open pipeline value and a weighted value, and you know a lot of deals still have no amount and no close date.",
+   "q": "What is the right answer?",
+   "o": [
+    "Quote the open pipeline tile - it is the official figure",
+    "Quote the weighted figure, since it is more conservative",
+    "Give the number of live deals and say the values are incomplete, then offer a figure once the amounts are filled",
+    "Estimate the missing amounts yourself and add them in"
+   ],
+   "c": 2,
+   "e": "Deals with no amount are simply absent from both totals, and a quarter view needs close dates to filter on. The count of live deals is a fact; the value is not yet, and inventing amounts corrupts every roll-up afterwards.",
+   "module": "The Weekly Picture"
   }
  ]
 }
