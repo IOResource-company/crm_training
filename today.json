@@ -1,7 +1,8 @@
 {
- "d": 20686,
- "mode": "exam",
- "date": "Friday 21 August 2026",
+ "d": 20689,
+ "mode": "study",
+ "module": "People & Companies",
+ "date": "Monday 24 August 2026",
  "questions": [
   {
    "q": "Why is the built-in Account Owner field hidden on our record pages?",
@@ -16,101 +17,40 @@
    "module": "People & Companies"
   },
   {
-   "q": "Claude offers to update the next step on twenty-three opportunities at once. What is the right move?",
+   "q": "Which of these are genuine duplicate records in our CRM today?",
    "o": [
-    "Let it run - that is the point of connecting it",
-    "Ask it to list the records and the exact change, then confirm",
-    "Refuse and do them all by hand",
-    "Run it and check the Sales Pulse tomorrow"
+    "Zebra and Zebra Technologies",
+    "STL Technology Solutions twice, Qualcom twice, McLernons vs McLernon Computers, Touchstore vs TouchStore",
+    "There are no duplicates",
+    "Every company created before July 2026"
    ],
    "c": 1,
-   "e": "It has full write access, so a wrong bulk change is a real mess. Read the list first, then let it proceed.",
-   "module": "CRM in Claude"
+   "e": "All four pairs are live. When several records match, use the one already holding the open opportunities and never split a rep's deals across twins.",
+   "module": "People & Companies"
   },
   {
-   "q": "Where are comments typed into the daily Pulse emails stored?",
+   "q": "In our CRM, what does a Company record represent?",
    "o": [
-    "In the Pulse system only",
-    "As a Note on the record, titled with an [Ops Pulse] or [Sales Pulse] prefix",
-    "As a Task assigned to Stephen",
-    "In the case resolution note"
+    "Any business we deal with, including suppliers and end users",
+    "Who we sell to: the reseller, system integrator, VAR, IT team or software vendor",
+    "The business the equipment is installed for",
+    "Only accounts that have placed an order"
    ],
    "c": 1,
-   "e": "Every Pulse comment becomes a CRM Note titled '[Ops Pulse] ...' or '[Sales Pulse] <date> - <record>', attached to the record and its company. The title prefix is how the Pulse reads them back, so it must not be edited.",
-   "module": "Tasks, Notes & Follow-Ups"
+   "e": "We are trade-only. Companies are who we sell to and who pays the invoice. Who the kit is for is an End Customer.",
+   "module": "People & Companies"
   },
   {
-   "q": "What are our opportunity stages, in order?",
+   "q": "What is the Account Code on a company record?",
    "o": [
-    "New, Qualified, Demo, Quote, Closed Won, Closed Lost",
-    "New, Screening, Meeting, Proposal, Customer, Closed Lost",
-    "Lead, Prospect, Opportunity, Customer",
-    "Enquiry, Quote, Order, Delivered, Invoiced"
+    "An internal CRM identifier",
+    "The Intact A/C code, which joins the CRM record to the ERP",
+    "The company registration number",
+    "The sales rep's initials"
    ],
    "c": 1,
-   "e": "New, Screening, Meeting, Proposal, then Customer for a win or Closed Lost for a loss. Customer is our won stage - there is no Closed Won.",
-   "module": "Opportunities & Pipeline"
-  },
-  {
-   "q": "Someone asks for the value of the pipeline for a board pack. What should you do first?",
-   "o": [
-    "Read the tile and send the number",
-    "Check how many open deals carry no amount, and whether the sweep is fresh",
-    "Add up the deals by hand",
-    "Use the weighted figure instead, since it is smaller"
-   ],
-   "c": 1,
-   "e": "Sanity-check before you quote. Deals without an amount are simply absent from the total, and a stale pipeline sweep means the CRM amounts have drifted from the reps' sheets.",
-   "module": "The Weekly Picture"
-  },
-  {
-   "q": "What is weighted pipeline?",
-   "o": [
-    "The total value of all open deals",
-    "Amount multiplied by probability, summed across open deals",
-    "The value of deals in Commit only",
-    "Last quarter's revenue"
-   ],
-   "c": 1,
-   "e": "Weighted value is amount multiplied by probability. It is the risk-adjusted view and is always smaller than raw open pipeline - and it excludes any deal with no amount or no probability.",
-   "module": "The Weekly Picture"
-  },
-  {
-   "q": "Why does that limitation matter for how you work?",
-   "o": [
-    "It does not, you can always forward it",
-    "Anything important from an email body must be written into a Note",
-    "It means email is not useful",
-    "It means you should copy everyone on everything"
-   ],
-   "c": 1,
-   "e": "A Note is the only place the substance of an email can live in the CRM. Without it, the record proves a conversation happened but not what was agreed.",
-   "module": "Email & the CRM"
-  },
-  {
-   "q": "Where does a comment left through a pulse actually end up?",
-   "o": [
-    "In a spreadsheet the automation keeps",
-    "Only in the next pulse email",
-    "As a CRM Note titled [Ops Pulse] or [Sales Pulse], attached to the record and its company",
-    "As a reply in the sales@ mailbox"
-   ],
-   "c": 2,
-   "e": "Comments are stored as CRM Notes with an [Ops Pulse] or [Sales Pulse] title prefix. The prefix is how the pulse reads them back and re-renders them under the item.",
-   "module": "The Pulse Emails"
-  },
-  {
-   "scenario": "A supplier asks how much business you have in the pipeline for their product this quarter. The dashboard shows an open pipeline value and a weighted value, and you know a lot of deals still have no amount and no close date.",
-   "q": "What is the right answer?",
-   "o": [
-    "Quote the open pipeline tile - it is the official figure",
-    "Quote the weighted figure, since it is more conservative",
-    "Give the number of live deals and say the values are incomplete, then offer a figure once the amounts are filled",
-    "Estimate the missing amounts yourself and add them in"
-   ],
-   "c": 2,
-   "e": "Deals with no amount are simply absent from both totals, and a quarter view needs close dates to filter on. The count of live deals is a fact; the value is not yet, and inventing amounts corrupts every roll-up afterwards.",
-   "module": "The Weekly Picture"
+   "e": "It is the join key. Without it, what the account has actually bought can never be tied back to the CRM record.",
+   "module": "People & Companies"
   }
  ]
 }
