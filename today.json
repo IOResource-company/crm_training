@@ -1,56 +1,56 @@
 {
- "d": 20689,
+ "d": 20690,
  "mode": "study",
- "module": "People & Companies",
- "date": "Monday 24 August 2026",
+ "module": "Opportunities & Pipeline",
+ "date": "Tuesday 25 August 2026",
  "questions": [
   {
-   "q": "Why is the built-in Account Owner field hidden on our record pages?",
+   "q": "Weighted pipeline is calculated as...",
    "o": [
-    "It costs extra to license",
-    "It reads as Stephen on nearly everything, so it is misleading",
-    "It was replaced by the Case owner field",
-    "It is only visible to administrators"
+    "amount divided by the number of stages",
+    "amount times probability",
+    "amount minus cost",
+    "the sum of Commit deals only"
    ],
    "c": 1,
-   "e": "It was deliberately hidden during the 1 July 2026 view overhaul so nobody derives ownership from it. Sales Rep is the truth.",
-   "module": "People & Companies"
+   "e": "amount times probability, held in weightedValue and summed on the Command Centre's Weighted Pipeline tile.",
+   "module": "Opportunities & Pipeline"
   },
   {
-   "q": "Which of these are genuine duplicate records in our CRM today?",
+   "q": "You quote a customer today. Which field changes to QUOTED?",
    "o": [
-    "Zebra and Zebra Technologies",
-    "STL Technology Solutions twice, Qualcom twice, McLernons vs McLernon Computers, Touchstore vs TouchStore",
-    "There are no duplicates",
-    "Every company created before July 2026"
+    "forecastCategory",
+    "amountBasis",
+    "quoteRef",
+    "probability"
    ],
    "c": 1,
-   "e": "All four pairs are live. When several records match, use the one already holding the open opportunities and never split a rep's deals across twins.",
-   "module": "People & Companies"
+   "e": "amountBasis moves from ESTIMATED to QUOTED. At the same time put the quotation number in quoteRef and move the stage to Proposal.",
+   "module": "Opportunities & Pipeline"
   },
   {
-   "q": "In our CRM, what does a Company record represent?",
+   "q": "What are our opportunity stages, in order?",
    "o": [
-    "Any business we deal with, including suppliers and end users",
-    "Who we sell to: the reseller, system integrator, VAR, IT team or software vendor",
-    "The business the equipment is installed for",
-    "Only accounts that have placed an order"
+    "New, Qualified, Demo, Quote, Closed Won, Closed Lost",
+    "New, Screening, Meeting, Proposal, Customer, Closed Lost",
+    "Lead, Prospect, Opportunity, Customer",
+    "Enquiry, Quote, Order, Delivered, Invoiced"
    ],
    "c": 1,
-   "e": "We are trade-only. Companies are who we sell to and who pays the invoice. Who the kit is for is an End Customer.",
-   "module": "People & Companies"
+   "e": "New, Screening, Meeting, Proposal, then Customer for a win or Closed Lost for a loss. Customer is our won stage - there is no Closed Won.",
+   "module": "Opportunities & Pipeline"
   },
   {
-   "q": "What is the Account Code on a company record?",
+   "q": "A deal has gone to a competitor. What is the minimum you must record?",
    "o": [
-    "An internal CRM identifier",
-    "The Intact A/C code, which joins the CRM record to the ERP",
-    "The company registration number",
-    "The sales rep's initials"
+    "Stage Closed Lost",
+    "Stage Closed Lost plus a lostReason",
+    "A note on the company",
+    "Delete the opportunity"
    ],
    "c": 1,
-   "e": "It is the join key. Without it, what the account has actually bought can never be tied back to the CRM record.",
-   "module": "People & Companies"
+   "e": "Closed Lost plus a lostReason is mandatory - here, Lost to Competitor. Also set competitorDisplaced so the displacement picture stays accurate. Never delete the deal.",
+   "module": "Opportunities & Pipeline"
   }
  ]
 }
