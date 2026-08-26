@@ -1,56 +1,56 @@
 {
- "d": 20690,
+ "d": 20691,
  "mode": "study",
- "module": "Opportunities & Pipeline",
- "date": "Tuesday 25 August 2026",
+ "module": "Cases — the Customer Ops Queue",
+ "date": "Wednesday 26 August 2026",
  "questions": [
   {
-   "q": "Weighted pipeline is calculated as...",
+   "q": "A customer has been asked for a purchase order number and has not come back. Which status?",
    "o": [
-    "amount divided by the number of stages",
-    "amount times probability",
-    "amount minus cost",
-    "the sum of Commit deals only"
+    "Waiting – Supplier",
+    "Waiting – Internal",
+    "Waiting – Customer",
+    "In Progress"
    ],
-   "c": 1,
-   "e": "amount times probability, held in weightedValue and summed on the Command Centre's Weighted Pipeline tile.",
-   "module": "Opportunities & Pipeline"
+   "c": 2,
+   "e": "The three Waiting statuses answer one question: whose move is it? The ball is with the customer, so it is Waiting – Customer — with a next action and a date to chase them.",
+   "module": "Cases — the Customer Ops Queue"
   },
   {
-   "q": "You quote a customer today. Which field changes to QUOTED?",
+   "q": "How quickly must an inbound customer item be acknowledged?",
    "o": [
-    "forecastCategory",
-    "amountBasis",
-    "quoteRef",
-    "probability"
+    "Within 1 working hour, or 15 minutes if it is Urgent",
+    "Within 4 working hours",
+    "Same working day",
+    "Before the end of the week"
    ],
-   "c": 1,
-   "e": "amountBasis moves from ESTIMATED to QUOTED. At the same time put the quotation number in quoteRef and move the stage to Proposal.",
-   "module": "Opportunities & Pipeline"
+   "c": 0,
+   "e": "The standard acknowledgement SLA is 1 working hour. Urgent items — site down, deadline today, key account at risk — drop that to 15 minutes.",
+   "module": "Cases — the Customer Ops Queue"
   },
   {
-   "q": "What are our opportunity stages, in order?",
+   "q": "What stamps the Acknowledged at, First response at and Resolved at timestamps on a case?",
    "o": [
-    "New, Qualified, Demo, Quote, Closed Won, Closed Lost",
-    "New, Screening, Meeting, Proposal, Customer, Closed Lost",
-    "Lead, Prospect, Opportunity, Customer",
-    "Enquiry, Quote, Order, Delivered, Invoiced"
+    "You type them in when you have a moment",
+    "Moving the case Status — the workflow stamps them automatically",
+    "The Ops Pulse email at 08:00 and 18:00",
+    "The salesperson when they review the account"
    ],
    "c": 1,
-   "e": "New, Screening, Meeting, Proposal, then Customer for a win or Closed Lost for a loss. Customer is our won stage - there is no Closed Won.",
-   "module": "Opportunities & Pipeline"
+   "e": "Moving the status is the whole action. Acknowledged stamps Acknowledged at, In Progress stamps First response at, Resolved stamps Resolved at. They are stamped once and never overwritten.",
+   "module": "Cases — the Customer Ops Queue"
   },
   {
-   "q": "A deal has gone to a competitor. What is the minimum you must record?",
+   "q": "An email arrives at sales@ from someone who is not in the CRM as a contact. What happens?",
    "o": [
-    "Stage Closed Lost",
-    "Stage Closed Lost plus a lostReason",
-    "A note on the company",
-    "Delete the opportunity"
+    "A case is created with no company linked",
+    "A case is created and assigned to the sales rep",
+    "No case is created — the email surfaces in the Ops Pulse email for a person to handle",
+    "The email is deleted as spam"
    ],
-   "c": 1,
-   "e": "Closed Lost plus a lostReason is mandatory - here, Lost to Competitor. Also set competitorDisplaced so the displacement picture stays accurate. Never delete the deal.",
-   "module": "Opportunities & Pipeline"
+   "c": 2,
+   "e": "Only senders that resolve to a Person with a Company are auto-cased. Unknown senders are never guessed at — they appear in the pulse email so a human decides. Adding contacts to People is what switches the automation on for them.",
+   "module": "Cases — the Customer Ops Queue"
   }
  ]
 }
