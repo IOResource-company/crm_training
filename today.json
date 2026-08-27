@@ -1,56 +1,56 @@
 {
- "d": 20691,
+ "d": 20692,
  "mode": "study",
- "module": "Cases — the Customer Ops Queue",
- "date": "Wednesday 26 August 2026",
+ "module": "Tasks, Notes & Follow-Ups",
+ "date": "Thursday 27 August 2026",
  "questions": [
   {
-   "q": "A customer has been asked for a purchase order number and has not come back. Which status?",
+   "q": "Why does a task for Conn or Majella often show as assigned to Stephen?",
    "o": [
-    "Waiting – Supplier",
-    "Waiting – Internal",
-    "Waiting – Customer",
-    "In Progress"
-   ],
-   "c": 2,
-   "e": "The three Waiting statuses answer one question: whose move is it? The ball is with the customer, so it is Waiting – Customer — with a next action and a date to chase them.",
-   "module": "Cases — the Customer Ops Queue"
-  },
-  {
-   "q": "How quickly must an inbound customer item be acknowledged?",
-   "o": [
-    "Within 1 working hour, or 15 minutes if it is Urgent",
-    "Within 4 working hours",
-    "Same working day",
-    "Before the end of the week"
-   ],
-   "c": 0,
-   "e": "The standard acknowledgement SLA is 1 working hour. Urgent items — site down, deadline today, key account at risk — drop that to 15 minutes.",
-   "module": "Cases — the Customer Ops Queue"
-  },
-  {
-   "q": "What stamps the Acknowledged at, First response at and Resolved at timestamps on a case?",
-   "o": [
-    "You type them in when you have a moment",
-    "Moving the case Status — the workflow stamps them automatically",
-    "The Ops Pulse email at 08:00 and 18:00",
-    "The salesperson when they review the account"
+    "Stephen approves all tasks",
+    "They do not hold a CRM seat today, so tasks go to their proxy with the real owner named in the task body",
+    "It is a bug",
+    "Their tasks are private"
    ],
    "c": 1,
-   "e": "Moving the status is the whole action. Acknowledged stamps Acknowledged at, In Progress stamps First response at, Resolved stamps Resolved at. They are stamped once and never overwritten.",
-   "module": "Cases — the Customer Ops Queue"
+   "e": "Only some of the team hold CRM seats. Automations assign to the proxy and put the real owner's name verbatim on the first line of the body - do the same when you create tasks by hand.",
+   "module": "Tasks, Notes & Follow-Ups"
   },
   {
-   "q": "An email arrives at sales@ from someone who is not in the CRM as a contact. What happens?",
+   "q": "What does the sales cadence engine actually do when you set Outreach Cadence on a person?",
    "o": [
-    "A case is created with no company linked",
-    "A case is created and assigned to the sales rep",
-    "No case is created — the email surfaces in the Ops Pulse email for a person to handle",
-    "The email is deleted as spam"
+    "It emails the prospect automatically on a schedule",
+    "It creates a series of Tasks with due dates for you to action",
+    "It moves the opportunity through the stages",
+    "It adds the person to a mailing list"
+   ],
+   "c": 1,
+   "e": "The engine is an internal nudge only. It creates one Task per touch with a real due date and never emails a prospect - you send every touch yourself from Outlook.",
+   "module": "Tasks, Notes & Follow-Ups"
+  },
+  {
+   "q": "Which of these is NOT something a Note is for?",
+   "o": [
+    "A meeting write-up",
+    "A commitment we made on price or lead time",
+    "A dated action somebody has to complete",
+    "Competitor intelligence picked up on a call"
    ],
    "c": 2,
-   "e": "Only senders that resolve to a Person with a Company are auto-cased. Unknown senders are never guessed at — they appear in the pulse email so a human decides. Adding contacts to People is what switches the automation on for them.",
-   "module": "Cases — the Customer Ops Queue"
+   "e": "A dated action is a Task. Actions buried inside notes do not appear on anyone's worklist and do not get done.",
+   "module": "Tasks, Notes & Follow-Ups"
+  },
+  {
+   "q": "You had a long call that changed nothing about the deal's stage. What is the minimum you should do?",
+   "o": [
+    "Nothing - no change means no record",
+    "Add a Note and update Last Activity Date and the next step on the deal",
+    "Move the stage forward so it does not look stale",
+    "Create a task for yourself to write it up later"
+   ],
+   "c": 1,
+   "e": "Write the Note, stamp the activity and set the next action. Never move a stage you have not earned, and never leave the deal looking untouched when you spoke to them today.",
+   "module": "Tasks, Notes & Follow-Ups"
   }
  ]
 }
