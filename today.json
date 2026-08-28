@@ -1,56 +1,116 @@
 {
- "d": 20692,
- "mode": "study",
- "module": "Tasks, Notes & Follow-Ups",
- "date": "Thursday 27 August 2026",
+ "d": 20693,
+ "mode": "exam",
+ "date": "Friday 28 August 2026",
  "questions": [
   {
-   "q": "Why does a task for Conn or Majella often show as assigned to Stephen?",
+   "q": "Claude offers to update the next step on twenty-three opportunities at once. What is the right move?",
    "o": [
-    "Stephen approves all tasks",
-    "They do not hold a CRM seat today, so tasks go to their proxy with the real owner named in the task body",
-    "It is a bug",
-    "Their tasks are private"
+    "Let it run - that is the point of connecting it",
+    "Ask it to list the records and the exact change, then confirm",
+    "Refuse and do them all by hand",
+    "Run it and check the Sales Pulse tomorrow"
    ],
    "c": 1,
-   "e": "Only some of the team hold CRM seats. Automations assign to the proxy and put the real owner's name verbatim on the first line of the body - do the same when you create tasks by hand.",
-   "module": "Tasks, Notes & Follow-Ups"
+   "e": "It has full write access, so a wrong bulk change is a real mess. Read the list first, then let it proceed.",
+   "module": "CRM in Claude"
   },
   {
-   "q": "What does the sales cadence engine actually do when you set Outreach Cadence on a person?",
+   "q": "Quotes - Missing Quote Ref shows zero, but you know most proposals have no quote number on them. What should you suspect?",
    "o": [
-    "It emails the prospect automatically on a schedule",
-    "It creates a series of Tasks with due dates for you to action",
-    "It moves the opportunity through the stages",
-    "It adds the person to a mailing list"
+    "Somebody filled them all in",
+    "The filter may be matching on empty rather than blank, or the other way round",
+    "The view is for cases, not deals",
+    "Quote refs are optional so the view is irrelevant"
    ],
    "c": 1,
-   "e": "The engine is an internal nudge only. It creates one Task per touch with a real due date and never emails a prospect - you send every touch yourself from Outlook.",
-   "module": "Tasks, Notes & Follow-Ups"
+   "e": "Quote references have historically been stored as an empty string rather than nothing at all, so a filter written one way can undercount badly. Cross-check the count against the number of open proposals.",
+   "module": "Search, Filters & Views"
   },
   {
-   "q": "Which of these is NOT something a Note is for?",
+   "q": "Weighted pipeline is calculated as...",
    "o": [
-    "A meeting write-up",
-    "A commitment we made on price or lead time",
-    "A dated action somebody has to complete",
-    "Competitor intelligence picked up on a call"
+    "amount divided by the number of stages",
+    "amount times probability",
+    "amount minus cost",
+    "the sum of Commit deals only"
+   ],
+   "c": 1,
+   "e": "amount times probability, held in weightedValue and summed on the Command Centre's Weighted Pipeline tile.",
+   "module": "Opportunities & Pipeline"
+  },
+  {
+   "q": "You take a phone call that could turn into an order. When should the opportunity be created?",
+   "o": [
+    "The same day",
+    "At the weekly review",
+    "Once a formal quote has been issued",
+    "Only if the value is above a threshold"
+   ],
+   "c": 0,
+   "e": "Same day, even as a one-liner. If it is not in the CRM it does not exist at the review - and a rough amount can be refined later.",
+   "module": "Recommended Daily Routine"
+  },
+  {
+   "q": "You create a new company for a customer you just won. What are the two fields to fill before you move on?",
+   "o": [
+    "Website and LinkedIn",
+    "Sales Rep and Account code",
+    "Annual revenue and staff count",
+    "Account Owner and vertical"
+   ],
+   "c": 1,
+   "e": "salesRep so it is not unowned, and accountCode so it can be reconciled against Intact. Account Owner is the hidden, misleading field — do not use it.",
+   "module": "Getting It Right First Time"
+  },
+  {
+   "q": "Which two views should a Customer Operations day start and end on?",
+   "o": [
+    "Top Prizes and Open Pipeline",
+    "Unowned cases and Overdue cases",
+    "Going Quiet and Win-Back",
+    "Kill the Zebra and Data Gaps"
+   ],
+   "c": 1,
+   "e": "Drive Unowned cases and Overdue cases to zero at the start of the day, and check both again at the end. The Ops Pulse gives you the same picture in email form.",
+   "module": "Recommended Daily Routine"
+  },
+  {
+   "q": "A customer rings about a delivery that has not arrived. Where does that belong?",
+   "o": [
+    "A new opportunity",
+    "A note on the opportunity",
+    "A Case for Customer Operations",
+    "A task for the supplier"
    ],
    "c": 2,
-   "e": "A dated action is a Task. Actions buried inside notes do not appear on anyone's worklist and do not get done.",
-   "module": "Tasks, Notes & Follow-Ups"
+   "e": "Winning the money is sales; delivering on the promise is Customer Operations. A delivery chase is a Case, not pipeline.",
+   "module": "Common Daily Workflows"
   },
   {
-   "q": "You had a long call that changed nothing about the deal's stage. What is the minimum you should do?",
+   "q": "Why do we insist on the Intact document number in the email subject?",
    "o": [
-    "Nothing - no change means no record",
-    "Add a Note and update Last Activity Date and the next step on the deal",
-    "Move the stage forward so it does not look stale",
-    "Create a task for yourself to write it up later"
+    "It looks professional",
+    "It is how CRM activity and the ERP transaction record are tied together",
+    "The email system requires it",
+    "It speeds up delivery"
    ],
    "c": 1,
-   "e": "Write the Note, stamp the activity and set the next action. Never move a stage you have not earned, and never leave the deal looking untouched when you spoke to them today.",
-   "module": "Tasks, Notes & Follow-Ups"
+   "e": "Intact owns money and documents; the CRM owns relationships and control. The document number in the subject is the join between the two, so a mistyped or missing number breaks the link.",
+   "module": "Email & the CRM"
+  },
+  {
+   "scenario": "It is 4:45pm. You have had three customer calls today, none of which you have written up, and you have a deal that moved from a quote to a verbal yes.",
+   "q": "What is the right end-of-day move?",
+   "o": [
+    "Write it all up on Friday when you have a clear hour",
+    "Update the deal's stage, next step and date now, and add the call notes as Notes",
+    "Email yourself a reminder",
+    "Just update the deal - the calls were routine"
+   ],
+   "c": 1,
+   "e": "End of day means opportunities are current and notes are written up. Friday batching is how deals rot, and a routine call today is the context somebody needs next month.",
+   "module": "Recommended Daily Routine"
   }
  ]
 }
