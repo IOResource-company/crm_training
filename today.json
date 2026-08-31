@@ -1,116 +1,56 @@
 {
- "d": 20693,
- "mode": "exam",
- "date": "Friday 28 August 2026",
+ "d": 20696,
+ "mode": "study",
+ "module": "Search, Filters & Views",
+ "date": "Monday 31 August 2026",
  "questions": [
   {
-   "q": "Claude offers to update the next step on twenty-three opportunities at once. What is the right move?",
+   "q": "You need to see whether two of our resellers are chasing the same deployment site.",
    "o": [
-    "Let it run - that is the point of connecting it",
-    "Ask it to list the records and the exact change, then confirm",
-    "Refuse and do them all by hand",
-    "Run it and check the Sales Pulse tomorrow"
+    "Filter Opportunities by company",
+    "Open the End Customer record and use In Play (Two-Horse)",
+    "Search the end customer's name in Companies",
+    "Check the Accounts by Status kanban"
    ],
    "c": 1,
-   "e": "It has full write access, so a wrong bulk change is a real mess. Read the list first, then let it proceed.",
-   "module": "CRM in Claude"
-  },
-  {
-   "q": "Quotes - Missing Quote Ref shows zero, but you know most proposals have no quote number on them. What should you suspect?",
-   "o": [
-    "Somebody filled them all in",
-    "The filter may be matching on empty rather than blank, or the other way round",
-    "The view is for cases, not deals",
-    "Quote refs are optional so the view is irrelevant"
-   ],
-   "c": 1,
-   "e": "Quote references have historically been stored as an empty string rather than nothing at all, so a filter written one way can undercount badly. Cross-check the count against the number of open proposals.",
+   "e": "End Customers are the sites the kit is actually for. Every deal chasing that site rolls up on the one End Customer record, which is the whole point of the two-horse view.",
    "module": "Search, Filters & Views"
   },
   {
-   "q": "Weighted pipeline is calculated as...",
+   "q": "Stale Deals is showing far more deals than you expect, including ones you spoke to this week. What is the most likely cause?",
    "o": [
-    "amount divided by the number of stages",
-    "amount times probability",
-    "amount minus cost",
-    "the sum of Commit deals only"
+    "The deals really are stale",
+    "Last Activity Date is not being filled in, so every deal looks quiet",
+    "The view is sorted wrongly",
+    "You are looking at someone else's deals"
    ],
    "c": 1,
-   "e": "amount times probability, held in weightedValue and summed on the Command Centre's Weighted Pipeline tile.",
-   "module": "Opportunities & Pipeline"
+   "e": "Stale Deals reads Last Activity Date and nothing else. When that field is blank the detector flags everything - which is exactly what happened when the views were first built.",
+   "module": "Search, Filters & Views"
   },
   {
-   "q": "You take a phone call that could turn into an order. When should the opportunity be created?",
+   "q": "Which field is the ownership field on a company record in our CRM?",
    "o": [
-    "The same day",
-    "At the weekly review",
-    "Once a formal quote has been issued",
-    "Only if the value is above a threshold"
-   ],
-   "c": 0,
-   "e": "Same day, even as a one-liner. If it is not in the CRM it does not exist at the review - and a rough amount can be refined later.",
-   "module": "Recommended Daily Routine"
-  },
-  {
-   "q": "You create a new company for a customer you just won. What are the two fields to fill before you move on?",
-   "o": [
-    "Website and LinkedIn",
-    "Sales Rep and Account code",
-    "Annual revenue and staff count",
-    "Account Owner and vertical"
-   ],
-   "c": 1,
-   "e": "salesRep so it is not unowned, and accountCode so it can be reconciled against Intact. Account Owner is the hidden, misleading field — do not use it.",
-   "module": "Getting It Right First Time"
-  },
-  {
-   "q": "Which two views should a Customer Operations day start and end on?",
-   "o": [
-    "Top Prizes and Open Pipeline",
-    "Unowned cases and Overdue cases",
-    "Going Quiet and Win-Back",
-    "Kill the Zebra and Data Gaps"
-   ],
-   "c": 1,
-   "e": "Drive Unowned cases and Overdue cases to zero at the start of the day, and check both again at the end. The Ops Pulse gives you the same picture in email form.",
-   "module": "Recommended Daily Routine"
-  },
-  {
-   "q": "A customer rings about a delivery that has not arrived. Where does that belong?",
-   "o": [
-    "A new opportunity",
-    "A note on the opportunity",
-    "A Case for Customer Operations",
-    "A task for the supplier"
+    "Account Owner",
+    "Created By",
+    "Sales Rep",
+    "Assignee"
    ],
    "c": 2,
-   "e": "Winning the money is sales; delivering on the promise is Customer Operations. A delivery chase is a Case, not pipeline.",
-   "module": "Common Daily Workflows"
+   "e": "Sales Rep is the truth everywhere. The older Account Owner column was hidden from views and record pages because it read as Stephen on everything and misled people.",
+   "module": "Search, Filters & Views"
   },
   {
-   "q": "Why do we insist on the Intact document number in the email subject?",
+   "q": "What is the safest first move when a search for a company returns nothing?",
    "o": [
-    "It looks professional",
-    "It is how CRM activity and the ERP transaction record are tied together",
-    "The email system requires it",
-    "It speeds up delivery"
+    "Create the company",
+    "Search again using the trading name, the legal name or the contact's email domain",
+    "Ask someone to create it for you",
+    "Raise a case"
    ],
    "c": 1,
-   "e": "Intact owns money and documents; the CRM owns relationships and control. The document number in the subject is the join between the two, so a mistyped or missing number breaks the link.",
-   "module": "Email & the CRM"
-  },
-  {
-   "scenario": "It is 4:45pm. You have had three customer calls today, none of which you have written up, and you have a deal that moved from a quote to a verbal yes.",
-   "q": "What is the right end-of-day move?",
-   "o": [
-    "Write it all up on Friday when you have a clear hour",
-    "Update the deal's stage, next step and date now, and add the call notes as Notes",
-    "Email yourself a reminder",
-    "Just update the deal - the calls were routine"
-   ],
-   "c": 1,
-   "e": "End of day means opportunities are current and notes are written up. Friday batching is how deals rot, and a routine call today is the context somebody needs next month.",
-   "module": "Recommended Daily Routine"
+   "e": "Search a second and third way before creating anything. Our accounts are recorded under a mix of trading and legal names, and a duplicate splits the spend history, deals and email trail.",
+   "module": "Search, Filters & Views"
   }
  ]
 }
