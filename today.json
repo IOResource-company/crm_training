@@ -1,56 +1,56 @@
 {
- "d": 20697,
+ "d": 20698,
  "mode": "study",
- "module": "Email & the CRM",
- "date": "Tuesday 1 September 2026",
+ "module": "Quote to Order",
+ "date": "Wednesday 2 September 2026",
  "questions": [
   {
-   "q": "Why does that limitation matter for how you work?",
+   "q": "Where are quotes, orders, invoices and credit notes created and stored?",
    "o": [
-    "It does not, you can always forward it",
-    "Anything important from an email body must be written into a Note",
-    "It means email is not useful",
-    "It means you should copy everyone on everything"
+    "In the CRM, on the Opportunity",
+    "In Intact — the CRM has no order object at all",
+    "In both, kept in sync automatically",
+    "In the sales@ inbox"
    ],
    "c": 1,
-   "e": "A Note is the only place the substance of an email can live in the CRM. Without it, the record proves a conversation happened but not what was agreed.",
-   "module": "Email & the CRM"
+   "e": "Intact is the system of record for money and documents. The CRM holds the relationship and the control layer. There is no order object in the CRM and you should not try to build one.",
+   "module": "Quote to Order"
   },
   {
-   "q": "An email arrives at sales@ from someone who is not in People. What happens?",
+   "q": "Who decides the price on a standard quotation?",
    "o": [
-    "A case is created and a person record is created",
-    "A case is created with no contact",
-    "No case is created - the sender surfaces in the Pulse email for a human to triage",
-    "The email is deleted"
-   ],
-   "c": 2,
-   "e": "Auto-casing only fires for known contacts who are linked to a company. Unknown senders are triaged by a person, which is also the prompt to add them to People.",
-   "module": "Email & the CRM"
-  },
-  {
-   "q": "You open a customer record and want to read an email they sent last week. What will the CRM show you?",
-   "o": [
-    "The full message and any attachments",
-    "The subject, who was on it and when - nothing more",
-    "A summary written by the system",
-    "Nothing at all"
+    "Customer Operations, within the agreed rules",
+    "The salesperson — Operations builds and sends the rest",
+    "The manager, on every quote",
+    "Whoever opens the email first"
    ],
    "c": 1,
-   "e": "The sales@ mailbox is synced with visibility set to Subject and metadata. You can see that an email happened, with whom and when, but the body and attachments are not shown in the CRM.",
-   "module": "Email & the CRM"
+   "e": "Operations prepares the quotation in Intact and sends it from sales@; the salesperson decides the price only. If it is the same price as last time, Operations checks Intact and sends.",
+   "module": "Quote to Order"
   },
   {
-   "q": "The (Sales Pipe mail) automation cannot confidently match your forward. What happens?",
+   "q": "What joins a CRM company to its Intact account?",
    "o": [
-    "Nothing happens and the email is dropped",
-    "It creates the closest matching opportunity anyway",
-    "It creates a review task for a human to deal with",
-    "It emails you back for clarification"
+    "The company name",
+    "The domain name",
+    "The Account code — the Intact A/C code stored on the company",
+    "The account owner's initials"
    ],
    "c": 2,
-   "e": "A review task is the mandatory fallback - the engine never guesses. Every action it does take also writes a Note on the record and shows up in the next Pulse under Actions taken.",
-   "module": "Email & the CRM"
+   "e": "Account code is the join key. Names and domains drift and duplicate; the A/C code does not.",
+   "module": "Quote to Order"
+  },
+  {
+   "q": "The rule of thumb for who owns what?",
+   "o": [
+    "Whoever opened the email owns everything",
+    "If it is about winning the money it is sales; if it is about delivering on the promise it is Customer Operations",
+    "Sales owns the customer, Ops owns the system",
+    "Ops owns everything until the order is placed"
+   ],
+   "c": 1,
+   "e": "Sales keeps the relationship, the pricing and every commercial decision. Ops owns the quoting admin, order processing, supplier and courier chasing, and keeping the customer informed. When in doubt it goes through sales@ and gets an owner either way.",
+   "module": "Quote to Order"
   }
  ]
 }
