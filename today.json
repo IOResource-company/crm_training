@@ -1,56 +1,56 @@
 {
- "d": 20698,
+ "d": 20699,
  "mode": "study",
- "module": "Quote to Order",
- "date": "Wednesday 2 September 2026",
+ "module": "Data Quality Rules",
+ "date": "Thursday 3 September 2026",
  "questions": [
   {
-   "q": "Where are quotes, orders, invoices and credit notes created and stored?",
+   "q": "A deal moves to Proposal. Which field is now expected on it?",
    "o": [
-    "In the CRM, on the Opportunity",
-    "In Intact — the CRM has no order object at all",
-    "In both, kept in sync automatically",
-    "In the sales@ inbox"
+    "Lost reason",
+    "Quote ref",
+    "Account code",
+    "Decision role"
    ],
    "c": 1,
-   "e": "Intact is the system of record for money and documents. The CRM holds the relationship and the control layer. There is no order object in the CRM and you should not try to build one.",
-   "module": "Quote to Order"
+   "e": "quoteRef ties the deal to the quotation or PO in Intact. Lost reason only applies when the deal is closed lost.",
+   "module": "Data Quality Rules"
   },
   {
-   "q": "Who decides the price on a standard quotation?",
+   "q": "Why do the Data Gaps and Stale Deals views exist?",
    "o": [
-    "Customer Operations, within the agreed rules",
-    "The salesperson — Operations builds and sends the rest",
-    "The manager, on every quote",
-    "Whoever opens the email first"
+    "To rank reps against each other",
+    "Because many open deals lack an amount and a close date, and stale ones need surfacing",
+    "To hold deals that have been closed",
+    "To list companies with no owner"
    ],
    "c": 1,
-   "e": "Operations prepares the quotation in Intact and sends it from sales@; the salesperson decides the price only. If it is the same price as last time, Operations checks Intact and sends.",
-   "module": "Quote to Order"
+   "e": "They are hygiene worklists built around the real gaps in our data. HOUSE — Unassigned is the equivalent for companies with no owner.",
+   "module": "Data Quality Rules"
   },
   {
-   "q": "What joins a CRM company to its Intact account?",
+   "q": "Which field tells you who owns a company account?",
    "o": [
-    "The company name",
-    "The domain name",
-    "The Account code — the Intact A/C code stored on the company",
-    "The account owner's initials"
-   ],
-   "c": 2,
-   "e": "Account code is the join key. Names and domains drift and duplicate; the A/C code does not.",
-   "module": "Quote to Order"
-  },
-  {
-   "q": "The rule of thumb for who owns what?",
-   "o": [
-    "Whoever opened the email owns everything",
-    "If it is about winning the money it is sales; if it is about delivering on the promise it is Customer Operations",
-    "Sales owns the customer, Ops owns the system",
-    "Ops owns everything until the order is placed"
+    "Account Owner",
+    "Sales Rep (salesRep)",
+    "Created By",
+    "The person who wrote the last note"
    ],
    "c": 1,
-   "e": "Sales keeps the relationship, the pricing and every commercial decision. Ops owns the quoting admin, order processing, supplier and courier chasing, and keeping the customer informed. When in doubt it goes through sales@ and gets an owner either way.",
-   "module": "Quote to Order"
+   "e": "salesRep is the ownership field. The built-in Account Owner field is hidden across our views because it is misleading.",
+   "module": "Data Quality Rules"
+  },
+  {
+   "q": "You are about to add McLernon Computers Ltd. What do you type into search first?",
+   "o": [
+    "The full name exactly as printed on their PO",
+    "A short distinctive fragment such as mclern",
+    "Nothing — the list is short enough to scan",
+    "Their VAT number"
+   ],
+   "c": 1,
+   "e": "A short fragment catches variants. Searching the full legal name is precisely how we ended up with McLernons and McLernon Computers as separate records.",
+   "module": "Data Quality Rules"
   }
  ]
 }
