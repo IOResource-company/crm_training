@@ -1,55 +1,115 @@
 {
- "d": 20699,
- "mode": "study",
- "module": "Data Quality Rules",
- "date": "Thursday 3 September 2026",
+ "d": 20700,
+ "mode": "exam",
+ "date": "Friday 4 September 2026",
  "questions": [
   {
-   "q": "A deal moves to Proposal. Which field is now expected on it?",
+   "q": "Which of these is safe to change by hand on an auto-created case?",
    "o": [
-    "Lost reason",
-    "Quote ref",
-    "Account code",
-    "Decision role"
+    "The received timestamp",
+    "The link to the source email thread",
+    "The owner, next action and due date",
+    "The acknowledgement timestamp"
    ],
-   "c": 1,
-   "e": "quoteRef ties the deal to the quotation or PO in Intact. Lost reason only applies when the deal is closed lost.",
-   "module": "Data Quality Rules"
+   "c": 2,
+   "e": "Owner, next action and due date are yours to set. The timestamps are stamped from real events and drive the SLA numbers, and the source-thread link is what prevents duplicate cases.",
+   "module": "Email & the CRM"
   },
   {
-   "q": "Why do the Data Gaps and Stale Deals views exist?",
+   "q": "You are logging a deal where a reseller is supplying kit to a large grocery chain. What goes in Company?",
    "o": [
-    "To rank reps against each other",
-    "Because many open deals lack an amount and a close date, and stale ones need surfacing",
-    "To hold deals that have been closed",
-    "To list companies with no owner"
+    "The grocery chain",
+    "The reseller we invoice",
+    "Whichever is bigger",
+    "Both, separated by a slash"
    ],
    "c": 1,
-   "e": "They are hygiene worklists built around the real gaps in our data. HOUSE — Unassigned is the equivalent for companies with no owner.",
-   "module": "Data Quality Rules"
+   "e": "Company is the trade account we invoice. The grocery chain goes in End Customer, which is what lets competing resellers chasing the same site roll up in one view.",
+   "module": "Getting It Right First Time"
   },
   {
-   "q": "Which field tells you who owns a company account?",
+   "q": "A task is titled 'Sales mtg W28 #7 - Chase Urovo on DT50S lead times'. Where did it come from?",
    "o": [
-    "Account Owner",
-    "Sales Rep (salesRep)",
-    "Created By",
-    "The person who wrote the last note"
+    "A colleague typed it in",
+    "The weekly sales meeting action register, ingested automatically",
+    "The cadence engine",
+    "The Ops Pulse auto-case creation"
    ],
    "c": 1,
-   "e": "salesRep is the ownership field. The built-in Account Owner field is hidden across our views because it is misleading.",
-   "module": "Data Quality Rules"
+   "e": "Weekly sales-meeting minutes are turned into Tasks automatically. The W-number is the meeting week and the #number is that action's permanent id, kept for its whole life even when it is carried forward.",
+   "module": "Tasks, Notes & Follow-Ups"
   },
   {
-   "q": "You are about to add McLernon Computers Ltd. What do you type into search first?",
+   "q": "How do you assign the owner of a new opportunity?",
    "o": [
-    "The full name exactly as printed on their PO",
-    "A short distinctive fragment such as mclern",
-    "Nothing — the list is short enough to scan",
-    "Their VAT number"
+    "Pick your name in the Owner field on the deal",
+    "Set the salesRep field on the linked company",
+    "The creator is automatically the owner",
+    "Ask an administrator"
    ],
    "c": 1,
-   "e": "A short fragment catches variants. Searching the full legal name is precisely how we ended up with McLernons and McLernon Computers as separate records.",
+   "e": "There is nothing meaningful to assign on the deal. Ownership derives from the company's salesRep, so that is the field to get right.",
+   "module": "Common Daily Workflows"
+  },
+  {
+   "q": "Weighted pipeline is calculated as...",
+   "o": [
+    "amount divided by the number of stages",
+    "amount times probability",
+    "amount minus cost",
+    "the sum of Commit deals only"
+   ],
+   "c": 1,
+   "e": "amount times probability, held in weightedValue and summed on the Command Centre's Weighted Pipeline tile.",
+   "module": "Opportunities & Pipeline"
+  },
+  {
+   "q": "What sits in front of the CRM login page?",
+   "o": [
+    "Nothing, it is open to the internet",
+    "Cloudflare Access, which only admits identities ending in @ioresource.com",
+    "A VPN you must install",
+    "Intact single sign-on"
+   ],
+   "c": 1,
+   "e": "There are two gates: Cloudflare Access first, then Twenty's own sign-in. A restricted-to-members message is the Cloudflare layer, not the CRM.",
+   "module": "Getting Started"
+  },
+  {
+   "q": "An email arrives at sales@ from someone who is not in the CRM as a contact. What happens?",
+   "o": [
+    "A case is created with no company linked",
+    "A case is created and assigned to the sales rep",
+    "No case is created — the email surfaces in the Ops Pulse email for a person to handle",
+    "The email is deleted as spam"
+   ],
+   "c": 2,
+   "e": "Only senders that resolve to a Person with a Company are auto-cased. Unknown senders are never guessed at — they appear in the pulse email so a human decides. Adding contacts to People is what switches the automation on for them.",
+   "module": "Cases — the Customer Ops Queue"
+  },
+  {
+   "q": "You need to see whether two of our resellers are chasing the same deployment site.",
+   "o": [
+    "Filter Opportunities by company",
+    "Open the End Customer record and use In Play (Two-Horse)",
+    "Search the end customer's name in Companies",
+    "Check the Accounts by Status kanban"
+   ],
+   "c": 1,
+   "e": "End Customers are the sites the kit is actually for. Every deal chasing that site rolls up on the one End Customer record, which is the whole point of the two-horse view.",
+   "module": "Search, Filters & Views"
+  },
+  {
+   "scenario": "A customer rings to say the rollout is on hold until their new financial year. The deal is at Proposal with a close date of next month and a next step dated last week.",
+   "q": "What is the minimum you update before you hang up?",
+   "o": [
+    "Nothing — you will remember at the Monday review",
+    "Close date to the realistic date, next step and next step date to the new chase, and a Note with what they said",
+    "Move it to Closed Lost",
+    "Just the next step date"
+   ],
+   "c": 1,
+   "e": "Re-date it honestly, write the new next action, and put the reason in a Note. Nobody minds a slipped date; a stale one makes the whole quarter's view fiction. It is not lost — it is later.",
    "module": "Data Quality Rules"
   }
  ]
