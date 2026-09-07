@@ -1,43 +1,44 @@
 {
- "d": 20700,
- "mode": "exam",
- "date": "Friday 4 September 2026",
+ "d": 20703,
+ "mode": "study",
+ "module": "Common Daily Workflows",
+ "date": "Monday 7 September 2026",
  "questions": [
   {
-   "q": "Which of these is safe to change by hand on an auto-created case?",
+   "q": "You spoke to a contact who is not yet in People. Why does it matter?",
    "o": [
-    "The received timestamp",
-    "The link to the source email thread",
-    "The owner, next action and due date",
-    "The acknowledgement timestamp"
+    "It does not - the email is stored anyway",
+    "Their email history is stored but shows on no record until the person exists",
+    "The CRM will reject the email",
+    "It blocks the opportunity from being created"
+   ],
+   "c": 1,
+   "e": "The mail is captured, but with no matching person it attaches to nothing. Two clicks - name, email, company - and the whole thread appears on the record.",
+   "module": "Common Daily Workflows"
+  },
+  {
+   "q": "Moving a deal to Customer in the CRM...",
+   "o": [
+    "Raises the order in Intact automatically",
+    "Creates a Case for Customer Operations",
+    "Does not create anything in Intact - the order is still raised there by hand",
+    "Emails the customer a confirmation"
    ],
    "c": 2,
-   "e": "Owner, next action and due date are yours to set. The timestamps are stamped from real events and drive the SLA numbers, and the source-thread link is what prevents duplicate cases.",
-   "module": "Email & the CRM"
+   "e": "The CRM stage change is a record of the win. Someone still raises the order in Intact and Customer Operations runs the delivery.",
+   "module": "Common Daily Workflows"
   },
   {
-   "q": "You are logging a deal where a reseller is supplying kit to a large grocery chain. What goes in Company?",
+   "q": "An order lands. What is the correct stage?",
    "o": [
-    "The grocery chain",
-    "The reseller we invoice",
-    "Whichever is bigger",
-    "Both, separated by a slash"
+    "Closed Won",
+    "Proposal with probability 100",
+    "Customer",
+    "Order"
    ],
-   "c": 1,
-   "e": "Company is the trade account we invoice. The grocery chain goes in End Customer, which is what lets competing resellers chasing the same site roll up in one view.",
-   "module": "Getting It Right First Time"
-  },
-  {
-   "q": "A task is titled 'Sales mtg W28 #7 - Chase Urovo on DT50S lead times'. Where did it come from?",
-   "o": [
-    "A colleague typed it in",
-    "The weekly sales meeting action register, ingested automatically",
-    "The cadence engine",
-    "The Ops Pulse auto-case creation"
-   ],
-   "c": 1,
-   "e": "Weekly sales-meeting minutes are turned into Tasks automatically. The W-number is the meeting week and the #number is that action's permanent id, kept for its whole life even when it is carried forward.",
-   "module": "Tasks, Notes & Follow-Ups"
+   "c": 2,
+   "e": "Customer is our won stage. Then correct the amount, fill quoteRef, set closeDate to the day the order landed and probability to 100.",
+   "module": "Common Daily Workflows"
   },
   {
    "q": "How do you assign the owner of a new opportunity?",
@@ -50,67 +51,6 @@
    "c": 1,
    "e": "There is nothing meaningful to assign on the deal. Ownership derives from the company's salesRep, so that is the field to get right.",
    "module": "Common Daily Workflows"
-  },
-  {
-   "q": "Weighted pipeline is calculated as...",
-   "o": [
-    "amount divided by the number of stages",
-    "amount times probability",
-    "amount minus cost",
-    "the sum of Commit deals only"
-   ],
-   "c": 1,
-   "e": "amount times probability, held in weightedValue and summed on the Command Centre's Weighted Pipeline tile.",
-   "module": "Opportunities & Pipeline"
-  },
-  {
-   "q": "What sits in front of the CRM login page?",
-   "o": [
-    "Nothing, it is open to the internet",
-    "Cloudflare Access, which only admits identities ending in @ioresource.com",
-    "A VPN you must install",
-    "Intact single sign-on"
-   ],
-   "c": 1,
-   "e": "There are two gates: Cloudflare Access first, then Twenty's own sign-in. A restricted-to-members message is the Cloudflare layer, not the CRM.",
-   "module": "Getting Started"
-  },
-  {
-   "q": "An email arrives at sales@ from someone who is not in the CRM as a contact. What happens?",
-   "o": [
-    "A case is created with no company linked",
-    "A case is created and assigned to the sales rep",
-    "No case is created — the email surfaces in the Ops Pulse email for a person to handle",
-    "The email is deleted as spam"
-   ],
-   "c": 2,
-   "e": "Only senders that resolve to a Person with a Company are auto-cased. Unknown senders are never guessed at — they appear in the pulse email so a human decides. Adding contacts to People is what switches the automation on for them.",
-   "module": "Cases — the Customer Ops Queue"
-  },
-  {
-   "q": "You need to see whether two of our resellers are chasing the same deployment site.",
-   "o": [
-    "Filter Opportunities by company",
-    "Open the End Customer record and use In Play (Two-Horse)",
-    "Search the end customer's name in Companies",
-    "Check the Accounts by Status kanban"
-   ],
-   "c": 1,
-   "e": "End Customers are the sites the kit is actually for. Every deal chasing that site rolls up on the one End Customer record, which is the whole point of the two-horse view.",
-   "module": "Search, Filters & Views"
-  },
-  {
-   "scenario": "A customer rings to say the rollout is on hold until their new financial year. The deal is at Proposal with a close date of next month and a next step dated last week.",
-   "q": "What is the minimum you update before you hang up?",
-   "o": [
-    "Nothing — you will remember at the Monday review",
-    "Close date to the realistic date, next step and next step date to the new chase, and a Note with what they said",
-    "Move it to Closed Lost",
-    "Just the next step date"
-   ],
-   "c": 1,
-   "e": "Re-date it honestly, write the new next action, and put the reason in a Note. Nobody minds a slipped date; a stale one makes the whole quarter's view fiction. It is not lost — it is later.",
-   "module": "Data Quality Rules"
   }
  ]
 }
