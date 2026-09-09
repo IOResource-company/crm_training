@@ -1,56 +1,56 @@
 {
- "d": 20704,
+ "d": 20705,
  "mode": "study",
- "module": "The Pulse Emails",
- "date": "Tuesday 8 September 2026",
+ "module": "Recommended Daily Routine",
+ "date": "Wednesday 9 September 2026",
  "questions": [
   {
-   "q": "Where does a comment left through a pulse actually end up?",
+   "q": "What is produced on Friday from the sales@ mailbox?",
    "o": [
-    "In a spreadsheet the automation keeps",
-    "Only in the next pulse email",
-    "As a CRM Note titled [Ops Pulse] or [Sales Pulse], attached to the record and its company",
-    "As a reply in the sales@ mailbox"
+    "A weekly mail digest document filed in the Weekly Summaries folder",
+    "A bulk update to every opportunity",
+    "A pipeline sweep of the reps' spreadsheets",
+    "The data-quality audit"
    ],
-   "c": 2,
-   "e": "Comments are stored as CRM Notes with an [Ops Pulse] or [Sales Pulse] title prefix. The prefix is how the pulse reads them back and re-renders them under the item.",
-   "module": "The Pulse Emails"
+   "c": 0,
+   "e": "The Friday weekly mail digest summarises orders received, supplier orders and deliveries into a document. It is read-only - it never writes to the CRM. The audit is Monday's and the sweep is Tuesday's.",
+   "module": "Recommended Daily Routine"
   },
   {
-   "q": "In the Tuesday pipeline sweep, which source wins on a deal's amount and probability?",
+   "q": "What happens to the actions agreed at the weekly sales meeting?",
    "o": [
-    "The CRM always wins",
-    "The rep's pipeline spreadsheet wins",
-    "Whichever was edited most recently",
-    "Neither - the row is flagged for review"
+    "They stay in the minutes document",
+    "They become Tasks in the CRM and appear in the Sales Pulse",
+    "They are emailed round as a list",
+    "They become new opportunities"
    ],
    "c": 1,
-   "e": "The sheet wins on amount, probability and next step. The CRM wins on stage and close date, so the sweep never invents a speculative date or silently moves a deal's stage.",
-   "module": "The Pulse Emails"
+   "e": "The minutes are ingested into the CRM as Tasks grouped by owner, and they render in the Sales Pulse with Done, Carry and Answer buttons.",
+   "module": "Recommended Daily Routine"
   },
   {
-   "q": "Which pulse button will not let you finish without picking a reason?",
+   "q": "What is the target for the first meaningful response on a case?",
    "o": [
-    "Won",
-    "Lost",
-    "Snooze +3d",
-    "Handled - hide"
+    "1 working hour",
+    "4 working hours",
+    "Same day",
+    "2 working days"
    ],
    "c": 1,
-   "e": "The Lost confirm page requires a reason from the list: price, lead time, lost to competitor, no budget, no decision, stalled or other. Free text is optional and is kept as a comment.",
-   "module": "The Pulse Emails"
+   "e": "Acknowledgement within 1 working hour, first meaningful response within 4 working hours. Both are measured from the case timestamps, which are stamped automatically.",
+   "module": "Recommended Daily Routine"
   },
   {
-   "q": "How long do the buttons in a pulse email keep working?",
+   "q": "You take a phone call that could turn into an order. When should the opportunity be created?",
    "o": [
-    "Forever",
-    "Until the next pulse is sent",
-    "21 days",
-    "One working day"
+    "The same day",
+    "At the weekly review",
+    "Once a formal quote has been issued",
+    "Only if the value is above a threshold"
    ],
-   "c": 2,
-   "e": "Every button link is signed and expires after 21 days. Work from today's pulse rather than an archived one.",
-   "module": "The Pulse Emails"
+   "c": 0,
+   "e": "Same day, even as a one-liner. If it is not in the CRM it does not exist at the review - and a rough amount can be refined later.",
+   "module": "Recommended Daily Routine"
   }
  ]
 }
