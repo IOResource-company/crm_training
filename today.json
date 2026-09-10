@@ -1,56 +1,56 @@
 {
- "d": 20705,
+ "d": 20706,
  "mode": "study",
- "module": "Recommended Daily Routine",
- "date": "Wednesday 9 September 2026",
+ "module": "Getting It Right First Time",
+ "date": "Thursday 10 September 2026",
  "questions": [
   {
-   "q": "What is produced on Friday from the sales@ mailbox?",
+   "q": "You create a new company for a customer you just won. What are the two fields to fill before you move on?",
    "o": [
-    "A weekly mail digest document filed in the Weekly Summaries folder",
-    "A bulk update to every opportunity",
-    "A pipeline sweep of the reps' spreadsheets",
-    "The data-quality audit"
-   ],
-   "c": 0,
-   "e": "The Friday weekly mail digest summarises orders received, supplier orders and deliveries into a document. It is read-only - it never writes to the CRM. The audit is Monday's and the sweep is Tuesday's.",
-   "module": "Recommended Daily Routine"
-  },
-  {
-   "q": "What happens to the actions agreed at the weekly sales meeting?",
-   "o": [
-    "They stay in the minutes document",
-    "They become Tasks in the CRM and appear in the Sales Pulse",
-    "They are emailed round as a list",
-    "They become new opportunities"
+    "Website and LinkedIn",
+    "Sales Rep and Account code",
+    "Annual revenue and staff count",
+    "Account Owner and vertical"
    ],
    "c": 1,
-   "e": "The minutes are ingested into the CRM as Tasks grouped by owner, and they render in the Sales Pulse with Done, Carry and Answer buttons.",
-   "module": "Recommended Daily Routine"
+   "e": "salesRep so it is not unowned, and accountCode so it can be reconciled against Intact. Account Owner is the hidden, misleading field — do not use it.",
+   "module": "Getting It Right First Time"
   },
   {
-   "q": "What is the target for the first meaningful response on a case?",
+   "q": "A customer email contains the delivery date they have committed to their own client. What must you do?",
    "o": [
-    "1 working hour",
-    "4 working hours",
-    "Same day",
-    "2 working days"
+    "Nothing — the synced email carries the body onto the record",
+    "Type it into a Note or the deal's next step",
+    "Forward it to sales@ and rely on the sync",
+    "Flag the email in your mailbox"
    ],
    "c": 1,
-   "e": "Acknowledgement within 1 working hour, first meaningful response within 4 working hours. Both are measured from the case timestamps, which are stamped automatically.",
-   "module": "Recommended Daily Routine"
+   "e": "The CRM shows subject and participants only. If it is in the body, it does not exist in the CRM until somebody types it in.",
+   "module": "Getting It Right First Time"
   },
   {
-   "q": "You take a phone call that could turn into an order. When should the opportunity be created?",
+   "q": "A PO arrives for a deal sitting at Proposal. What is the trap to avoid?",
    "o": [
-    "The same day",
-    "At the weekly review",
-    "Once a formal quote has been issued",
-    "Only if the value is above a threshold"
+    "Updating the amount",
+    "Leaving the stage at Proposal",
+    "Adding the quote ref",
+    "Writing a note"
    ],
-   "c": 0,
-   "e": "Same day, even as a one-liner. If it is not in the CRM it does not exist at the review - and a rough amount can be refined later.",
-   "module": "Recommended Daily Routine"
+   "c": 1,
+   "e": "Move it to Customer, our won stage. Left at Proposal it inflates open pipeline and keeps showing up in quote follow-up lists.",
+   "module": "Getting It Right First Time"
+  },
+  {
+   "q": "Which of these is a next step somebody else could act on?",
+   "o": [
+    "Chase",
+    "Waiting on customer",
+    "Ring Fiachra to confirm DT50S quantities on quotation 2119 — Thursday",
+    "Follow up next week"
+   ],
+   "c": 2,
+   "e": "It names the person, the thing, the document and the date. The other three read fine to the person who wrote them and are useless to anyone else.",
+   "module": "Getting It Right First Time"
   }
  ]
 }
