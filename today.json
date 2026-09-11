@@ -1,33 +1,8 @@
 {
- "d": 20706,
- "mode": "study",
- "module": "Getting It Right First Time",
- "date": "Thursday 10 September 2026",
+ "d": 20707,
+ "mode": "exam",
+ "date": "Friday 11 September 2026",
  "questions": [
-  {
-   "q": "You create a new company for a customer you just won. What are the two fields to fill before you move on?",
-   "o": [
-    "Website and LinkedIn",
-    "Sales Rep and Account code",
-    "Annual revenue and staff count",
-    "Account Owner and vertical"
-   ],
-   "c": 1,
-   "e": "salesRep so it is not unowned, and accountCode so it can be reconciled against Intact. Account Owner is the hidden, misleading field — do not use it.",
-   "module": "Getting It Right First Time"
-  },
-  {
-   "q": "A customer email contains the delivery date they have committed to their own client. What must you do?",
-   "o": [
-    "Nothing — the synced email carries the body onto the record",
-    "Type it into a Note or the deal's next step",
-    "Forward it to sales@ and rely on the sync",
-    "Flag the email in your mailbox"
-   ],
-   "c": 1,
-   "e": "The CRM shows subject and participants only. If it is in the body, it does not exist in the CRM until somebody types it in.",
-   "module": "Getting It Right First Time"
-  },
   {
    "q": "A PO arrives for a deal sitting at Proposal. What is the trap to avoid?",
    "o": [
@@ -41,16 +16,101 @@
    "module": "Getting It Right First Time"
   },
   {
-   "q": "Which of these is a next step somebody else could act on?",
+   "q": "What are the four Aftercare service types?",
    "o": [
-    "Chase",
-    "Waiting on customer",
-    "Ring Fiachra to confirm DT50S quantities on quotation 2119 — Thursday",
-    "Follow up next week"
+    "RMA, Warranty, Advance Replacement, Lifecycle Refresh",
+    "Return, Repair, Replace, Refund",
+    "RMA, Credit, Delivery, Technical",
+    "Open, In Progress, Closed, Cancelled"
+   ],
+   "c": 0,
+   "e": "RMA, Warranty, Advance Replacement and Lifecycle Refresh. The last one is the proactive side — warranty end and refresh due dates drive renewal conversations.",
+   "module": "Quote to Order"
+  },
+  {
+   "q": "The rule of thumb for who owns what?",
+   "o": [
+    "Whoever opened the email owns everything",
+    "If it is about winning the money it is sales; if it is about delivering on the promise it is Customer Operations",
+    "Sales owns the customer, Ops owns the system",
+    "Ops owns everything until the order is placed"
+   ],
+   "c": 1,
+   "e": "Sales keeps the relationship, the pricing and every commercial decision. Ops owns the quoting admin, order processing, supplier and courier chasing, and keeping the customer informed. When in doubt it goes through sales@ and gets an owner either way.",
+   "module": "Quote to Order"
+  },
+  {
+   "q": "What is the Account Code on a company record?",
+   "o": [
+    "An internal CRM identifier",
+    "The Intact A/C code, which joins the CRM record to the ERP",
+    "The company registration number",
+    "The sales rep's initials"
+   ],
+   "c": 1,
+   "e": "It is the join key. Without it, what the account has actually bought can never be tied back to the CRM record.",
+   "module": "People & Companies"
+  },
+  {
+   "q": "Claude offers to update the next step on twenty-three opportunities at once. What is the right move?",
+   "o": [
+    "Let it run - that is the point of connecting it",
+    "Ask it to list the records and the exact change, then confirm",
+    "Refuse and do them all by hand",
+    "Run it and check the Sales Pulse tomorrow"
+   ],
+   "c": 1,
+   "e": "It has full write access, so a wrong bulk change is a real mess. Read the list first, then let it proceed.",
+   "module": "CRM in Claude"
+  },
+  {
+   "q": "The (Sales Pipe mail) automation cannot confidently match your forward. What happens?",
+   "o": [
+    "Nothing happens and the email is dropped",
+    "It creates the closest matching opportunity anyway",
+    "It creates a review task for a human to deal with",
+    "It emails you back for clarification"
    ],
    "c": 2,
-   "e": "It names the person, the thing, the document and the date. The other three read fine to the person who wrote them and are useless to anyone else.",
-   "module": "Getting It Right First Time"
+   "e": "A review task is the mandatory fallback - the engine never guesses. Every action it does take also writes a Note on the record and shows up in the next Pulse under Actions taken.",
+   "module": "Email & the CRM"
+  },
+  {
+   "q": "What happens to the actions agreed at the weekly sales meeting?",
+   "o": [
+    "They stay in the minutes document",
+    "They become Tasks in the CRM and appear in the Sales Pulse",
+    "They are emailed round as a list",
+    "They become new opportunities"
+   ],
+   "c": 1,
+   "e": "The minutes are ingested into the CRM as Tasks grouped by owner, and they render in the Sales Pulse with Done, Carry and Answer buttons.",
+   "module": "Recommended Daily Routine"
+  },
+  {
+   "q": "A colleague asks you to send them your access so they can try it. What do you do?",
+   "o": [
+    "Send it - they work here too",
+    "Send it but ask them not to share it further",
+    "Point them at Stephen for their own",
+    "Set it up on their machine using yours"
+   ],
+   "c": 2,
+   "e": "Individual access is the whole point: it lets one person be withdrawn without re-issuing everyone else's.",
+   "module": "CRM in Claude"
+  },
+  {
+   "scenario": "It is the first week of a new quarter. You open Closing This Quarter and it shows a healthy list of deals, several of which you know closed or died last quarter.",
+   "q": "What has most likely happened?",
+   "o": [
+    "The deals reopened",
+    "The view's date range is hardcoded to the previous quarter and has not been refreshed",
+    "The stage field is broken",
+    "Someone changed the sort order"
+   ],
+   "c": 1,
+   "e": "Closing This Quarter is hardcoded to a specific quarter and has to be refreshed when the quarter turns. Check the filter chip, work from a corrected filter for now, and ask for the saved view to be updated.",
+   "module": "Search, Filters & Views"
   }
  ]
 }
