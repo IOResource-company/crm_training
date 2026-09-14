@@ -1,116 +1,56 @@
 {
- "d": 20707,
- "mode": "exam",
- "date": "Friday 11 September 2026",
+ "d": 20710,
+ "mode": "study",
+ "module": "The Weekly Picture",
+ "date": "Monday 14 September 2026",
  "questions": [
   {
-   "q": "A PO arrives for a deal sitting at Proposal. What is the trap to avoid?",
+   "q": "Where do you find the median acknowledgement and first-response times?",
    "o": [
-    "Updating the amount",
-    "Leaving the stage at Proposal",
-    "Adding the quote ref",
-    "Writing a note"
+    "On the Command Centre dashboard",
+    "In the Ops Pulse email",
+    "In the Cases list footer",
+    "In the Sales Pulse"
    ],
    "c": 1,
-   "e": "Move it to Customer, our won stage. Left at Proposal it inflates open pipeline and keeps showing up in quote follow-up lists.",
-   "module": "Getting It Right First Time"
+   "e": "The SLA medians are calculated in the twice-daily Ops Pulse. The dashboard widget types on our version cannot compute differences between timestamps.",
+   "module": "The Weekly Picture"
   },
   {
-   "q": "What are the four Aftercare service types?",
+   "q": "What does the Kill the Zebra view track?",
    "o": [
-    "RMA, Warranty, Advance Replacement, Lifecycle Refresh",
-    "Return, Repair, Replace, Refund",
-    "RMA, Credit, Delivery, Technical",
-    "Open, In Progress, Closed, Cancelled"
-   ],
-   "c": 0,
-   "e": "RMA, Warranty, Advance Replacement and Lifecycle Refresh. The last one is the proactive side — warranty end and refresh due dates drive renewal conversations.",
-   "module": "Quote to Order"
-  },
-  {
-   "q": "The rule of thumb for who owns what?",
-   "o": [
-    "Whoever opened the email owns everything",
-    "If it is about winning the money it is sales; if it is about delivering on the promise it is Customer Operations",
-    "Sales owns the customer, Ops owns the system",
-    "Ops owns everything until the order is placed"
+    "Deals about to be lost",
+    "Live competitor-displacement deals",
+    "Deals with no amount",
+    "Cases waiting on a supplier"
    ],
    "c": 1,
-   "e": "Sales keeps the relationship, the pricing and every commercial decision. Ops owns the quoting admin, order processing, supplier and courier chasing, and keeping the customer informed. When in doubt it goes through sales@ and gets an owner either way.",
-   "module": "Quote to Order"
+   "e": "It collects live displacement plays, tagged with the competitor displaced. It is a strategic scoreboard rather than a revenue view.",
+   "module": "The Weekly Picture"
   },
   {
-   "q": "What is the Account Code on a company record?",
+   "q": "Why are the dashboard's action tables built on sorts rather than date filters?",
    "o": [
-    "An internal CRM identifier",
-    "The Intact A/C code, which joins the CRM record to the ERP",
-    "The company registration number",
-    "The sales rep's initials"
+    "Sorts are faster",
+    "Date filters rot - a hard-coded date quietly stops being right",
+    "The API cannot write filters",
+    "So the tables can be exported"
    ],
    "c": 1,
-   "e": "It is the join key. Without it, what the account has actually bought can never be tied back to the CRM record.",
-   "module": "People & Companies"
+   "e": "A view filtered on a hard-coded date keeps returning a confident, wrong answer as time passes. A sort-based table always floats the most urgent record to the top with no maintenance.",
+   "module": "The Weekly Picture"
   },
   {
-   "q": "Claude offers to update the next step on twenty-three opportunities at once. What is the right move?",
+   "q": "A case has no Received at value. What does that mean for the SLA numbers?",
    "o": [
-    "Let it run - that is the point of connecting it",
-    "Ask it to list the records and the exact change, then confirm",
-    "Refuse and do them all by hand",
-    "Run it and check the Sales Pulse tomorrow"
-   ],
-   "c": 1,
-   "e": "It has full write access, so a wrong bulk change is a real mess. Read the list first, then let it proceed.",
-   "module": "CRM in Claude"
-  },
-  {
-   "q": "The (Sales Pipe mail) automation cannot confidently match your forward. What happens?",
-   "o": [
-    "Nothing happens and the email is dropped",
-    "It creates the closest matching opportunity anyway",
-    "It creates a review task for a human to deal with",
-    "It emails you back for clarification"
+    "It counts as a breach",
+    "It counts as passing",
+    "It is counted as unmeasurable",
+    "It is excluded from the case queue entirely"
    ],
    "c": 2,
-   "e": "A review task is the mandatory fallback - the engine never guesses. Every action it does take also writes a Note on the record and shows up in the next Pulse under Actions taken.",
-   "module": "Email & the CRM"
-  },
-  {
-   "q": "What happens to the actions agreed at the weekly sales meeting?",
-   "o": [
-    "They stay in the minutes document",
-    "They become Tasks in the CRM and appear in the Sales Pulse",
-    "They are emailed round as a list",
-    "They become new opportunities"
-   ],
-   "c": 1,
-   "e": "The minutes are ingested into the CRM as Tasks grouped by owner, and they render in the Sales Pulse with Done, Carry and Answer buttons.",
-   "module": "Recommended Daily Routine"
-  },
-  {
-   "q": "A colleague asks you to send them your access so they can try it. What do you do?",
-   "o": [
-    "Send it - they work here too",
-    "Send it but ask them not to share it further",
-    "Point them at Stephen for their own",
-    "Set it up on their machine using yours"
-   ],
-   "c": 2,
-   "e": "Individual access is the whole point: it lets one person be withdrawn without re-issuing everyone else's.",
-   "module": "CRM in Claude"
-  },
-  {
-   "scenario": "It is the first week of a new quarter. You open Closing This Quarter and it shows a healthy list of deals, several of which you know closed or died last quarter.",
-   "q": "What has most likely happened?",
-   "o": [
-    "The deals reopened",
-    "The view's date range is hardcoded to the previous quarter and has not been refreshed",
-    "The stage field is broken",
-    "Someone changed the sort order"
-   ],
-   "c": 1,
-   "e": "Closing This Quarter is hardcoded to a specific quarter and has to be refreshed when the quarter turns. Check the filter chip, work from a corrected filter for now, and ask for the saved view to be updated.",
-   "module": "Search, Filters & Views"
+   "e": "Without a start time there is no clock, so the case is counted as unmeasurable rather than as a pass or a fail. It still appears in the queue and still needs working.",
+   "module": "The Weekly Picture"
   }
  ]
 }
