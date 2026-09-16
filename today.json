@@ -1,56 +1,56 @@
 {
- "d": 20711,
+ "d": 20712,
  "mode": "study",
- "module": "CRM in Claude",
- "date": "Tuesday 15 September 2026",
+ "module": "Getting Started",
+ "date": "Wednesday 16 September 2026",
  "questions": [
   {
-   "q": "What does this access cover?",
+   "q": "Which sidebar entry holds the businesses the equipment is ultimately for?",
    "o": [
-    "Only the accounts you own",
-    "Only what you can see in the CRM screens",
-    "The whole workspace, read and write",
-    "Read-only access to everything"
+    "Companies",
+    "People",
+    "End Customers",
+    "Sales Transactions"
    ],
    "c": 2,
-   "e": "The whole workspace, both read and write. It is not narrowed by your role in the interface, which is why it is only given to people trusted with all of it.",
-   "module": "CRM in Claude"
+   "e": "Companies are who we sell to. End Customers are who the kit is for, so competing resellers' deals can roll up under one of them.",
+   "module": "Getting Started"
   },
   {
-   "q": "How do you get CRM access inside Claude?",
+   "q": "Which system is the system of record for quotations, invoices and real margin?",
    "o": [
-    "Set it up yourself from the CRM settings",
-    "Ask Stephen - it is issued per person",
-    "Use a shared team login",
-    "It is switched on for everyone by default"
+    "Twenty CRM",
+    "Intact ERP",
+    "The sales@ mailbox",
+    "The weekly pipeline spreadsheet"
    ],
    "c": 1,
-   "e": "It is issued individually by the administrator, with the setup instructions supplied alongside it. There is no self-service and no shared login.",
-   "module": "CRM in Claude"
+   "e": "Intact owns money and documents. The CRM owns relationships and control; the mailbox carries information between them.",
+   "module": "Getting Started"
   },
   {
-   "q": "Which Claude app can connect to our CRM?",
+   "q": "What sits in front of the CRM login page?",
    "o": [
-    "The web app at claude.ai",
-    "The Claude desktop app",
-    "Claude Code",
-    "All of them"
+    "Nothing, it is open to the internet",
+    "Cloudflare Access, which only admits identities ending in @ioresource.com",
+    "A VPN you must install",
+    "Intact single sign-on"
    ],
-   "c": 2,
-   "e": "Claude Code. The connector screens in the desktop and web apps authenticate differently and will not accept this kind of credential.",
-   "module": "CRM in Claude"
+   "c": 1,
+   "e": "There are two gates: Cloudflare Access first, then Twenty's own sign-in. A restricted-to-members message is the Cloudflare layer, not the CRM.",
+   "module": "Getting Started"
   },
   {
-   "q": "A colleague asks you to send them your access so they can try it. What do you do?",
+   "q": "Why does an invitation email to the CRM never arrive?",
    "o": [
-    "Send it - they work here too",
-    "Send it but ask them not to share it further",
-    "Point them at Stephen for their own",
-    "Set it up on their machine using yours"
+    "It is caught by the spam filter",
+    "The CRM's own outbound email is not configured, so the invite link must be copied and sent by hand",
+    "Cloudflare blocks all mail from the CRM",
+    "The mailbox is unlicensed"
    ],
-   "c": 2,
-   "e": "Individual access is the whole point: it lets one person be withdrawn without re-issuing everyone else's.",
-   "module": "CRM in Claude"
+   "c": 1,
+   "e": "Admins use Settings, Members, Invite by link, then send the link themselves. Waiting for an automatic invitation is waiting forever.",
+   "module": "Getting Started"
   }
  ]
 }
