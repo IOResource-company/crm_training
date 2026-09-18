@@ -1,56 +1,116 @@
 {
- "d": 20713,
- "mode": "study",
- "module": "People & Companies",
- "date": "Thursday 17 September 2026",
+ "d": 20714,
+ "mode": "exam",
+ "date": "Friday 18 September 2026",
  "questions": [
   {
-   "q": "A contact signs off the budget. What Decision Role do you set?",
+   "q": "Where do most cases come from?",
    "o": [
-    "CHAMPION",
-    "ECONOMIC_BUYER",
-    "TECHNICAL_EVALUATOR",
-    "INFLUENCER"
+    "Ops types every one in by hand",
+    "They are auto-created from inbound sales@ mail every 15 minutes on weekdays",
+    "The salesperson creates them from the Opportunity",
+    "They are imported nightly from Intact"
    ],
    "c": 1,
-   "e": "Economic Buyer is whoever controls the money. Champion sells for us internally; Technical Evaluator tests the kit.",
-   "module": "People & Companies"
+   "e": "An automation reads the sales@ mailbox every 15 minutes on weekdays and opens one case per mail thread from a known customer contact, with Received at set to the real arrival time.",
+   "module": "Cases — the Customer Ops Queue"
   },
   {
-   "q": "A brand new logo has been created but has not ordered yet. What Account Status?",
+   "q": "Which of these is NOT a button on an Ops Pulse row?",
    "o": [
-    "ACTIVE",
-    "DORMANT",
-    "LAPSED",
-    "PROSPECT"
+    "Create case",
+    "Handled - hide",
+    "Snooze +3d",
+    "Mark deal Won"
    ],
    "c": 3,
-   "e": "Prospect until the first order lands, then Active. Dormant and Lapsed are accounts that used to trade and stopped.",
-   "module": "People & Companies"
+   "e": "Won and Lost are Sales Pulse deal buttons. Ops rows carry Create case, Handled - hide, Comment, Open in CRM, and on overdue cases Resolve and Snooze +3d.",
+   "module": "The Pulse Emails"
   },
   {
-   "q": "Which of these are genuine duplicate records in our CRM today?",
+   "q": "Which field tells you who owns a company account?",
    "o": [
-    "Zebra and Zebra Technologies",
-    "STL Technology Solutions twice, Qualcom twice, McLernons vs McLernon Computers, Touchstore vs TouchStore",
-    "There are no duplicates",
-    "Every company created before July 2026"
+    "Account Owner",
+    "Sales Rep (salesRep)",
+    "Created By",
+    "The person who wrote the last note"
    ],
    "c": 1,
-   "e": "All four pairs are live. When several records match, use the one already holding the open opportunities and never split a rep's deals across twins.",
-   "module": "People & Companies"
+   "e": "salesRep is the ownership field. The built-in Account Owner field is hidden across our views because it is misleading.",
+   "module": "Data Quality Rules"
   },
   {
-   "q": "Two of our resellers are both chasing the same supermarket group. Where does the supermarket group live?",
+   "q": "What does the Kill the Zebra view track?",
    "o": [
-    "As a Company with Account Type set to End Client",
-    "As an End Customer record, with each reseller's deal linked to it",
-    "As a note on each reseller's record",
-    "As two company records, one per reseller"
+    "Deals about to be lost",
+    "Live competitor-displacement deals",
+    "Deals with no amount",
+    "Cases waiting on a supplier"
    ],
    "c": 1,
-   "e": "That is the two-horse race view. One End Customer record, every competing deal rolled up under it.",
-   "module": "People & Companies"
+   "e": "It collects live displacement plays, tagged with the competitor displaced. It is a strategic scoreboard rather than a revenue view.",
+   "module": "The Weekly Picture"
+  },
+  {
+   "q": "Why is a blank lostReason a real problem?",
+   "o": [
+    "The deal cannot be reopened",
+    "The record will be deleted",
+    "We lose the pattern of why we lose — price, lead time, competitor",
+    "The stage will not save"
+   ],
+   "c": 2,
+   "e": "Lost reasons are the cheapest market research we get. Patterns in Price and Lead Time go straight into supplier conversations, and nothing else in the CRM records them.",
+   "module": "Getting It Right First Time"
+  },
+  {
+   "q": "What are the four things every open opportunity must have?",
+   "o": [
+    "Owner, priority, tier and vertical",
+    "Amount, stage, next step and next step date",
+    "Quote ref, contact, competitor and lead source",
+    "Close date, probability, forecast category and weighted value"
+   ],
+   "c": 1,
+   "e": "Amount, stage, next step and date. With those four in place the pipeline is readable and the forecast is possible; without them the deal is not really in the active pipeline.",
+   "module": "Recommended Daily Routine"
+  },
+  {
+   "q": "The (Sales Pipe mail) automation cannot confidently match your forward. What happens?",
+   "o": [
+    "Nothing happens and the email is dropped",
+    "It creates the closest matching opportunity anyway",
+    "It creates a review task for a human to deal with",
+    "It emails you back for clarification"
+   ],
+   "c": 2,
+   "e": "A review task is the mandatory fallback - the engine never guesses. Every action it does take also writes a Note on the record and shows up in the next Pulse under Actions taken.",
+   "module": "Email & the CRM"
+  },
+  {
+   "q": "The Going Quiet view is described as 'no order in 90+ days'. What should you check before working it?",
+   "o": [
+    "Nothing, the view recalculates every night",
+    "The date in the filter chip, because it is hardcoded and goes stale",
+    "That you are logged in as the right rep",
+    "The column widths"
+   ],
+   "c": 1,
+   "e": "Going Quiet filters on a fixed date that was correct when the view was built and is meant to be refreshed quarterly. If the date is old, the view over-reports - it will list accounts that have ordered since.",
+   "module": "Search, Filters & Views"
+  },
+  {
+   "scenario": "A prepay customer has placed an order and is pushing hard to have it shipped today, before their payment clears. They are a good long-standing account and the salesperson is on the road.",
+   "q": "What do you do?",
+   "o": [
+    "Ship it — they are a good account and the money will follow",
+    "Refuse and close the conversation there",
+    "Hold the dispatch, tell the customer plainly when it will ship once payment lands, and get the salesperson or a manager to approve if they want the terms bent",
+    "Convert them to a credit account so the order can go out"
+   ],
+   "c": 2,
+   "e": "Prepay means paid before dispatch. Bending that is a commercial decision above Ops, and opening a new credit account needs management approval. The right handling is to hold, be straight with the customer about what happens when, and escalate the exception rather than making the call yourself — while still owning the case and the communication.",
+   "module": "Quote to Order"
   }
  ]
 }
