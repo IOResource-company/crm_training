@@ -1,56 +1,56 @@
 {
- "d": 20717,
+ "d": 20718,
  "mode": "study",
- "module": "Opportunities & Pipeline",
- "date": "Monday 21 September 2026",
+ "module": "Cases — the Customer Ops Queue",
+ "date": "Tuesday 22 September 2026",
  "questions": [
   {
-   "q": "Weighted pipeline is calculated as...",
+   "q": "What stamps the Acknowledged at, First response at and Resolved at timestamps on a case?",
    "o": [
-    "amount divided by the number of stages",
-    "amount times probability",
-    "amount minus cost",
-    "the sum of Commit deals only"
+    "You type them in when you have a moment",
+    "Moving the case Status — the workflow stamps them automatically",
+    "The Ops Pulse email at 08:00 and 18:00",
+    "The salesperson when they review the account"
    ],
    "c": 1,
-   "e": "amount times probability, held in weightedValue and summed on the Command Centre's Weighted Pipeline tile.",
-   "module": "Opportunities & Pipeline"
+   "e": "Moving the status is the whole action. Acknowledged stamps Acknowledged at, In Progress stamps First response at, Resolved stamps Resolved at. They are stamped once and never overwritten.",
+   "module": "Cases — the Customer Ops Queue"
   },
   {
-   "q": "A deal moves from Screening to Meeting when...",
+   "q": "How do you mark a case as escalated?",
    "o": [
-    "You have decided the deal is real",
-    "A meeting, demo or site visit is actually booked",
-    "The customer replies to your email",
-    "You have set a close date"
+    "Change its Status to Escalated",
+    "Tick the Escalated flag and keep the real status",
+    "Set Priority to Urgent",
+    "Move it to Waiting – Internal"
    ],
    "c": 1,
-   "e": "Stages are facts, not feelings. Screening exits when a meeting, demo or site visit is genuinely in the diary.",
-   "module": "Opportunities & Pipeline"
+   "e": "Escalated is a flag on top of the status, not a status of its own. The case keeps whatever status genuinely describes where it is, and appears on the Escalated view for daily review.",
+   "module": "Cases — the Customer Ops Queue"
   },
   {
-   "q": "You quote a customer today. Which field changes to QUOTED?",
+   "q": "Which two views should read zero every morning?",
    "o": [
-    "forecastCategory",
-    "amountBasis",
-    "quoteRef",
-    "probability"
+    "Escalated and Waiting – Supplier",
+    "All Open (SLA) and Resolved — Last 30 Days",
+    "Unowned cases and Overdue cases",
+    "Open cases (by status) and the Command Centre"
    ],
-   "c": 1,
-   "e": "amountBasis moves from ESTIMATED to QUOTED. At the same time put the quotation number in quoteRef and move the stage to Proposal.",
-   "module": "Opportunities & Pipeline"
+   "c": 2,
+   "e": "Unowned cases means somebody has to claim it; Overdue cases means it has to be cleared or escalated. When both read zero, the queue is under control.",
+   "module": "Cases — the Customer Ops Queue"
   },
   {
-   "q": "What must be true before a deal sits at Proposal?",
+   "q": "Where do most cases come from?",
    "o": [
-    "A meeting has happened",
-    "A formal quotation or proposal has been issued",
-    "The customer has verbally agreed",
-    "The close date is inside this quarter"
+    "Ops types every one in by hand",
+    "They are auto-created from inbound sales@ mail every 15 minutes on weekdays",
+    "The salesperson creates them from the Opportunity",
+    "They are imported nightly from Intact"
    ],
    "c": 1,
-   "e": "Proposal means the quote is in the customer's hands. That is also when the Intact quotation number goes into quoteRef and amountBasis flips to QUOTED.",
-   "module": "Opportunities & Pipeline"
+   "e": "An automation reads the sales@ mailbox every 15 minutes on weekdays and opens one case per mail thread from a known customer contact, with Received at set to the real arrival time.",
+   "module": "Cases — the Customer Ops Queue"
   }
  ]
 }
