@@ -1,56 +1,56 @@
 {
- "d": 20718,
+ "d": 20719,
  "mode": "study",
- "module": "Cases — the Customer Ops Queue",
- "date": "Tuesday 22 September 2026",
+ "module": "Tasks, Notes & Follow-Ups",
+ "date": "Wednesday 23 September 2026",
  "questions": [
   {
-   "q": "What stamps the Acknowledged at, First response at and Resolved at timestamps on a case?",
+   "q": "An action from the sales meeting was not done. What happens to it?",
    "o": [
-    "You type them in when you have a moment",
-    "Moving the case Status — the workflow stamps them automatically",
-    "The Ops Pulse email at 08:00 and 18:00",
-    "The salesperson when they review the account"
-   ],
-   "c": 1,
-   "e": "Moving the status is the whole action. Acknowledged stamps Acknowledged at, In Progress stamps First response at, Resolved stamps Resolved at. They are stamped once and never overwritten.",
-   "module": "Cases — the Customer Ops Queue"
-  },
-  {
-   "q": "How do you mark a case as escalated?",
-   "o": [
-    "Change its Status to Escalated",
-    "Tick the Escalated flag and keep the real status",
-    "Set Priority to Urgent",
-    "Move it to Waiting – Internal"
-   ],
-   "c": 1,
-   "e": "Escalated is a flag on top of the status, not a status of its own. The case keeps whatever status genuinely describes where it is, and appears on the Escalated view for daily review.",
-   "module": "Cases — the Customer Ops Queue"
-  },
-  {
-   "q": "Which two views should read zero every morning?",
-   "o": [
-    "Escalated and Waiting – Supplier",
-    "All Open (SLA) and Resolved — Last 30 Days",
-    "Unowned cases and Overdue cases",
-    "Open cases (by status) and the Command Centre"
+    "It is deleted and has to be re-raised",
+    "It is renumbered and re-created",
+    "It is carried forward keeping its original number, with a 'Carried to' line and a new due date",
+    "It closes automatically after a week"
    ],
    "c": 2,
-   "e": "Unowned cases means somebody has to claim it; Overdue cases means it has to be cleared or escalated. When both read zero, the queue is under control.",
-   "module": "Cases — the Customer Ops Queue"
+   "e": "Carry-forward never renumbers. W28 #7 stays W28 #7 for life, gaining a 'Carried to W29' line and a new due date. Three carries is the escalation signal - kill it or commit a date.",
+   "module": "Tasks, Notes & Follow-Ups"
   },
   {
-   "q": "Where do most cases come from?",
+   "q": "Why does a task for Conn or Majella often show as assigned to Stephen?",
    "o": [
-    "Ops types every one in by hand",
-    "They are auto-created from inbound sales@ mail every 15 minutes on weekdays",
-    "The salesperson creates them from the Opportunity",
-    "They are imported nightly from Intact"
+    "Stephen approves all tasks",
+    "They do not hold a CRM seat today, so tasks go to their proxy with the real owner named in the task body",
+    "It is a bug",
+    "Their tasks are private"
    ],
    "c": 1,
-   "e": "An automation reads the sales@ mailbox every 15 minutes on weekdays and opens one case per mail thread from a known customer contact, with Received at set to the real arrival time.",
-   "module": "Cases — the Customer Ops Queue"
+   "e": "Only some of the team hold CRM seats. Automations assign to the proxy and put the real owner's name verbatim on the first line of the body - do the same when you create tasks by hand.",
+   "module": "Tasks, Notes & Follow-Ups"
+  },
+  {
+   "q": "A task is titled 'Sales mtg W28 #7 - Chase Urovo on DT50S lead times'. Where did it come from?",
+   "o": [
+    "A colleague typed it in",
+    "The weekly sales meeting action register, ingested automatically",
+    "The cadence engine",
+    "The Ops Pulse auto-case creation"
+   ],
+   "c": 1,
+   "e": "Weekly sales-meeting minutes are turned into Tasks automatically. The W-number is the meeting week and the #number is that action's permanent id, kept for its whole life even when it is carried forward.",
+   "module": "Tasks, Notes & Follow-Ups"
+  },
+  {
+   "q": "You had a long call that changed nothing about the deal's stage. What is the minimum you should do?",
+   "o": [
+    "Nothing - no change means no record",
+    "Add a Note and update Last Activity Date and the next step on the deal",
+    "Move the stage forward so it does not look stale",
+    "Create a task for yourself to write it up later"
+   ],
+   "c": 1,
+   "e": "Write the Note, stamp the activity and set the next action. Never move a stage you have not earned, and never leave the deal looking untouched when you spoke to them today.",
+   "module": "Tasks, Notes & Follow-Ups"
   }
  ]
 }
