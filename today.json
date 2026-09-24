@@ -1,56 +1,56 @@
 {
- "d": 20719,
+ "d": 20720,
  "mode": "study",
- "module": "Tasks, Notes & Follow-Ups",
- "date": "Wednesday 23 September 2026",
+ "module": "Search, Filters & Views",
+ "date": "Thursday 24 September 2026",
  "questions": [
   {
-   "q": "An action from the sales meeting was not done. What happens to it?",
+   "q": "Stale Deals is showing far more deals than you expect, including ones you spoke to this week. What is the most likely cause?",
    "o": [
-    "It is deleted and has to be re-raised",
-    "It is renumbered and re-created",
-    "It is carried forward keeping its original number, with a 'Carried to' line and a new due date",
-    "It closes automatically after a week"
+    "The deals really are stale",
+    "Last Activity Date is not being filled in, so every deal looks quiet",
+    "The view is sorted wrongly",
+    "You are looking at someone else's deals"
+   ],
+   "c": 1,
+   "e": "Stale Deals reads Last Activity Date and nothing else. When that field is blank the detector flags everything - which is exactly what happened when the views were first built.",
+   "module": "Search, Filters & Views"
+  },
+  {
+   "q": "Which of these views is meant to read zero?",
+   "o": [
+    "Open Pipeline",
+    "Top Prizes",
+    "HOUSE - Unassigned",
+    "By Stage"
    ],
    "c": 2,
-   "e": "Carry-forward never renumbers. W28 #7 stays W28 #7 for life, gaining a 'Carried to W29' line and a new due date. Three carries is the escalation signal - kill it or commit a date.",
-   "module": "Tasks, Notes & Follow-Ups"
+   "e": "HOUSE - Unassigned lists accounts with no owner and is a hygiene list. So are Open Opps - No Next Action, Data Gaps - no amount, and the Unowned and Overdue case views. Open Pipeline, Top Prizes and By Stage are working views.",
+   "module": "Search, Filters & Views"
   },
   {
-   "q": "Why does a task for Conn or Majella often show as assigned to Stephen?",
+   "q": "Quotes - Missing Quote Ref shows zero, but you know most proposals have no quote number on them. What should you suspect?",
    "o": [
-    "Stephen approves all tasks",
-    "They do not hold a CRM seat today, so tasks go to their proxy with the real owner named in the task body",
-    "It is a bug",
-    "Their tasks are private"
+    "Somebody filled them all in",
+    "The filter may be matching on empty rather than blank, or the other way round",
+    "The view is for cases, not deals",
+    "Quote refs are optional so the view is irrelevant"
    ],
    "c": 1,
-   "e": "Only some of the team hold CRM seats. Automations assign to the proxy and put the real owner's name verbatim on the first line of the body - do the same when you create tasks by hand.",
-   "module": "Tasks, Notes & Follow-Ups"
+   "e": "Quote references have historically been stored as an empty string rather than nothing at all, so a filter written one way can undercount badly. Cross-check the count against the number of open proposals.",
+   "module": "Search, Filters & Views"
   },
   {
-   "q": "A task is titled 'Sales mtg W28 #7 - Chase Urovo on DT50S lead times'. Where did it come from?",
+   "q": "You need to see whether two of our resellers are chasing the same deployment site.",
    "o": [
-    "A colleague typed it in",
-    "The weekly sales meeting action register, ingested automatically",
-    "The cadence engine",
-    "The Ops Pulse auto-case creation"
+    "Filter Opportunities by company",
+    "Open the End Customer record and use In Play (Two-Horse)",
+    "Search the end customer's name in Companies",
+    "Check the Accounts by Status kanban"
    ],
    "c": 1,
-   "e": "Weekly sales-meeting minutes are turned into Tasks automatically. The W-number is the meeting week and the #number is that action's permanent id, kept for its whole life even when it is carried forward.",
-   "module": "Tasks, Notes & Follow-Ups"
-  },
-  {
-   "q": "You had a long call that changed nothing about the deal's stage. What is the minimum you should do?",
-   "o": [
-    "Nothing - no change means no record",
-    "Add a Note and update Last Activity Date and the next step on the deal",
-    "Move the stage forward so it does not look stale",
-    "Create a task for yourself to write it up later"
-   ],
-   "c": 1,
-   "e": "Write the Note, stamp the activity and set the next action. Never move a stage you have not earned, and never leave the deal looking untouched when you spoke to them today.",
-   "module": "Tasks, Notes & Follow-Ups"
+   "e": "End Customers are the sites the kit is actually for. Every deal chasing that site rolls up on the one End Customer record, which is the whole point of the two-horse view.",
+   "module": "Search, Filters & Views"
   }
  ]
 }
