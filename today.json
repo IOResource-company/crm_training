@@ -1,56 +1,116 @@
 {
- "d": 20720,
- "mode": "study",
- "module": "Search, Filters & Views",
- "date": "Thursday 24 September 2026",
+ "d": 20721,
+ "mode": "exam",
+ "date": "Friday 25 September 2026",
  "questions": [
   {
-   "q": "Stale Deals is showing far more deals than you expect, including ones you spoke to this week. What is the most likely cause?",
+   "q": "Why is the built-in Account Owner field hidden on our record pages?",
    "o": [
-    "The deals really are stale",
-    "Last Activity Date is not being filled in, so every deal looks quiet",
-    "The view is sorted wrongly",
-    "You are looking at someone else's deals"
+    "It costs extra to license",
+    "It reads as Stephen on nearly everything, so it is misleading",
+    "It was replaced by the Case owner field",
+    "It is only visible to administrators"
    ],
    "c": 1,
-   "e": "Stale Deals reads Last Activity Date and nothing else. When that field is blank the detector flags everything - which is exactly what happened when the views were first built.",
-   "module": "Search, Filters & Views"
+   "e": "It was deliberately hidden during the 1 July 2026 view overhaul so nobody derives ownership from it. Sales Rep is the truth.",
+   "module": "People & Companies"
   },
   {
-   "q": "Which of these views is meant to read zero?",
+   "q": "Which of these can Customer Operations resolve alone, with no approval?",
    "o": [
-    "Open Pipeline",
-    "Top Prizes",
-    "HOUSE - Unassigned",
-    "By Stage"
+    "Giving a customer a discount to win the order",
+    "Agreeing 30 day credit terms for a new account",
+    "Giving stock and lead times from Intact and chasing a courier",
+    "Issuing a credit note as a goodwill gesture"
    ],
    "c": 2,
-   "e": "HOUSE - Unassigned lists accounts with no owner and is a hygiene list. So are Open Opps - No Next Action, Data Gaps - no amount, and the Unowned and Overdue case views. Open Pipeline, Top Prizes and By Stage are working views.",
-   "module": "Search, Filters & Views"
+   "e": "Stock, lead times, supplier and courier chasing, order confirmations, standard quotes within the rules and standard returns are all resolve-alone. Discounts and credit terms need sales approval; new credit accounts and larger credit notes need management.",
+   "module": "Quote to Order"
   },
   {
-   "q": "Quotes - Missing Quote Ref shows zero, but you know most proposals have no quote number on them. What should you suspect?",
+   "q": "Which sidebar entry holds the businesses the equipment is ultimately for?",
    "o": [
-    "Somebody filled them all in",
-    "The filter may be matching on empty rather than blank, or the other way round",
-    "The view is for cases, not deals",
-    "Quote refs are optional so the view is irrelevant"
+    "Companies",
+    "People",
+    "End Customers",
+    "Sales Transactions"
    ],
-   "c": 1,
-   "e": "Quote references have historically been stored as an empty string rather than nothing at all, so a filter written one way can undercount badly. Cross-check the count against the number of open proposals.",
-   "module": "Search, Filters & Views"
+   "c": 2,
+   "e": "Companies are who we sell to. End Customers are who the kit is for, so competing resellers' deals can roll up under one of them.",
+   "module": "Getting Started"
   },
   {
-   "q": "You need to see whether two of our resellers are chasing the same deployment site.",
+   "q": "Why does the document number go in the email subject?",
    "o": [
-    "Filter Opportunities by company",
-    "Open the End Customer record and use In Play (Two-Horse)",
-    "Search the end customer's name in Companies",
-    "Check the Accounts by Status kanban"
+    "So the customer can find it",
+    "It is how the email links to the right CRM record and the right Intact document",
+    "For the accounts team's filing",
+    "It is optional but tidy"
    ],
    "c": 1,
-   "e": "End Customers are the sites the kit is actually for. Every deal chasing that site rolls up on the one End Customer record, which is the whole point of the two-horse view.",
-   "module": "Search, Filters & Views"
+   "e": "It is the primary linking method between the inbox, the CRM and Intact — the cheapest, most reliable join we have.",
+   "module": "Quote to Order"
+  },
+  {
+   "q": "Why do we insist on the Intact document number in the email subject?",
+   "o": [
+    "It looks professional",
+    "It is how CRM activity and the ERP transaction record are tied together",
+    "The email system requires it",
+    "It speeds up delivery"
+   ],
+   "c": 1,
+   "e": "Intact owns money and documents; the CRM owns relationships and control. The document number in the subject is the join between the two, so a mistyped or missing number breaks the link.",
+   "module": "Email & the CRM"
+  },
+  {
+   "q": "A brand new logo has been created but has not ordered yet. What Account Status?",
+   "o": [
+    "ACTIVE",
+    "DORMANT",
+    "LAPSED",
+    "PROSPECT"
+   ],
+   "c": 3,
+   "e": "Prospect until the first order lands, then Active. Dormant and Lapsed are accounts that used to trade and stopped.",
+   "module": "People & Companies"
+  },
+  {
+   "q": "How quickly should a new inbound customer item be acknowledged?",
+   "o": [
+    "Within 1 working hour, or 15 minutes if it is urgent",
+    "By the end of the day",
+    "Within 4 working hours",
+    "Within one working day"
+   ],
+   "c": 0,
+   "e": "Acknowledge within 1 working hour, 15 minutes for an urgent operational problem. The first meaningful response follows within 4 working hours.",
+   "module": "Recommended Daily Routine"
+  },
+  {
+   "q": "Which of these can you NOT do through the API on our version of the CRM?",
+   "o": [
+    "Read opportunities",
+    "Create a saved view",
+    "Build a dashboard, star a favourite or reorder the sidebar",
+    "Update a case status"
+   ],
+   "c": 2,
+   "e": "Dashboards are read-only through the API on our version, and favourites and sidebar order cannot be set that way either. They have to be built by hand in the browser.",
+   "module": "The Weekly Picture"
+  },
+  {
+   "scenario": "You have chased a supplier twice about a lead time for a case that is now three days old. There is still no reply, and the customer has a deadline this week.",
+   "q": "What is the right handling?",
+   "o": [
+    "Set the status to Resolved since there is nothing more you can do",
+    "Leave the case in In Progress and wait for the supplier to come back",
+    "Keep it Waiting – Supplier with the supplier named in Supplier dependency, tick Escalated, set a fresh next action and date, and update the customer even though nothing has changed",
+    "Close the case and open a new one when the supplier replies"
+   ],
+   "c": 2,
+   "e": "Waiting – Supplier with the vendor named is what makes the watch-list work. Escalate early — blocked and at risk of missing a customer deadline is exactly the trigger. And the customer still gets an update on the promised interval; supplier-dependent items get one every 24 to 48 hours. Resolved means the customer's issue is actually sorted.",
+   "module": "Cases — the Customer Ops Queue"
   }
  ]
 }
