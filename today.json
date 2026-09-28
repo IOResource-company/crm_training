@@ -1,116 +1,56 @@
 {
- "d": 20721,
- "mode": "exam",
- "date": "Friday 25 September 2026",
+ "d": 20724,
+ "mode": "study",
+ "module": "Email & the CRM",
+ "date": "Monday 28 September 2026",
  "questions": [
   {
-   "q": "Why is the built-in Account Owner field hidden on our record pages?",
+   "q": "An email arrives at sales@ from someone who is not in People. What happens?",
    "o": [
-    "It costs extra to license",
-    "It reads as Stephen on nearly everything, so it is misleading",
-    "It was replaced by the Case owner field",
-    "It is only visible to administrators"
-   ],
-   "c": 1,
-   "e": "It was deliberately hidden during the 1 July 2026 view overhaul so nobody derives ownership from it. Sales Rep is the truth.",
-   "module": "People & Companies"
-  },
-  {
-   "q": "Which of these can Customer Operations resolve alone, with no approval?",
-   "o": [
-    "Giving a customer a discount to win the order",
-    "Agreeing 30 day credit terms for a new account",
-    "Giving stock and lead times from Intact and chasing a courier",
-    "Issuing a credit note as a goodwill gesture"
+    "A case is created and a person record is created",
+    "A case is created with no contact",
+    "No case is created - the sender surfaces in the Pulse email for a human to triage",
+    "The email is deleted"
    ],
    "c": 2,
-   "e": "Stock, lead times, supplier and courier chasing, order confirmations, standard quotes within the rules and standard returns are all resolve-alone. Discounts and credit terms need sales approval; new credit accounts and larger credit notes need management.",
-   "module": "Quote to Order"
-  },
-  {
-   "q": "Which sidebar entry holds the businesses the equipment is ultimately for?",
-   "o": [
-    "Companies",
-    "People",
-    "End Customers",
-    "Sales Transactions"
-   ],
-   "c": 2,
-   "e": "Companies are who we sell to. End Customers are who the kit is for, so competing resellers' deals can roll up under one of them.",
-   "module": "Getting Started"
-  },
-  {
-   "q": "Why does the document number go in the email subject?",
-   "o": [
-    "So the customer can find it",
-    "It is how the email links to the right CRM record and the right Intact document",
-    "For the accounts team's filing",
-    "It is optional but tidy"
-   ],
-   "c": 1,
-   "e": "It is the primary linking method between the inbox, the CRM and Intact — the cheapest, most reliable join we have.",
-   "module": "Quote to Order"
-  },
-  {
-   "q": "Why do we insist on the Intact document number in the email subject?",
-   "o": [
-    "It looks professional",
-    "It is how CRM activity and the ERP transaction record are tied together",
-    "The email system requires it",
-    "It speeds up delivery"
-   ],
-   "c": 1,
-   "e": "Intact owns money and documents; the CRM owns relationships and control. The document number in the subject is the join between the two, so a mistyped or missing number breaks the link.",
+   "e": "Auto-casing only fires for known contacts who are linked to a company. Unknown senders are triaged by a person, which is also the prompt to add them to People.",
    "module": "Email & the CRM"
   },
   {
-   "q": "A brand new logo has been created but has not ordered yet. What Account Status?",
+   "q": "How often does the CRM check inbound sales@ mail and create Cases?",
    "o": [
-    "ACTIVE",
-    "DORMANT",
-    "LAPSED",
-    "PROSPECT"
+    "Once a night",
+    "Every 15 minutes during the working day on weekdays",
+    "Only when someone presses a button",
+    "In real time, always"
    ],
-   "c": 3,
-   "e": "Prospect until the first order lands, then Active. Dormant and Lapsed are accounts that used to trade and stopped.",
-   "module": "People & Companies"
+   "c": 1,
+   "e": "The ingest runs every 15 minutes through working hours on weekdays. It creates one case per email thread, so a running conversation does not create duplicates.",
+   "module": "Email & the CRM"
   },
   {
-   "q": "How quickly should a new inbound customer item be acknowledged?",
+   "q": "What does putting '(Sales Pipe mail)' in the subject of a forward to sales@ do?",
    "o": [
-    "Within 1 working hour, or 15 minutes if it is urgent",
-    "By the end of the day",
-    "Within 4 working hours",
-    "Within one working day"
+    "Nothing, it is just a label",
+    "The automation reads it and updates or creates the right deal or case, or raises a review task if unsure",
+    "It marks the email as urgent",
+    "It sends it to everyone in sales"
    ],
-   "c": 0,
-   "e": "Acknowledge within 1 working hour, 15 minutes for an urgent operational problem. The first meaningful response follows within 4 working hours.",
-   "module": "Recommended Daily Routine"
+   "c": 1,
+   "e": "The automation matches the mail against open deals and cases. It can update an opportunity, resolve a case or create a new opportunity - and anything it cannot match confidently becomes a review task rather than a guess.",
+   "module": "Email & the CRM"
   },
   {
-   "q": "Which of these can you NOT do through the API on our version of the CRM?",
+   "q": "The (Sales Pipe mail) automation cannot confidently match your forward. What happens?",
    "o": [
-    "Read opportunities",
-    "Create a saved view",
-    "Build a dashboard, star a favourite or reorder the sidebar",
-    "Update a case status"
+    "Nothing happens and the email is dropped",
+    "It creates the closest matching opportunity anyway",
+    "It creates a review task for a human to deal with",
+    "It emails you back for clarification"
    ],
    "c": 2,
-   "e": "Dashboards are read-only through the API on our version, and favourites and sidebar order cannot be set that way either. They have to be built by hand in the browser.",
-   "module": "The Weekly Picture"
-  },
-  {
-   "scenario": "You have chased a supplier twice about a lead time for a case that is now three days old. There is still no reply, and the customer has a deadline this week.",
-   "q": "What is the right handling?",
-   "o": [
-    "Set the status to Resolved since there is nothing more you can do",
-    "Leave the case in In Progress and wait for the supplier to come back",
-    "Keep it Waiting – Supplier with the supplier named in Supplier dependency, tick Escalated, set a fresh next action and date, and update the customer even though nothing has changed",
-    "Close the case and open a new one when the supplier replies"
-   ],
-   "c": 2,
-   "e": "Waiting – Supplier with the vendor named is what makes the watch-list work. Escalate early — blocked and at risk of missing a customer deadline is exactly the trigger. And the customer still gets an update on the promised interval; supplier-dependent items get one every 24 to 48 hours. Resolved means the customer's issue is actually sorted.",
-   "module": "Cases — the Customer Ops Queue"
+   "e": "A review task is the mandatory fallback - the engine never guesses. Every action it does take also writes a Note on the record and shows up in the next Pulse under Actions taken.",
+   "module": "Email & the CRM"
   }
  ]
 }
