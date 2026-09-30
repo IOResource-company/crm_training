@@ -1,56 +1,56 @@
 {
- "d": 20725,
+ "d": 20726,
  "mode": "study",
- "module": "Quote to Order",
- "date": "Tuesday 29 September 2026",
+ "module": "Data Quality Rules",
+ "date": "Wednesday 30 September 2026",
  "questions": [
   {
-   "q": "Why does the document number go in the email subject?",
+   "q": "What does a blank accountCode on a company mean in practice?",
    "o": [
-    "So the customer can find it",
-    "It is how the email links to the right CRM record and the right Intact document",
-    "For the accounts team's filing",
-    "It is optional but tidy"
+    "The account is dormant",
+    "The account cannot be reconciled against real orders in Intact",
+    "The account has no contacts",
+    "Nothing — it is optional metadata"
    ],
    "c": 1,
-   "e": "It is the primary linking method between the inbox, the CRM and Intact — the cheapest, most reliable join we have.",
-   "module": "Quote to Order"
+   "e": "accountCode is the Intact join key. Without it the company cannot be matched to actual trading history.",
+   "module": "Data Quality Rules"
   },
   {
-   "q": "A prepay account places an order. What is issued?",
+   "q": "Which field tells you who owns a company account?",
    "o": [
-    "A Sales Order confirmation",
-    "A Pro Forma, paid before anything is dispatched",
-    "An invoice on 30 day terms",
-    "A quotation"
+    "Account Owner",
+    "Sales Rep (salesRep)",
+    "Created By",
+    "The person who wrote the last note"
    ],
    "c": 1,
-   "e": "Prepay accounts get a Pro Forma for payment before dispatch. Credit accounts get a Sales Order confirmation and are invoiced on terms after dispatch.",
-   "module": "Quote to Order"
+   "e": "salesRep is the ownership field. The built-in Account Owner field is hidden across our views because it is misleading.",
+   "module": "Data Quality Rules"
   },
   {
-   "q": "A customer returns a faulty scanner under warranty. What do you create?",
+   "q": "A deal has gone quiet and will not happen. What is the correct close?",
    "o": [
-    "A Case of type Return",
-    "A Case of type Technical",
-    "An Aftercare record with Service type Warranty",
-    "An Opportunity with a negative amount"
+    "Delete it so it stops cluttering the pipeline",
+    "Leave it at Proposal in case they come back",
+    "Move it to Closed Lost and set a lostReason",
+    "Set the close date a year out"
    ],
    "c": 2,
-   "e": "RMA and warranty are deliberately not case types. They go in Aftercare as a slim log with the RMA reference, because the separate technical system is the source of truth.",
-   "module": "Quote to Order"
+   "e": "Closed Lost with a reason. A closed lost deal can always be reopened if the customer returns, and the reason is what makes win-rate analysis possible.",
+   "module": "Data Quality Rules"
   },
   {
-   "q": "What are the four Aftercare service types?",
+   "q": "An email to sales@ contains a customer's decision deadline. What must happen for the CRM to hold it?",
    "o": [
-    "RMA, Warranty, Advance Replacement, Lifecycle Refresh",
-    "Return, Repair, Replace, Refund",
-    "RMA, Credit, Delivery, Technical",
-    "Open, In Progress, Closed, Cancelled"
+    "Nothing — the email body syncs onto the record",
+    "Someone must type it into a Note or the deal's next step",
+    "Forward the email to yourself",
+    "Attach the email to a Task"
    ],
-   "c": 0,
-   "e": "RMA, Warranty, Advance Replacement and Lifecycle Refresh. The last one is the proactive side — warranty end and refresh due dates drive renewal conversations.",
-   "module": "Quote to Order"
+   "c": 1,
+   "e": "Synced email shows subject and participants only. If the detail is in the body, it does not exist in the CRM until a person writes it down.",
+   "module": "Data Quality Rules"
   }
  ]
 }
