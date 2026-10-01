@@ -1,56 +1,56 @@
 {
- "d": 20726,
+ "d": 20727,
  "mode": "study",
- "module": "Data Quality Rules",
- "date": "Wednesday 30 September 2026",
+ "module": "Common Daily Workflows",
+ "date": "Thursday 1 October 2026",
  "questions": [
   {
-   "q": "What does a blank accountCode on a company mean in practice?",
+   "q": "You spoke to a contact who is not yet in People. Why does it matter?",
    "o": [
-    "The account is dormant",
-    "The account cannot be reconciled against real orders in Intact",
-    "The account has no contacts",
-    "Nothing — it is optional metadata"
+    "It does not - the email is stored anyway",
+    "Their email history is stored but shows on no record until the person exists",
+    "The CRM will reject the email",
+    "It blocks the opportunity from being created"
    ],
    "c": 1,
-   "e": "accountCode is the Intact join key. Without it the company cannot be matched to actual trading history.",
-   "module": "Data Quality Rules"
+   "e": "The mail is captured, but with no matching person it attaches to nothing. Two clicks - name, email, company - and the whole thread appears on the record.",
+   "module": "Common Daily Workflows"
   },
   {
-   "q": "Which field tells you who owns a company account?",
+   "q": "A customer rings about a delivery that has not arrived. Where does that belong?",
    "o": [
-    "Account Owner",
-    "Sales Rep (salesRep)",
-    "Created By",
-    "The person who wrote the last note"
-   ],
-   "c": 1,
-   "e": "salesRep is the ownership field. The built-in Account Owner field is hidden across our views because it is misleading.",
-   "module": "Data Quality Rules"
-  },
-  {
-   "q": "A deal has gone quiet and will not happen. What is the correct close?",
-   "o": [
-    "Delete it so it stops cluttering the pipeline",
-    "Leave it at Proposal in case they come back",
-    "Move it to Closed Lost and set a lostReason",
-    "Set the close date a year out"
+    "A new opportunity",
+    "A note on the opportunity",
+    "A Case for Customer Operations",
+    "A task for the supplier"
    ],
    "c": 2,
-   "e": "Closed Lost with a reason. A closed lost deal can always be reopened if the customer returns, and the reason is what makes win-rate analysis possible.",
-   "module": "Data Quality Rules"
+   "e": "Winning the money is sales; delivering on the promise is Customer Operations. A delivery chase is a Case, not pipeline.",
+   "module": "Common Daily Workflows"
   },
   {
-   "q": "An email to sales@ contains a customer's decision deadline. What must happen for the CRM to hold it?",
+   "q": "First action when a new enquiry arrives?",
    "o": [
-    "Nothing — the email body syncs onto the record",
-    "Someone must type it into a Note or the deal's next step",
-    "Forward the email to yourself",
-    "Attach the email to a Task"
+    "Create the opportunity",
+    "Search for the company",
+    "Email the customer a quote",
+    "Add a task"
    ],
    "c": 1,
-   "e": "Synced email shows subject and participants only. If the detail is in the body, it does not exist in the CRM until a person writes it down.",
-   "module": "Data Quality Rules"
+   "e": "Search company, then contact, then create only what is missing. We already have duplicate company records, and every unnecessary new one splits a rep's deals.",
+   "module": "Common Daily Workflows"
+  },
+  {
+   "q": "How do you assign the owner of a new opportunity?",
+   "o": [
+    "Pick your name in the Owner field on the deal",
+    "Set the salesRep field on the linked company",
+    "The creator is automatically the owner",
+    "Ask an administrator"
+   ],
+   "c": 1,
+   "e": "There is nothing meaningful to assign on the deal. Ownership derives from the company's salesRep, so that is the field to get right.",
+   "module": "Common Daily Workflows"
   }
  ]
 }
