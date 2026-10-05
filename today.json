@@ -1,116 +1,56 @@
 {
- "d": 20728,
- "mode": "exam",
- "date": "Friday 2 October 2026",
+ "d": 20731,
+ "mode": "study",
+ "module": "The Pulse Emails",
+ "date": "Monday 5 October 2026",
  "questions": [
   {
-   "q": "Where does a comment left through a pulse actually end up?",
+   "q": "Which pulse button will not let you finish without picking a reason?",
    "o": [
-    "In a spreadsheet the automation keeps",
-    "Only in the next pulse email",
-    "As a CRM Note titled [Ops Pulse] or [Sales Pulse], attached to the record and its company",
-    "As a reply in the sales@ mailbox"
+    "Won",
+    "Lost",
+    "Snooze +3d",
+    "Handled - hide"
    ],
-   "c": 2,
-   "e": "Comments are stored as CRM Notes with an [Ops Pulse] or [Sales Pulse] title prefix. The prefix is how the pulse reads them back and re-renders them under the item.",
+   "c": 1,
+   "e": "The Lost confirm page requires a reason from the list: price, lead time, lost to competitor, no budget, no decision, stalled or other. Free text is optional and is kept as a comment.",
    "module": "The Pulse Emails"
   },
   {
-   "q": "In the Tuesday pipeline sweep, which side wins on stage and close date?",
+   "q": "In the Tuesday pipeline sweep, which source wins on a deal's amount and probability?",
    "o": [
-    "The rep's spreadsheet",
-    "The CRM",
-    "Whichever is more recent",
-    "Neither - both are flagged"
+    "The CRM always wins",
+    "The rep's pipeline spreadsheet wins",
+    "Whichever was edited most recently",
+    "Neither - the row is flagged for review"
    ],
    "c": 1,
-   "e": "The CRM wins on stage and close date; the sheet wins on amount, probability and next step. That way the sweep never silently moves a deal's stage or invents a close date.",
-   "module": "Recommended Daily Routine"
-  },
-  {
-   "q": "Which of these are genuine duplicate records in our CRM today?",
-   "o": [
-    "Zebra and Zebra Technologies",
-    "STL Technology Solutions twice, Qualcom twice, McLernons vs McLernon Computers, Touchstore vs TouchStore",
-    "There are no duplicates",
-    "Every company created before July 2026"
-   ],
-   "c": 1,
-   "e": "All four pairs are live. When several records match, use the one already holding the open opportunities and never split a rep's deals across twins.",
-   "module": "People & Companies"
-  },
-  {
-   "q": "How long do the buttons in a pulse email keep working?",
-   "o": [
-    "Forever",
-    "Until the next pulse is sent",
-    "21 days",
-    "One working day"
-   ],
-   "c": 2,
-   "e": "Every button link is signed and expires after 21 days. Work from today's pulse rather than an archived one.",
+   "e": "The sheet wins on amount, probability and next step. The CRM wins on stage and close date, so the sweep never invents a speculative date or silently moves a deal's stage.",
    "module": "The Pulse Emails"
   },
   {
-   "q": "You spoke to a contact who is not yet in People. Why does it matter?",
+   "q": "Which of these is NOT a button on an Ops Pulse row?",
    "o": [
-    "It does not - the email is stored anyway",
-    "Their email history is stored but shows on no record until the person exists",
-    "The CRM will reject the email",
-    "It blocks the opportunity from being created"
+    "Create case",
+    "Handled - hide",
+    "Snooze +3d",
+    "Mark deal Won"
+   ],
+   "c": 3,
+   "e": "Won and Lost are Sales Pulse deal buttons. Ops rows carry Create case, Handled - hide, Comment, Open in CRM, and on overdue cases Resolve and Snooze +3d.",
+   "module": "The Pulse Emails"
+  },
+  {
+   "q": "How often does the Ops Pulse arrive?",
+   "o": [
+    "Once a week, on Monday",
+    "Twice a day on weekdays - morning and evening",
+    "Once a day, in the early afternoon",
+    "Only when there is an overdue case"
    ],
    "c": 1,
-   "e": "The mail is captured, but with no matching person it attaches to nothing. Two clicks - name, email, company - and the whole thread appears on the record.",
-   "module": "Common Daily Workflows"
-  },
-  {
-   "q": "An action from the sales meeting was not done. What happens to it?",
-   "o": [
-    "It is deleted and has to be re-raised",
-    "It is renumbered and re-created",
-    "It is carried forward keeping its original number, with a 'Carried to' line and a new due date",
-    "It closes automatically after a week"
-   ],
-   "c": 2,
-   "e": "Carry-forward never renumbers. W28 #7 stays W28 #7 for life, gaining a 'Carried to W29' line and a new due date. Three carries is the escalation signal - kill it or commit a date.",
-   "module": "Tasks, Notes & Follow-Ups"
-  },
-  {
-   "q": "What does this access cover?",
-   "o": [
-    "Only the accounts you own",
-    "Only what you can see in the CRM screens",
-    "The whole workspace, read and write",
-    "Read-only access to everything"
-   ],
-   "c": 2,
-   "e": "The whole workspace, both read and write. It is not narrowed by your role in the interface, which is why it is only given to people trusted with all of it.",
-   "module": "CRM in Claude"
-  },
-  {
-   "q": "What does putting '(Sales Pipe mail)' in the subject of a forward to sales@ do?",
-   "o": [
-    "Nothing, it is just a label",
-    "The automation reads it and updates or creates the right deal or case, or raises a review task if unsure",
-    "It marks the email as urgent",
-    "It sends it to everyone in sales"
-   ],
-   "c": 1,
-   "e": "The automation matches the mail against open deals and cases. It can update an opportunity, resolve a case or create a new opportunity - and anything it cannot match confidently becomes a review task rather than a guess.",
-   "module": "Email & the CRM"
-  },
-  {
-   "scenario": "It is 09:10 on a Tuesday. You open the queue and find a case auto-created at 08:20 from a contact at Deycom, sitting as New / Query / Normal. The email says a scanner arrived damaged and the customer is quoting their rights under consumer law.",
-   "q": "What do you do first?",
-   "o": [
-    "Email Tom to open an RMA and leave the case as it is until he replies",
-    "Change Type to Complaint, raise Priority, reply from sales@ to acknowledge and move the status to Acknowledged, then set next action and due date",
-    "Move the status straight to In Progress so the response clock is stamped",
-    "Create a second case of type Return so both angles are tracked"
-   ],
-   "c": 1,
-   "e": "Auto-created cases always land as Query / Normal, so the first job is to make the record true — Complaint, higher priority. Then acknowledge inside the hour, which stamps Acknowledged at, and give it a next action and a due date. Involving Tom is the next action, not a substitute for owning it. A complaint has a 2 working day resolve target with daily updates.",
-   "module": "Cases — the Customer Ops Queue"
+   "e": "The Ops Pulse runs twice every weekday, in the morning and again in the evening. The evening edition shows what is still on the board to clear first thing tomorrow.",
+   "module": "The Pulse Emails"
   }
  ]
 }
