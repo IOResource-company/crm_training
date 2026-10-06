@@ -1,56 +1,56 @@
 {
- "d": 20731,
+ "d": 20732,
  "mode": "study",
- "module": "The Pulse Emails",
- "date": "Monday 5 October 2026",
+ "module": "Recommended Daily Routine",
+ "date": "Tuesday 6 October 2026",
  "questions": [
   {
-   "q": "Which pulse button will not let you finish without picking a reason?",
+   "q": "What are the four things every open opportunity must have?",
    "o": [
-    "Won",
-    "Lost",
-    "Snooze +3d",
-    "Handled - hide"
+    "Owner, priority, tier and vertical",
+    "Amount, stage, next step and next step date",
+    "Quote ref, contact, competitor and lead source",
+    "Close date, probability, forecast category and weighted value"
    ],
    "c": 1,
-   "e": "The Lost confirm page requires a reason from the list: price, lead time, lost to competitor, no budget, no decision, stalled or other. Free text is optional and is kept as a comment.",
-   "module": "The Pulse Emails"
+   "e": "Amount, stage, next step and date. With those four in place the pipeline is readable and the forecast is possible; without them the deal is not really in the active pipeline.",
+   "module": "Recommended Daily Routine"
   },
   {
-   "q": "In the Tuesday pipeline sweep, which source wins on a deal's amount and probability?",
+   "q": "What is produced on Friday from the sales@ mailbox?",
    "o": [
-    "The CRM always wins",
-    "The rep's pipeline spreadsheet wins",
-    "Whichever was edited most recently",
-    "Neither - the row is flagged for review"
+    "A weekly mail digest document filed in the Weekly Summaries folder",
+    "A bulk update to every opportunity",
+    "A pipeline sweep of the reps' spreadsheets",
+    "The data-quality audit"
+   ],
+   "c": 0,
+   "e": "The Friday weekly mail digest summarises orders received, supplier orders and deliveries into a document. It is read-only - it never writes to the CRM. The audit is Monday's and the sweep is Tuesday's.",
+   "module": "Recommended Daily Routine"
+  },
+  {
+   "q": "What happens to the actions agreed at the weekly sales meeting?",
+   "o": [
+    "They stay in the minutes document",
+    "They become Tasks in the CRM and appear in the Sales Pulse",
+    "They are emailed round as a list",
+    "They become new opportunities"
    ],
    "c": 1,
-   "e": "The sheet wins on amount, probability and next step. The CRM wins on stage and close date, so the sweep never invents a speculative date or silently moves a deal's stage.",
-   "module": "The Pulse Emails"
+   "e": "The minutes are ingested into the CRM as Tasks grouped by owner, and they render in the Sales Pulse with Done, Carry and Answer buttons.",
+   "module": "Recommended Daily Routine"
   },
   {
-   "q": "Which of these is NOT a button on an Ops Pulse row?",
+   "q": "You are back after two days out and there are four unread pulse emails.",
    "o": [
-    "Create case",
-    "Handled - hide",
-    "Snooze +3d",
-    "Mark deal Won"
-   ],
-   "c": 3,
-   "e": "Won and Lost are Sales Pulse deal buttons. Ops rows carry Create case, Handled - hide, Comment, Open in CRM, and on overdue cases Resolve and Snooze +3d.",
-   "module": "The Pulse Emails"
-  },
-  {
-   "q": "How often does the Ops Pulse arrive?",
-   "o": [
-    "Once a week, on Monday",
-    "Twice a day on weekdays - morning and evening",
-    "Once a day, in the early afternoon",
-    "Only when there is an overdue case"
+    "Work through them oldest first",
+    "Work from the most recent one plus the overdue views",
+    "Ignore them all and start fresh",
+    "Forward them to a colleague to action"
    ],
    "c": 1,
-   "e": "The Ops Pulse runs twice every weekday, in the morning and again in the evening. The evening edition shows what is still on the board to clear first thing tomorrow.",
-   "module": "The Pulse Emails"
+   "e": "The newest pulse already reflects the current state, and older button links go stale - they expire after 21 days. Work from today's edition and the overdue views.",
+   "module": "Recommended Daily Routine"
   }
  ]
 }
