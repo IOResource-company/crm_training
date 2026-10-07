@@ -1,56 +1,56 @@
 {
- "d": 20732,
+ "d": 20733,
  "mode": "study",
- "module": "Recommended Daily Routine",
- "date": "Tuesday 6 October 2026",
+ "module": "Getting It Right First Time",
+ "date": "Wednesday 7 October 2026",
  "questions": [
   {
-   "q": "What are the four things every open opportunity must have?",
+   "q": "Which of these is the safest way to avoid creating a duplicate company?",
    "o": [
-    "Owner, priority, tier and vertical",
-    "Amount, stage, next step and next step date",
-    "Quote ref, contact, competitor and lead source",
-    "Close date, probability, forecast category and weighted value"
+    "Search the full legal name from their PO",
+    "Search a short distinctive fragment and a couple of variants",
+    "Scroll the Companies list alphabetically",
+    "Ask a colleague if they remember the customer"
    ],
    "c": 1,
-   "e": "Amount, stage, next step and date. With those four in place the pipeline is readable and the forecast is possible; without them the deal is not really in the active pipeline.",
-   "module": "Recommended Daily Routine"
+   "e": "Short fragments catch variants in spacing, plurals and capitalisation — which is where the duplicate pairs already in the data differ from each other.",
+   "module": "Getting It Right First Time"
   },
   {
-   "q": "What is produced on Friday from the sales@ mailbox?",
+   "q": "A customer email contains the delivery date they have committed to their own client. What must you do?",
    "o": [
-    "A weekly mail digest document filed in the Weekly Summaries folder",
-    "A bulk update to every opportunity",
-    "A pipeline sweep of the reps' spreadsheets",
-    "The data-quality audit"
-   ],
-   "c": 0,
-   "e": "The Friday weekly mail digest summarises orders received, supplier orders and deliveries into a document. It is read-only - it never writes to the CRM. The audit is Monday's and the sweep is Tuesday's.",
-   "module": "Recommended Daily Routine"
-  },
-  {
-   "q": "What happens to the actions agreed at the weekly sales meeting?",
-   "o": [
-    "They stay in the minutes document",
-    "They become Tasks in the CRM and appear in the Sales Pulse",
-    "They are emailed round as a list",
-    "They become new opportunities"
+    "Nothing — the synced email carries the body onto the record",
+    "Type it into a Note or the deal's next step",
+    "Forward it to sales@ and rely on the sync",
+    "Flag the email in your mailbox"
    ],
    "c": 1,
-   "e": "The minutes are ingested into the CRM as Tasks grouped by owner, and they render in the Sales Pulse with Done, Carry and Answer buttons.",
-   "module": "Recommended Daily Routine"
+   "e": "The CRM shows subject and participants only. If it is in the body, it does not exist in the CRM until somebody types it in.",
+   "module": "Getting It Right First Time"
   },
   {
-   "q": "You are back after two days out and there are four unread pulse emails.",
+   "q": "You create a new company for a customer you just won. What are the two fields to fill before you move on?",
    "o": [
-    "Work through them oldest first",
-    "Work from the most recent one plus the overdue views",
-    "Ignore them all and start fresh",
-    "Forward them to a colleague to action"
+    "Website and LinkedIn",
+    "Sales Rep and Account code",
+    "Annual revenue and staff count",
+    "Account Owner and vertical"
    ],
    "c": 1,
-   "e": "The newest pulse already reflects the current state, and older button links go stale - they expire after 21 days. Work from today's edition and the overdue views.",
-   "module": "Recommended Daily Routine"
+   "e": "salesRep so it is not unowned, and accountCode so it can be reconciled against Intact. Account Owner is the hidden, misleading field — do not use it.",
+   "module": "Getting It Right First Time"
+  },
+  {
+   "q": "You are logging a deal where a reseller is supplying kit to a large grocery chain. What goes in Company?",
+   "o": [
+    "The grocery chain",
+    "The reseller we invoice",
+    "Whichever is bigger",
+    "Both, separated by a slash"
+   ],
+   "c": 1,
+   "e": "Company is the trade account we invoice. The grocery chain goes in End Customer, which is what lets competing resellers chasing the same site roll up in one view.",
+   "module": "Getting It Right First Time"
   }
  ]
 }
