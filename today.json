@@ -1,32 +1,79 @@
 {
- "d": 20734,
- "mode": "study",
- "module": "The Weekly Picture",
- "date": "Thursday 8 October 2026",
+ "d": 20735,
+ "mode": "exam",
+ "date": "Friday 9 October 2026",
  "questions": [
   {
-   "q": "What is weighted pipeline?",
+   "q": "Which system is the system of record for quotations, invoices and real margin?",
    "o": [
-    "The total value of all open deals",
-    "Amount multiplied by probability, summed across open deals",
-    "The value of deals in Commit only",
-    "Last quarter's revenue"
+    "Twenty CRM",
+    "Intact ERP",
+    "The sales@ mailbox",
+    "The weekly pipeline spreadsheet"
    ],
    "c": 1,
-   "e": "Weighted value is amount multiplied by probability. It is the risk-adjusted view and is always smaller than raw open pipeline - and it excludes any deal with no amount or no probability.",
-   "module": "The Weekly Picture"
+   "e": "Intact owns money and documents. The CRM owns relationships and control; the mailbox carries information between them.",
+   "module": "Getting Started"
   },
   {
-   "q": "Which of these can you NOT do through the API on our version of the CRM?",
+   "q": "Which field tells you who really owns an account?",
    "o": [
-    "Read opportunities",
-    "Create a saved view",
-    "Build a dashboard, star a favourite or reorder the sidebar",
-    "Update a case status"
+    "Account Owner",
+    "Sales Rep",
+    "Created By",
+    "Account Tier"
+   ],
+   "c": 1,
+   "e": "Sales Rep is the single field that decides whose book, whose pipeline and whose pulse email an account belongs to.",
+   "module": "People & Companies"
+  },
+  {
+   "q": "Where does an order live once it is placed?",
+   "o": [
+    "The CRM opportunity record",
+    "Intact ERP",
+    "The sales@ inbox",
+    "A note on the company"
+   ],
+   "c": 1,
+   "e": "Intact is the system of record for orders, stock and invoicing. The CRM holds the pursuit; quoteRef and accountCode are how the two tie together.",
+   "module": "Getting It Right First Time"
+  },
+  {
+   "q": "Which field is the ownership field on a company record in our CRM?",
+   "o": [
+    "Account Owner",
+    "Created By",
+    "Sales Rep",
+    "Assignee"
    ],
    "c": 2,
-   "e": "Dashboards are read-only through the API on our version, and favourites and sidebar order cannot be set that way either. They have to be built by hand in the browser.",
-   "module": "The Weekly Picture"
+   "e": "Sales Rep is the truth everywhere. The older Account Owner column was hidden from views and record pages because it read as Stephen on everything and misled people.",
+   "module": "Search, Filters & Views"
+  },
+  {
+   "q": "Why is the built-in Account Owner field hidden on our record pages?",
+   "o": [
+    "It costs extra to license",
+    "It reads as Stephen on nearly everything, so it is misleading",
+    "It was replaced by the Case owner field",
+    "It is only visible to administrators"
+   ],
+   "c": 1,
+   "e": "It was deliberately hidden during the 1 July 2026 view overhaul so nobody derives ownership from it. Sales Rep is the truth.",
+   "module": "People & Companies"
+  },
+  {
+   "q": "Which two views should read zero every morning?",
+   "o": [
+    "Escalated and Waiting – Supplier",
+    "All Open (SLA) and Resolved — Last 30 Days",
+    "Unowned cases and Overdue cases",
+    "Open cases (by status) and the Command Centre"
+   ],
+   "c": 2,
+   "e": "Unowned cases means somebody has to claim it; Overdue cases means it has to be cleared or escalated. When both read zero, the queue is under control.",
+   "module": "Cases — the Customer Ops Queue"
   },
   {
    "q": "Why is there no versus-target gauge on the dashboard?",
@@ -41,15 +88,28 @@
    "module": "The Weekly Picture"
   },
   {
-   "q": "Which forecast category means 'keep tracking it, but leave it out of the numbers'?",
+   "q": "How quickly must an inbound customer item be acknowledged?",
    "o": [
-    "Pipeline",
-    "Best Case",
-    "Omitted",
-    "Commit"
+    "Within 1 working hour, or 15 minutes if it is Urgent",
+    "Within 4 working hours",
+    "Same working day",
+    "Before the end of the week"
    ],
-   "c": 2,
-   "e": "Omitted. Commit is essentially won, Best Case is winnable this period if things go our way, and Pipeline is real but earlier.",
+   "c": 0,
+   "e": "The standard acknowledgement SLA is 1 working hour. Urgent items — site down, deadline today, key account at risk — drop that to 15 minutes.",
+   "module": "Cases — the Customer Ops Queue"
+  },
+  {
+   "scenario": "In a management meeting someone asks to see how the team is tracking against this month's sales target inside the CRM.",
+   "q": "What do you tell them?",
+   "o": [
+    "Open the versus-target gauge on the Command Centre",
+    "Explain that the Sales Target object is empty, so there is no target gauge or coverage ratio yet - targets would need to be loaded first",
+    "Export the opportunities and calculate it manually as if it were a CRM report",
+    "Use weighted pipeline as the target"
+   ],
+   "c": 1,
+   "e": "The Sales Target and Sales Transaction objects both exist but hold no data, so the CRM cannot show progress against a target or a coverage ratio. Say so plainly rather than substituting a number that means something else.",
    "module": "The Weekly Picture"
   }
  ]
