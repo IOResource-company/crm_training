@@ -1,116 +1,56 @@
 {
- "d": 20735,
- "mode": "exam",
- "date": "Friday 9 October 2026",
+ "d": 20738,
+ "mode": "study",
+ "module": "CRM in Claude",
+ "date": "Monday 12 October 2026",
  "questions": [
   {
-   "q": "Which system is the system of record for quotations, invoices and real margin?",
+   "q": "You think someone else may have seen your credential. What do you do?",
    "o": [
-    "Twenty CRM",
-    "Intact ERP",
-    "The sales@ mailbox",
-    "The weekly pipeline spreadsheet"
+    "Watch for anything odd and report it if it happens",
+    "Tell Stephen straight away",
+    "Change your CRM password",
+    "Nothing, it is probably fine"
    ],
    "c": 1,
-   "e": "Intact owns money and documents. The CRM owns relationships and control; the mailbox carries information between them.",
-   "module": "Getting Started"
+   "e": "Report it immediately so it can be withdrawn and replaced. Nobody minds a false alarm; waiting for evidence is the expensive option.",
+   "module": "CRM in Claude"
   },
   {
-   "q": "Which field tells you who really owns an account?",
+   "q": "Which Claude app can connect to our CRM?",
    "o": [
-    "Account Owner",
-    "Sales Rep",
-    "Created By",
-    "Account Tier"
-   ],
-   "c": 1,
-   "e": "Sales Rep is the single field that decides whose book, whose pipeline and whose pulse email an account belongs to.",
-   "module": "People & Companies"
-  },
-  {
-   "q": "Where does an order live once it is placed?",
-   "o": [
-    "The CRM opportunity record",
-    "Intact ERP",
-    "The sales@ inbox",
-    "A note on the company"
-   ],
-   "c": 1,
-   "e": "Intact is the system of record for orders, stock and invoicing. The CRM holds the pursuit; quoteRef and accountCode are how the two tie together.",
-   "module": "Getting It Right First Time"
-  },
-  {
-   "q": "Which field is the ownership field on a company record in our CRM?",
-   "o": [
-    "Account Owner",
-    "Created By",
-    "Sales Rep",
-    "Assignee"
+    "The web app at claude.ai",
+    "The Claude desktop app",
+    "Claude Code",
+    "All of them"
    ],
    "c": 2,
-   "e": "Sales Rep is the truth everywhere. The older Account Owner column was hidden from views and record pages because it read as Stephen on everything and misled people.",
-   "module": "Search, Filters & Views"
+   "e": "Claude Code. The connector screens in the desktop and web apps authenticate differently and will not accept this kind of credential.",
+   "module": "CRM in Claude"
   },
   {
-   "q": "Why is the built-in Account Owner field hidden on our record pages?",
+   "q": "What does this access cover?",
    "o": [
-    "It costs extra to license",
-    "It reads as Stephen on nearly everything, so it is misleading",
-    "It was replaced by the Case owner field",
-    "It is only visible to administrators"
-   ],
-   "c": 1,
-   "e": "It was deliberately hidden during the 1 July 2026 view overhaul so nobody derives ownership from it. Sales Rep is the truth.",
-   "module": "People & Companies"
-  },
-  {
-   "q": "Which two views should read zero every morning?",
-   "o": [
-    "Escalated and Waiting – Supplier",
-    "All Open (SLA) and Resolved — Last 30 Days",
-    "Unowned cases and Overdue cases",
-    "Open cases (by status) and the Command Centre"
+    "Only the accounts you own",
+    "Only what you can see in the CRM screens",
+    "The whole workspace, read and write",
+    "Read-only access to everything"
    ],
    "c": 2,
-   "e": "Unowned cases means somebody has to claim it; Overdue cases means it has to be cleared or escalated. When both read zero, the queue is under control.",
-   "module": "Cases — the Customer Ops Queue"
+   "e": "The whole workspace, both read and write. It is not narrowed by your role in the interface, which is why it is only given to people trusted with all of it.",
+   "module": "CRM in Claude"
   },
   {
-   "q": "Why is there no versus-target gauge on the dashboard?",
+   "q": "How do you get CRM access inside Claude?",
    "o": [
-    "The widget type is not supported",
-    "The Sales Target and Sales Transaction objects are empty",
-    "Targets are confidential",
-    "It was removed for being a vanity metric"
+    "Set it up yourself from the CRM settings",
+    "Ask Stephen - it is issued per person",
+    "Use a shared team login",
+    "It is switched on for everyone by default"
    ],
    "c": 1,
-   "e": "Both objects exist but hold no data, so there is nothing to compare against. Seeding targets is what would unlock a versus-target gauge and a pipeline coverage ratio.",
-   "module": "The Weekly Picture"
-  },
-  {
-   "q": "How quickly must an inbound customer item be acknowledged?",
-   "o": [
-    "Within 1 working hour, or 15 minutes if it is Urgent",
-    "Within 4 working hours",
-    "Same working day",
-    "Before the end of the week"
-   ],
-   "c": 0,
-   "e": "The standard acknowledgement SLA is 1 working hour. Urgent items — site down, deadline today, key account at risk — drop that to 15 minutes.",
-   "module": "Cases — the Customer Ops Queue"
-  },
-  {
-   "scenario": "In a management meeting someone asks to see how the team is tracking against this month's sales target inside the CRM.",
-   "q": "What do you tell them?",
-   "o": [
-    "Open the versus-target gauge on the Command Centre",
-    "Explain that the Sales Target object is empty, so there is no target gauge or coverage ratio yet - targets would need to be loaded first",
-    "Export the opportunities and calculate it manually as if it were a CRM report",
-    "Use weighted pipeline as the target"
-   ],
-   "c": 1,
-   "e": "The Sales Target and Sales Transaction objects both exist but hold no data, so the CRM cannot show progress against a target or a coverage ratio. Say so plainly rather than substituting a number that means something else.",
-   "module": "The Weekly Picture"
+   "e": "It is issued individually by the administrator, with the setup instructions supplied alongside it. There is no self-service and no shared login.",
+   "module": "CRM in Claude"
   }
  ]
 }
