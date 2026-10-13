@@ -1,56 +1,56 @@
 {
- "d": 20738,
+ "d": 20739,
  "mode": "study",
- "module": "CRM in Claude",
- "date": "Monday 12 October 2026",
+ "module": "Getting Started",
+ "date": "Tuesday 13 October 2026",
  "questions": [
   {
-   "q": "You think someone else may have seen your credential. What do you do?",
+   "q": "You log in and see sample records about Google, Pets and Rockets. What has happened?",
    "o": [
-    "Watch for anything odd and report it if it happens",
-    "Tell Stephen straight away",
-    "Change your CRM password",
-    "Nothing, it is probably fine"
+    "The CRM has been reset",
+    "You are in a stray demo workspace; switch to IOResource from the workspace menu at the top-left",
+    "Somebody imported test data into our workspace",
+    "Your account has no permissions yet"
    ],
    "c": 1,
-   "e": "Report it immediately so it can be withdrawn and replaced. Nobody minds a false alarm; waiting for evidence is the expensive option.",
-   "module": "CRM in Claude"
+   "e": "A stray Twenty demo workspace has appeared on first login before. Our workspace has Companies, People, Opportunities, End Customers and Cases in the sidebar.",
+   "module": "Getting Started"
   },
   {
-   "q": "Which Claude app can connect to our CRM?",
+   "q": "Which sidebar entry holds the businesses the equipment is ultimately for?",
    "o": [
-    "The web app at claude.ai",
-    "The Claude desktop app",
-    "Claude Code",
-    "All of them"
+    "Companies",
+    "People",
+    "End Customers",
+    "Sales Transactions"
    ],
    "c": 2,
-   "e": "Claude Code. The connector screens in the desktop and web apps authenticate differently and will not accept this kind of credential.",
-   "module": "CRM in Claude"
+   "e": "Companies are who we sell to. End Customers are who the kit is for, so competing resellers' deals can roll up under one of them.",
+   "module": "Getting Started"
   },
   {
-   "q": "What does this access cover?",
+   "q": "What is the quickest way to make the CRM usable day to day?",
    "o": [
-    "Only the accounts you own",
-    "Only what you can see in the CRM screens",
-    "The whole workspace, read and write",
-    "Read-only access to everything"
-   ],
-   "c": 2,
-   "e": "The whole workspace, both read and write. It is not narrowed by your role in the interface, which is why it is only given to people trusted with all of it.",
-   "module": "CRM in Claude"
-  },
-  {
-   "q": "How do you get CRM access inside Claude?",
-   "o": [
-    "Set it up yourself from the CRM settings",
-    "Ask Stephen - it is issued per person",
-    "Use a shared team login",
-    "It is switched on for everyone by default"
+    "Memorise the record IDs",
+    "Star the views you use and work from favourites at the top of the sidebar",
+    "Export everything to Excel each morning",
+    "Keep the full Companies list open all day"
    ],
    "c": 1,
-   "e": "It is issued individually by the administrator, with the setup instructions supplied alongside it. There is no self-service and no shared login.",
-   "module": "CRM in Claude"
+   "e": "Views answer one question each. Starring them turns the sidebar into your daily to-do list.",
+   "module": "Getting Started"
+  },
+  {
+   "q": "Which of these belongs in the CRM rather than in Intact?",
+   "o": [
+    "The invoice value of last month's order",
+    "The stock level of a POS terminal",
+    "Who the economic buyer is at the account",
+    "The real margin on a shipped order"
+   ],
+   "c": 2,
+   "e": "Relationship facts live in the CRM. Money and document facts live in Intact.",
+   "module": "Getting Started"
   }
  ]
 }
