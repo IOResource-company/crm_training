@@ -1,56 +1,56 @@
 {
- "d": 20740,
+ "d": 20741,
  "mode": "study",
- "module": "People & Companies",
- "date": "Wednesday 14 October 2026",
+ "module": "Opportunities & Pipeline",
+ "date": "Thursday 15 October 2026",
  "questions": [
   {
-   "q": "Why is the built-in Account Owner field hidden on our record pages?",
+   "q": "Who owns an opportunity?",
    "o": [
-    "It costs extra to license",
-    "It reads as Stephen on nearly everything, so it is misleading",
-    "It was replaced by the Case owner field",
-    "It is only visible to administrators"
+    "Whoever created the record",
+    "The Opportunity Owner field on the deal",
+    "It derives from the salesRep field on the linked company",
+    "Whoever last edited it"
    ],
-   "c": 1,
-   "e": "It was deliberately hidden during the 1 July 2026 view overhaul so nobody derives ownership from it. Sales Rep is the truth.",
-   "module": "People & Companies"
+   "c": 2,
+   "e": "Ownership comes from the company's salesRep. That is why a deal with no company linked belongs to nobody and drops out of every rep's list and pulse.",
+   "module": "Opportunities & Pipeline"
   },
   {
-   "q": "A contact signs off the budget. What Decision Role do you set?",
+   "q": "Which forecast category means 'you would stake your reputation on it landing this period'?",
    "o": [
-    "CHAMPION",
-    "ECONOMIC_BUYER",
-    "TECHNICAL_EVALUATOR",
-    "INFLUENCER"
+    "Pipeline",
+    "Best Case",
+    "Commit",
+    "Omitted"
    ],
-   "c": 1,
-   "e": "Economic Buyer is whoever controls the money. Champion sells for us internally; Technical Evaluator tests the kit.",
-   "module": "People & Companies"
+   "c": 2,
+   "e": "Commit. Best Case is winnable if things go our way, Pipeline is real but earlier, Omitted is tracked deliberately outside the numbers.",
+   "module": "Opportunities & Pipeline"
   },
   {
-   "q": "What is the Account Code on a company record?",
+   "q": "Weighted pipeline is calculated as...",
    "o": [
-    "An internal CRM identifier",
-    "The Intact A/C code, which joins the CRM record to the ERP",
-    "The company registration number",
-    "The sales rep's initials"
+    "amount divided by the number of stages",
+    "amount times probability",
+    "amount minus cost",
+    "the sum of Commit deals only"
    ],
    "c": 1,
-   "e": "It is the join key. Without it, what the account has actually bought can never be tied back to the CRM record.",
-   "module": "People & Companies"
+   "e": "amount times probability, held in weightedValue and summed on the Command Centre's Weighted Pipeline tile.",
+   "module": "Opportunities & Pipeline"
   },
   {
-   "q": "Two of our resellers are both chasing the same supermarket group. Where does the supermarket group live?",
+   "q": "A deal moves from Screening to Meeting when...",
    "o": [
-    "As a Company with Account Type set to End Client",
-    "As an End Customer record, with each reseller's deal linked to it",
-    "As a note on each reseller's record",
-    "As two company records, one per reseller"
+    "You have decided the deal is real",
+    "A meeting, demo or site visit is actually booked",
+    "The customer replies to your email",
+    "You have set a close date"
    ],
    "c": 1,
-   "e": "That is the two-horse race view. One End Customer record, every competing deal rolled up under it.",
-   "module": "People & Companies"
+   "e": "Stages are facts, not feelings. Screening exits when a meeting, demo or site visit is genuinely in the diary.",
+   "module": "Opportunities & Pipeline"
   }
  ]
 }
