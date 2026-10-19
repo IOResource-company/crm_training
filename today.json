@@ -1,116 +1,56 @@
 {
- "d": 20742,
- "mode": "exam",
- "date": "Friday 16 October 2026",
+ "d": 20745,
+ "mode": "study",
+ "module": "Cases — the Customer Ops Queue",
+ "date": "Monday 19 October 2026",
  "questions": [
   {
-   "q": "How often does the CRM check inbound sales@ mail and create Cases?",
+   "q": "How do you mark a case as escalated?",
    "o": [
-    "Once a night",
-    "Every 15 minutes during the working day on weekdays",
-    "Only when someone presses a button",
-    "In real time, always"
+    "Change its Status to Escalated",
+    "Tick the Escalated flag and keep the real status",
+    "Set Priority to Urgent",
+    "Move it to Waiting – Internal"
    ],
    "c": 1,
-   "e": "The ingest runs every 15 minutes through working hours on weekdays. It creates one case per email thread, so a running conversation does not create duplicates.",
-   "module": "Email & the CRM"
+   "e": "Escalated is a flag on top of the status, not a status of its own. The case keeps whatever status genuinely describes where it is, and appears on the Escalated view for daily review.",
+   "module": "Cases — the Customer Ops Queue"
   },
   {
-   "q": "Why is the built-in Account Owner field hidden on our record pages?",
+   "q": "Where do most cases come from?",
    "o": [
-    "It costs extra to license",
-    "It reads as Stephen on nearly everything, so it is misleading",
-    "It was replaced by the Case owner field",
-    "It is only visible to administrators"
+    "Ops types every one in by hand",
+    "They are auto-created from inbound sales@ mail every 15 minutes on weekdays",
+    "The salesperson creates them from the Opportunity",
+    "They are imported nightly from Intact"
    ],
    "c": 1,
-   "e": "It was deliberately hidden during the 1 July 2026 view overhaul so nobody derives ownership from it. Sales Rep is the truth.",
-   "module": "People & Companies"
+   "e": "An automation reads the sales@ mailbox every 15 minutes on weekdays and opens one case per mail thread from a known customer contact, with Received at set to the real arrival time.",
+   "module": "Cases — the Customer Ops Queue"
   },
   {
-   "q": "The rule of thumb for who owns what?",
+   "q": "Which two views should read zero every morning?",
    "o": [
-    "Whoever opened the email owns everything",
-    "If it is about winning the money it is sales; if it is about delivering on the promise it is Customer Operations",
-    "Sales owns the customer, Ops owns the system",
-    "Ops owns everything until the order is placed"
-   ],
-   "c": 1,
-   "e": "Sales keeps the relationship, the pricing and every commercial decision. Ops owns the quoting admin, order processing, supplier and courier chasing, and keeping the customer informed. When in doubt it goes through sales@ and gets an owner either way.",
-   "module": "Quote to Order"
-  },
-  {
-   "q": "Why are the dashboard's action tables built on sorts rather than date filters?",
-   "o": [
-    "Sorts are faster",
-    "Date filters rot - a hard-coded date quietly stops being right",
-    "The API cannot write filters",
-    "So the tables can be exported"
-   ],
-   "c": 1,
-   "e": "A view filtered on a hard-coded date keeps returning a confident, wrong answer as time passes. A sort-based table always floats the most urgent record to the top with no maintenance.",
-   "module": "The Weekly Picture"
-  },
-  {
-   "q": "Why does a task for Conn or Majella often show as assigned to Stephen?",
-   "o": [
-    "Stephen approves all tasks",
-    "They do not hold a CRM seat today, so tasks go to their proxy with the real owner named in the task body",
-    "It is a bug",
-    "Their tasks are private"
-   ],
-   "c": 1,
-   "e": "Only some of the team hold CRM seats. Automations assign to the proxy and put the real owner's name verbatim on the first line of the body - do the same when you create tasks by hand.",
-   "module": "Tasks, Notes & Follow-Ups"
-  },
-  {
-   "q": "Can you rely on the Sales Transaction object for a customer's spend history?",
-   "o": [
-    "Yes, it is fed live from Intact",
-    "Yes, it is updated weekly",
-    "No — it is currently empty, the Intact backfill has not run",
-    "No — the object does not exist"
+    "Escalated and Waiting – Supplier",
+    "All Open (SLA) and Resolved — Last 30 Days",
+    "Unowned cases and Overdue cases",
+    "Open cases (by status) and the Command Centre"
    ],
    "c": 2,
-   "e": "The object exists and is designed to join to Intact on the same Account code, but it has not been populated. Until the backfill runs, take the numbers from Intact.",
-   "module": "Quote to Order"
+   "e": "Unowned cases means somebody has to claim it; Overdue cases means it has to be cleared or escalated. When both read zero, the queue is under control.",
+   "module": "Cases — the Customer Ops Queue"
   },
   {
-   "q": "Where does a comment left through a pulse actually end up?",
+   "q": "Which of these is NOT a case type in our CRM?",
    "o": [
-    "In a spreadsheet the automation keeps",
-    "Only in the next pulse email",
-    "As a CRM Note titled [Ops Pulse] or [Sales Pulse], attached to the record and its company",
-    "As a reply in the sales@ mailbox"
+    "Credit query",
+    "Warranty / RMA",
+    "Delivery",
+    "Technical"
    ],
-   "c": 2,
-   "e": "Comments are stored as CRM Notes with an [Ops Pulse] or [Sales Pulse] title prefix. The prefix is how the pulse reads them back and re-renders them under the item.",
-   "module": "The Pulse Emails"
-  },
-  {
-   "q": "A case has no Received at value. What does that mean for the SLA numbers?",
-   "o": [
-    "It counts as a breach",
-    "It counts as passing",
-    "It is counted as unmeasurable",
-    "It is excluded from the case queue entirely"
-   ],
-   "c": 2,
-   "e": "Without a start time there is no clock, so the case is counted as unmeasurable rather than as a pass or a fail. It still appears in the queue and still needs working.",
-   "module": "The Weekly Picture"
-  },
-  {
-   "scenario": "An email lands in sales@ from a new name at an existing reseller, asking for pricing on kit for one of their retail clients. The reseller is already a company in the CRM with a rep set; the person is not in People.",
-   "q": "What is the minimum correct sequence?",
-   "o": [
-    "Reply with pricing and log it later",
-    "Create a duplicate company for the new contact, then a deal",
-    "Add the person to People linked to the existing company, then create the opportunity from the company record with a value, stage and dated next step",
-    "Create the opportunity only - the contact will appear automatically"
-   ],
-   "c": 2,
-   "e": "The company exists, so do not create a second one. Add the person so their email history attaches, then create the deal from the company record - which fills the company link and puts it on the right rep via salesRep. Link the end customer if there is a deployment site behind it.",
-   "module": "Common Daily Workflows"
+   "c": 1,
+   "e": "RMA and warranty work is deliberately not a case type. It lives in the Aftercare object as a slim log, because the separate technical system is the source of truth for the detail.",
+   "module": "Cases — the Customer Ops Queue"
   }
  ]
 }
