@@ -1,56 +1,56 @@
 {
- "d": 20747,
+ "d": 20748,
  "mode": "study",
- "module": "Search, Filters & Views",
- "date": "Wednesday 21 October 2026",
+ "module": "Email & the CRM",
+ "date": "Thursday 22 October 2026",
  "questions": [
   {
-   "q": "Which view do Customer Operations start the day on?",
+   "q": "Why does that limitation matter for how you work?",
    "o": [
-    "Open Pipeline",
-    "All Open (SLA)",
-    "Resolved - Last 30 Days",
-    "Recently Added"
+    "It does not, you can always forward it",
+    "Anything important from an email body must be written into a Note",
+    "It means email is not useful",
+    "It means you should copy everyone on everything"
    ],
    "c": 1,
-   "e": "All Open (SLA) is the live case worklist, sorted by due date so the most urgent sits at the top. Unowned and Overdue are then driven to zero.",
-   "module": "Search, Filters & Views"
+   "e": "A Note is the only place the substance of an email can live in the CRM. Without it, the record proves a conversation happened but not what was agreed.",
+   "module": "Email & the CRM"
   },
   {
-   "q": "What is the safest first move when a search for a company returns nothing?",
+   "q": "You open a customer record and want to read an email they sent last week. What will the CRM show you?",
    "o": [
-    "Create the company",
-    "Search again using the trading name, the legal name or the contact's email domain",
-    "Ask someone to create it for you",
-    "Raise a case"
+    "The full message and any attachments",
+    "The subject, who was on it and when - nothing more",
+    "A summary written by the system",
+    "Nothing at all"
    ],
    "c": 1,
-   "e": "Search a second and third way before creating anything. Our accounts are recorded under a mix of trading and legal names, and a duplicate splits the spend history, deals and email trail.",
-   "module": "Search, Filters & Views"
+   "e": "The sales@ mailbox is synced with visibility set to Subject and metadata. You can see that an email happened, with whom and when, but the body and attachments are not shown in the CRM.",
+   "module": "Email & the CRM"
   },
   {
-   "q": "The Going Quiet view is described as 'no order in 90+ days'. What should you check before working it?",
+   "q": "How often does the CRM check inbound sales@ mail and create Cases?",
    "o": [
-    "Nothing, the view recalculates every night",
-    "The date in the filter chip, because it is hardcoded and goes stale",
-    "That you are logged in as the right rep",
-    "The column widths"
+    "Once a night",
+    "Every 15 minutes during the working day on weekdays",
+    "Only when someone presses a button",
+    "In real time, always"
    ],
    "c": 1,
-   "e": "Going Quiet filters on a fixed date that was correct when the view was built and is meant to be refreshed quarterly. If the date is old, the view over-reports - it will list accounts that have ordered since.",
-   "module": "Search, Filters & Views"
+   "e": "The ingest runs every 15 minutes through working hours on weekdays. It creates one case per email thread, so a running conversation does not create duplicates.",
+   "module": "Email & the CRM"
   },
   {
-   "q": "Quotes - Missing Quote Ref shows zero, but you know most proposals have no quote number on them. What should you suspect?",
+   "q": "The (Sales Pipe mail) automation cannot confidently match your forward. What happens?",
    "o": [
-    "Somebody filled them all in",
-    "The filter may be matching on empty rather than blank, or the other way round",
-    "The view is for cases, not deals",
-    "Quote refs are optional so the view is irrelevant"
+    "Nothing happens and the email is dropped",
+    "It creates the closest matching opportunity anyway",
+    "It creates a review task for a human to deal with",
+    "It emails you back for clarification"
    ],
-   "c": 1,
-   "e": "Quote references have historically been stored as an empty string rather than nothing at all, so a filter written one way can undercount badly. Cross-check the count against the number of open proposals.",
-   "module": "Search, Filters & Views"
+   "c": 2,
+   "e": "A review task is the mandatory fallback - the engine never guesses. Every action it does take also writes a Note on the record and shows up in the next Pulse under Actions taken.",
+   "module": "Email & the CRM"
   }
  ]
 }
