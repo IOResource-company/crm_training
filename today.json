@@ -1,116 +1,56 @@
 {
- "d": 20749,
- "mode": "exam",
- "date": "Friday 23 October 2026",
+ "d": 20752,
+ "mode": "study",
+ "module": "Quote to Order",
+ "date": "Monday 26 October 2026",
  "questions": [
   {
-   "q": "What does the Quote follow-up cadence actually do?",
+   "q": "What joins a CRM company to its Intact account?",
    "o": [
-    "Sends four emails to the customer automatically",
-    "Creates four timed Tasks over about two weeks that you action yourself",
-    "Moves the deal through stages automatically",
-    "Notifies the customer that the quote expires"
-   ],
-   "c": 1,
-   "e": "Four touches over about two weeks - email, call, email, break-up - created as Tasks with due dates and a paste-in template. It never emails the prospect; you send each one from Outlook.",
-   "module": "Common Daily Workflows"
-  },
-  {
-   "q": "Who owns an opportunity?",
-   "o": [
-    "Whoever created the record",
-    "The Opportunity Owner field on the deal",
-    "It derives from the salesRep field on the linked company",
-    "Whoever last edited it"
+    "The company name",
+    "The domain name",
+    "The Account code — the Intact A/C code stored on the company",
+    "The account owner's initials"
    ],
    "c": 2,
-   "e": "Ownership comes from the company's salesRep. That is why a deal with no company linked belongs to nobody and drops out of every rep's list and pulse.",
-   "module": "Opportunities & Pipeline"
-  },
-  {
-   "q": "You are closing a deal as lost. What must you not do?",
-   "o": [
-    "Set lostReason",
-    "Blank out the amount and close date",
-    "Set competitorDisplaced if we lost to a competitor",
-    "Clear the next step"
-   ],
-   "c": 1,
-   "e": "Leave the amount and close date exactly as they were. They are the raw material for win-rate and pricing analysis - blanking them destroys the evidence.",
-   "module": "Common Daily Workflows"
-  },
-  {
-   "q": "How quickly must an inbound customer item be acknowledged?",
-   "o": [
-    "Within 1 working hour, or 15 minutes if it is Urgent",
-    "Within 4 working hours",
-    "Same working day",
-    "Before the end of the week"
-   ],
-   "c": 0,
-   "e": "The standard acknowledgement SLA is 1 working hour. Urgent items — site down, deadline today, key account at risk — drop that to 15 minutes.",
-   "module": "Cases — the Customer Ops Queue"
-  },
-  {
-   "q": "Why does a task for Conn or Majella often show as assigned to Stephen?",
-   "o": [
-    "Stephen approves all tasks",
-    "They do not hold a CRM seat today, so tasks go to their proxy with the real owner named in the task body",
-    "It is a bug",
-    "Their tasks are private"
-   ],
-   "c": 1,
-   "e": "Only some of the team hold CRM seats. Automations assign to the proxy and put the real owner's name verbatim on the first line of the body - do the same when you create tasks by hand.",
-   "module": "Tasks, Notes & Follow-Ups"
-  },
-  {
-   "q": "Which two views should a Customer Operations day start and end on?",
-   "o": [
-    "Top Prizes and Open Pipeline",
-    "Unowned cases and Overdue cases",
-    "Going Quiet and Win-Back",
-    "Kill the Zebra and Data Gaps"
-   ],
-   "c": 1,
-   "e": "Drive Unowned cases and Overdue cases to zero at the start of the day, and check both again at the end. The Ops Pulse gives you the same picture in email form.",
-   "module": "Recommended Daily Routine"
-  },
-  {
-   "q": "What stamps the Acknowledged at, First response at and Resolved at timestamps on a case?",
-   "o": [
-    "You type them in when you have a moment",
-    "Moving the case Status — the workflow stamps them automatically",
-    "The Ops Pulse email at 08:00 and 18:00",
-    "The salesperson when they review the account"
-   ],
-   "c": 1,
-   "e": "Moving the status is the whole action. Acknowledged stamps Acknowledged at, In Progress stamps First response at, Resolved stamps Resolved at. They are stamped once and never overwritten.",
-   "module": "Cases — the Customer Ops Queue"
-  },
-  {
-   "q": "What are the four Aftercare service types?",
-   "o": [
-    "RMA, Warranty, Advance Replacement, Lifecycle Refresh",
-    "Return, Repair, Replace, Refund",
-    "RMA, Credit, Delivery, Technical",
-    "Open, In Progress, Closed, Cancelled"
-   ],
-   "c": 0,
-   "e": "RMA, Warranty, Advance Replacement and Lifecycle Refresh. The last one is the proactive side — warranty end and refresh due dates drive renewal conversations.",
+   "e": "Account code is the join key. Names and domains drift and duplicate; the A/C code does not.",
    "module": "Quote to Order"
   },
   {
-   "scenario": "A new colleague starts and asks for the same CRM-in-Claude setup you have. Yours works fine and you still have the details to hand.",
-   "q": "What is the right thing to do?",
+   "q": "Which of these can Customer Operations resolve alone, with no approval?",
    "o": [
-    "Send them yours - it already works, so there is nothing to debug",
-    "Point them at Stephen so they are set up in their own name",
-    "Let them use your machine when they need CRM data",
-    "Tell them to stick to the browser"
+    "Giving a customer a discount to win the order",
+    "Agreeing 30 day credit terms for a new account",
+    "Giving stock and lead times from Intact and chasing a courier",
+    "Issuing a credit note as a goodwill gesture"
+   ],
+   "c": 2,
+   "e": "Stock, lead times, supplier and courier chasing, order confirmations, standard quotes within the rules and standard returns are all resolve-alone. Discounts and credit terms need sales approval; new credit accounts and larger credit notes need management.",
+   "module": "Quote to Order"
+  },
+  {
+   "q": "Who decides the price on a standard quotation?",
+   "o": [
+    "Customer Operations, within the agreed rules",
+    "The salesperson — Operations builds and sends the rest",
+    "The manager, on every quote",
+    "Whoever opens the email first"
    ],
    "c": 1,
-   "e": "Access is issued per person on purpose. Sharing yours means their activity looks like yours, and neither of you can be withdrawn independently later.",
-   "module": "CRM in Claude"
+   "e": "Operations prepares the quotation in Intact and sends it from sales@; the salesperson decides the price only. If it is the same price as last time, Operations checks Intact and sends.",
+   "module": "Quote to Order"
+  },
+  {
+   "q": "Can you rely on the Sales Transaction object for a customer's spend history?",
+   "o": [
+    "Yes, it is fed live from Intact",
+    "Yes, it is updated weekly",
+    "No — it is currently empty, the Intact backfill has not run",
+    "No — the object does not exist"
+   ],
+   "c": 2,
+   "e": "The object exists and is designed to join to Intact on the same Account code, but it has not been populated. Until the backfill runs, take the numbers from Intact.",
+   "module": "Quote to Order"
   }
  ]
 }
