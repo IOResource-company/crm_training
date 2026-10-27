@@ -1,56 +1,56 @@
 {
- "d": 20752,
+ "d": 20753,
  "mode": "study",
- "module": "Quote to Order",
- "date": "Monday 26 October 2026",
+ "module": "Data Quality Rules",
+ "date": "Tuesday 27 October 2026",
  "questions": [
   {
-   "q": "What joins a CRM company to its Intact account?",
+   "q": "What does a blank accountCode on a company mean in practice?",
    "o": [
-    "The company name",
-    "The domain name",
-    "The Account code — the Intact A/C code stored on the company",
-    "The account owner's initials"
-   ],
-   "c": 2,
-   "e": "Account code is the join key. Names and domains drift and duplicate; the A/C code does not.",
-   "module": "Quote to Order"
-  },
-  {
-   "q": "Which of these can Customer Operations resolve alone, with no approval?",
-   "o": [
-    "Giving a customer a discount to win the order",
-    "Agreeing 30 day credit terms for a new account",
-    "Giving stock and lead times from Intact and chasing a courier",
-    "Issuing a credit note as a goodwill gesture"
-   ],
-   "c": 2,
-   "e": "Stock, lead times, supplier and courier chasing, order confirmations, standard quotes within the rules and standard returns are all resolve-alone. Discounts and credit terms need sales approval; new credit accounts and larger credit notes need management.",
-   "module": "Quote to Order"
-  },
-  {
-   "q": "Who decides the price on a standard quotation?",
-   "o": [
-    "Customer Operations, within the agreed rules",
-    "The salesperson — Operations builds and sends the rest",
-    "The manager, on every quote",
-    "Whoever opens the email first"
+    "The account is dormant",
+    "The account cannot be reconciled against real orders in Intact",
+    "The account has no contacts",
+    "Nothing — it is optional metadata"
    ],
    "c": 1,
-   "e": "Operations prepares the quotation in Intact and sends it from sales@; the salesperson decides the price only. If it is the same price as last time, Operations checks Intact and sends.",
-   "module": "Quote to Order"
+   "e": "accountCode is the Intact join key. Without it the company cannot be matched to actual trading history.",
+   "module": "Data Quality Rules"
   },
   {
-   "q": "Can you rely on the Sales Transaction object for a customer's spend history?",
+   "q": "A deal has gone quiet and will not happen. What is the correct close?",
    "o": [
-    "Yes, it is fed live from Intact",
-    "Yes, it is updated weekly",
-    "No — it is currently empty, the Intact backfill has not run",
-    "No — the object does not exist"
+    "Delete it so it stops cluttering the pipeline",
+    "Leave it at Proposal in case they come back",
+    "Move it to Closed Lost and set a lostReason",
+    "Set the close date a year out"
    ],
    "c": 2,
-   "e": "The object exists and is designed to join to Intact on the same Account code, but it has not been populated. Until the backfill runs, take the numbers from Intact.",
-   "module": "Quote to Order"
+   "e": "Closed Lost with a reason. A closed lost deal can always be reopened if the customer returns, and the reason is what makes win-rate analysis possible.",
+   "module": "Data Quality Rules"
+  },
+  {
+   "q": "An email to sales@ contains a customer's decision deadline. What must happen for the CRM to hold it?",
+   "o": [
+    "Nothing — the email body syncs onto the record",
+    "Someone must type it into a Note or the deal's next step",
+    "Forward the email to yourself",
+    "Attach the email to a Task"
+   ],
+   "c": 1,
+   "e": "Synced email shows subject and participants only. If the detail is in the body, it does not exist in the CRM until a person writes it down.",
+   "module": "Data Quality Rules"
+  },
+  {
+   "q": "Why do the Data Gaps and Stale Deals views exist?",
+   "o": [
+    "To rank reps against each other",
+    "Because many open deals lack an amount and a close date, and stale ones need surfacing",
+    "To hold deals that have been closed",
+    "To list companies with no owner"
+   ],
+   "c": 1,
+   "e": "They are hygiene worklists built around the real gaps in our data. HOUSE — Unassigned is the equivalent for companies with no owner.",
+   "module": "Data Quality Rules"
   }
  ]
 }
