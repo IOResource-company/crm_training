@@ -1,56 +1,56 @@
 {
- "d": 20754,
+ "d": 20755,
  "mode": "study",
- "module": "Common Daily Workflows",
- "date": "Wednesday 28 October 2026",
+ "module": "The Pulse Emails",
+ "date": "Thursday 29 October 2026",
  "questions": [
   {
-   "q": "You have just sent a formal quotation. Which three things change on the deal?",
+   "q": "Which pulse button will not let you finish without picking a reason?",
    "o": [
-    "Stage to Proposal, quoteRef filled, amountBasis to QUOTED",
-    "Stage to Customer, probability 100, closeDate today",
-    "leadSource, vertical, endCustomer",
-    "Nothing until they reply"
-   ],
-   "c": 0,
-   "e": "Proposal, the quotation number in quoteRef, and amountBasis flipped from ESTIMATED to QUOTED. Then set the chase as your next step with a date.",
-   "module": "Common Daily Workflows"
-  },
-  {
-   "q": "You spoke to a contact who is not yet in People. Why does it matter?",
-   "o": [
-    "It does not - the email is stored anyway",
-    "Their email history is stored but shows on no record until the person exists",
-    "The CRM will reject the email",
-    "It blocks the opportunity from being created"
+    "Won",
+    "Lost",
+    "Snooze +3d",
+    "Handled - hide"
    ],
    "c": 1,
-   "e": "The mail is captured, but with no matching person it attaches to nothing. Two clicks - name, email, company - and the whole thread appears on the record.",
-   "module": "Common Daily Workflows"
+   "e": "The Lost confirm page requires a reason from the list: price, lead time, lost to competitor, no budget, no decision, stalled or other. Free text is optional and is kept as a comment.",
+   "module": "The Pulse Emails"
   },
   {
-   "q": "When does the quote follow-up cadence stop on its own?",
+   "q": "How often does the Ops Pulse arrive?",
    "o": [
-    "Never - you must always stop it manually",
-    "When the customer replies, the deal advances a stage, or it is won or lost",
-    "After 30 days",
-    "When the close date passes"
+    "Once a week, on Monday",
+    "Twice a day on weekdays - morning and evening",
+    "Once a day, in the early afternoon",
+    "Only when there is an overdue case"
    ],
    "c": 1,
-   "e": "It auto-stops on a reply, a stage advance, a win or a loss, or when all the steps have elapsed. You can also set Cadence Status to Stopped by hand.",
-   "module": "Common Daily Workflows"
+   "e": "The Ops Pulse runs twice every weekday, in the morning and again in the evening. The evening edition shows what is still on the board to clear first thing tomorrow.",
+   "module": "The Pulse Emails"
   },
   {
-   "q": "A customer rings about a delivery that has not arrived. Where does that belong?",
+   "q": "Which of these is NOT a button on an Ops Pulse row?",
    "o": [
-    "A new opportunity",
-    "A note on the opportunity",
-    "A Case for Customer Operations",
-    "A task for the supplier"
+    "Create case",
+    "Handled - hide",
+    "Snooze +3d",
+    "Mark deal Won"
+   ],
+   "c": 3,
+   "e": "Won and Lost are Sales Pulse deal buttons. Ops rows carry Create case, Handled - hide, Comment, Open in CRM, and on overdue cases Resolve and Snooze +3d.",
+   "module": "The Pulse Emails"
+  },
+  {
+   "q": "Where does a comment left through a pulse actually end up?",
+   "o": [
+    "In a spreadsheet the automation keeps",
+    "Only in the next pulse email",
+    "As a CRM Note titled [Ops Pulse] or [Sales Pulse], attached to the record and its company",
+    "As a reply in the sales@ mailbox"
    ],
    "c": 2,
-   "e": "Winning the money is sales; delivering on the promise is Customer Operations. A delivery chase is a Case, not pipeline.",
-   "module": "Common Daily Workflows"
+   "e": "Comments are stored as CRM Notes with an [Ops Pulse] or [Sales Pulse] title prefix. The prefix is how the pulse reads them back and re-renders them under the item.",
+   "module": "The Pulse Emails"
   }
  ]
 }
