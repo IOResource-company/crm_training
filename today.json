@@ -1,116 +1,56 @@
 {
- "d": 20756,
- "mode": "exam",
- "date": "Friday 30 October 2026",
+ "d": 20759,
+ "mode": "study",
+ "module": "Recommended Daily Routine",
+ "date": "Monday 2 November 2026",
  "questions": [
   {
-   "q": "A customer has been asked for a purchase order number and has not come back. Which status?",
+   "q": "What is produced on Friday from the sales@ mailbox?",
    "o": [
-    "Waiting – Supplier",
-    "Waiting – Internal",
-    "Waiting – Customer",
-    "In Progress"
+    "A weekly mail digest document filed in the Weekly Summaries folder",
+    "A bulk update to every opportunity",
+    "A pipeline sweep of the reps' spreadsheets",
+    "The data-quality audit"
+   ],
+   "c": 0,
+   "e": "The Friday weekly mail digest summarises orders received, supplier orders and deliveries into a document. It is read-only - it never writes to the CRM. The audit is Monday's and the sweep is Tuesday's.",
+   "module": "Recommended Daily Routine"
+  },
+  {
+   "q": "How quickly should a new inbound customer item be acknowledged?",
+   "o": [
+    "Within 1 working hour, or 15 minutes if it is urgent",
+    "By the end of the day",
+    "Within 4 working hours",
+    "Within one working day"
+   ],
+   "c": 0,
+   "e": "Acknowledge within 1 working hour, 15 minutes for an urgent operational problem. The first meaningful response follows within 4 working hours.",
+   "module": "Recommended Daily Routine"
+  },
+  {
+   "q": "A deal will genuinely not close until next year. What is the right thing to do?",
+   "o": [
+    "Leave the next-step date in the past so it keeps appearing",
+    "Close it as lost and recreate it later",
+    "Set the next-step date months out to its real cadence",
+    "Remove the next step altogether"
    ],
    "c": 2,
-   "e": "The three Waiting statuses answer one question: whose move is it? The ball is with the customer, so it is Waiting – Customer — with a next action and a date to chase them.",
-   "module": "Cases — the Customer Ops Queue"
+   "e": "A long-cycle deal is not overdue, it is mis-dated. Push the date out to the real touch cadence - the pulse gives you plus-one-month and plus-three-month buttons for exactly this.",
+   "module": "Recommended Daily Routine"
   },
   {
-   "q": "A deal has gone to a competitor. What is the minimum you must record?",
+   "q": "Which two views should a Customer Operations day start and end on?",
    "o": [
-    "Stage Closed Lost",
-    "Stage Closed Lost plus a lostReason",
-    "A note on the company",
-    "Delete the opportunity"
+    "Top Prizes and Open Pipeline",
+    "Unowned cases and Overdue cases",
+    "Going Quiet and Win-Back",
+    "Kill the Zebra and Data Gaps"
    ],
    "c": 1,
-   "e": "Closed Lost plus a lostReason is mandatory - here, Lost to Competitor. Also set competitorDisplaced so the displacement picture stays accurate. Never delete the deal.",
-   "module": "Opportunities & Pipeline"
-  },
-  {
-   "q": "A saved view shows a suspiciously small number just before the Monday review. What do you do first?",
-   "o": [
-    "Quote it — the view is the system of record",
-    "Check the filter chips for a hardcoded date",
-    "Rebuild the view from scratch",
-    "Ignore the view and count by hand every week"
-   ],
-   "c": 1,
-   "e": "Some of our views were built with fixed dates that rot as the calendar moves. Check what the view is actually filtering on before you trust the count.",
-   "module": "Getting It Right First Time"
-  },
-  {
-   "q": "What does putting '(Sales Pipe mail)' in the subject of a forward to sales@ do?",
-   "o": [
-    "Nothing, it is just a label",
-    "The automation reads it and updates or creates the right deal or case, or raises a review task if unsure",
-    "It marks the email as urgent",
-    "It sends it to everyone in sales"
-   ],
-   "c": 1,
-   "e": "The automation matches the mail against open deals and cases. It can update an opportunity, resolve a case or create a new opportunity - and anything it cannot match confidently becomes a review task rather than a guess.",
-   "module": "Email & the CRM"
-  },
-  {
-   "q": "What sits in front of the CRM login page?",
-   "o": [
-    "Nothing, it is open to the internet",
-    "Cloudflare Access, which only admits identities ending in @ioresource.com",
-    "A VPN you must install",
-    "Intact single sign-on"
-   ],
-   "c": 1,
-   "e": "There are two gates: Cloudflare Access first, then Twenty's own sign-in. A restricted-to-members message is the Cloudflare layer, not the CRM.",
-   "module": "Getting Started"
-  },
-  {
-   "q": "A deal has gone quiet and will not happen. What is the correct close?",
-   "o": [
-    "Delete it so it stops cluttering the pipeline",
-    "Leave it at Proposal in case they come back",
-    "Move it to Closed Lost and set a lostReason",
-    "Set the close date a year out"
-   ],
-   "c": 2,
-   "e": "Closed Lost with a reason. A closed lost deal can always be reopened if the customer returns, and the reason is what makes win-rate analysis possible.",
-   "module": "Data Quality Rules"
-  },
-  {
-   "q": "You have a rough idea of a deal's value but no quotation yet. What do you do?",
-   "o": [
-    "Leave amount blank until the quote goes out",
-    "Enter your estimate and set amountBasis to Estimated",
-    "Enter your estimate and set amountBasis to Quoted",
-    "Enter zero as a placeholder"
-   ],
-   "c": 1,
-   "e": "A rough number beats a permanent blank, but the basis has to be honest. Upgrade it to Quoted the day a real quotation issues.",
-   "module": "Data Quality Rules"
-  },
-  {
-   "q": "Where does an order live once it is placed?",
-   "o": [
-    "The CRM opportunity record",
-    "Intact ERP",
-    "The sales@ inbox",
-    "A note on the company"
-   ],
-   "c": 1,
-   "e": "Intact is the system of record for orders, stock and invoicing. The CRM holds the pursuit; quoteRef and accountCode are how the two tie together.",
-   "module": "Getting It Right First Time"
-  },
-  {
-   "scenario": "You have agreed a price on the phone and Customer Operations will produce the quotation in Intact.",
-   "q": "What goes into the CRM?",
-   "o": [
-    "The full priced quotation, line by line",
-    "Nothing, because Intact has the document",
-    "The opportunity with a best-estimate amount, a stage, a next step, a date and the quote reference",
-    "A note in a folder in your own inbox"
-   ],
-   "c": 2,
-   "e": "Intact owns the priced document. The CRM carries the deal so it can be forecast and chased, with the quote reference as the link back to Intact.",
-   "module": "Getting Started"
+   "e": "Drive Unowned cases and Overdue cases to zero at the start of the day, and check both again at the end. The Ops Pulse gives you the same picture in email form.",
+   "module": "Recommended Daily Routine"
   }
  ]
 }
