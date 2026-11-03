@@ -1,56 +1,56 @@
 {
- "d": 20759,
+ "d": 20760,
  "mode": "study",
- "module": "Recommended Daily Routine",
- "date": "Monday 2 November 2026",
+ "module": "Getting It Right First Time",
+ "date": "Tuesday 3 November 2026",
  "questions": [
   {
-   "q": "What is produced on Friday from the sales@ mailbox?",
+   "q": "You create a new company for a customer you just won. What are the two fields to fill before you move on?",
    "o": [
-    "A weekly mail digest document filed in the Weekly Summaries folder",
-    "A bulk update to every opportunity",
-    "A pipeline sweep of the reps' spreadsheets",
-    "The data-quality audit"
-   ],
-   "c": 0,
-   "e": "The Friday weekly mail digest summarises orders received, supplier orders and deliveries into a document. It is read-only - it never writes to the CRM. The audit is Monday's and the sweep is Tuesday's.",
-   "module": "Recommended Daily Routine"
-  },
-  {
-   "q": "How quickly should a new inbound customer item be acknowledged?",
-   "o": [
-    "Within 1 working hour, or 15 minutes if it is urgent",
-    "By the end of the day",
-    "Within 4 working hours",
-    "Within one working day"
-   ],
-   "c": 0,
-   "e": "Acknowledge within 1 working hour, 15 minutes for an urgent operational problem. The first meaningful response follows within 4 working hours.",
-   "module": "Recommended Daily Routine"
-  },
-  {
-   "q": "A deal will genuinely not close until next year. What is the right thing to do?",
-   "o": [
-    "Leave the next-step date in the past so it keeps appearing",
-    "Close it as lost and recreate it later",
-    "Set the next-step date months out to its real cadence",
-    "Remove the next step altogether"
-   ],
-   "c": 2,
-   "e": "A long-cycle deal is not overdue, it is mis-dated. Push the date out to the real touch cadence - the pulse gives you plus-one-month and plus-three-month buttons for exactly this.",
-   "module": "Recommended Daily Routine"
-  },
-  {
-   "q": "Which two views should a Customer Operations day start and end on?",
-   "o": [
-    "Top Prizes and Open Pipeline",
-    "Unowned cases and Overdue cases",
-    "Going Quiet and Win-Back",
-    "Kill the Zebra and Data Gaps"
+    "Website and LinkedIn",
+    "Sales Rep and Account code",
+    "Annual revenue and staff count",
+    "Account Owner and vertical"
    ],
    "c": 1,
-   "e": "Drive Unowned cases and Overdue cases to zero at the start of the day, and check both again at the end. The Ops Pulse gives you the same picture in email form.",
-   "module": "Recommended Daily Routine"
+   "e": "salesRep so it is not unowned, and accountCode so it can be reconciled against Intact. Account Owner is the hidden, misleading field — do not use it.",
+   "module": "Getting It Right First Time"
+  },
+  {
+   "q": "Which of these is the safest way to avoid creating a duplicate company?",
+   "o": [
+    "Search the full legal name from their PO",
+    "Search a short distinctive fragment and a couple of variants",
+    "Scroll the Companies list alphabetically",
+    "Ask a colleague if they remember the customer"
+   ],
+   "c": 1,
+   "e": "Short fragments catch variants in spacing, plurals and capitalisation — which is where the duplicate pairs already in the data differ from each other.",
+   "module": "Getting It Right First Time"
+  },
+  {
+   "q": "Why is a blank lostReason a real problem?",
+   "o": [
+    "The deal cannot be reopened",
+    "The record will be deleted",
+    "We lose the pattern of why we lose — price, lead time, competitor",
+    "The stage will not save"
+   ],
+   "c": 2,
+   "e": "Lost reasons are the cheapest market research we get. Patterns in Price and Lead Time go straight into supplier conversations, and nothing else in the CRM records them.",
+   "module": "Getting It Right First Time"
+  },
+  {
+   "q": "A PO arrives for a deal sitting at Proposal. What is the trap to avoid?",
+   "o": [
+    "Updating the amount",
+    "Leaving the stage at Proposal",
+    "Adding the quote ref",
+    "Writing a note"
+   ],
+   "c": 1,
+   "e": "Move it to Customer, our won stage. Left at Proposal it inflates open pipeline and keeps showing up in quote follow-up lists.",
+   "module": "Getting It Right First Time"
   }
  ]
 }
