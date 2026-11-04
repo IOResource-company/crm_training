@@ -1,56 +1,56 @@
 {
- "d": 20760,
+ "d": 20761,
  "mode": "study",
- "module": "Getting It Right First Time",
- "date": "Tuesday 3 November 2026",
+ "module": "The Weekly Picture",
+ "date": "Wednesday 4 November 2026",
  "questions": [
   {
-   "q": "You create a new company for a customer you just won. What are the two fields to fill before you move on?",
+   "q": "The Next Actions widget sorts open opportunities by next-step date. Where do deals with no date at all appear?",
    "o": [
-    "Website and LinkedIn",
-    "Sales Rep and Account code",
-    "Annual revenue and staff count",
-    "Account Owner and vertical"
-   ],
-   "c": 1,
-   "e": "salesRep so it is not unowned, and accountCode so it can be reconciled against Intact. Account Owner is the hidden, misleading field — do not use it.",
-   "module": "Getting It Right First Time"
-  },
-  {
-   "q": "Which of these is the safest way to avoid creating a duplicate company?",
-   "o": [
-    "Search the full legal name from their PO",
-    "Search a short distinctive fragment and a couple of variants",
-    "Scroll the Companies list alphabetically",
-    "Ask a colleague if they remember the customer"
-   ],
-   "c": 1,
-   "e": "Short fragments catch variants in spacing, plurals and capitalisation — which is where the duplicate pairs already in the data differ from each other.",
-   "module": "Getting It Right First Time"
-  },
-  {
-   "q": "Why is a blank lostReason a real problem?",
-   "o": [
-    "The deal cannot be reopened",
-    "The record will be deleted",
-    "We lose the pattern of why we lose — price, lead time, competitor",
-    "The stage will not save"
+    "They are excluded",
+    "At the bottom",
+    "At the top, with the overdue ones",
+    "In a separate widget"
    ],
    "c": 2,
-   "e": "Lost reasons are the cheapest market research we get. Patterns in Price and Lead Time go straight into supplier conversations, and nothing else in the CRM records them.",
-   "module": "Getting It Right First Time"
+   "e": "Overdue and undated deals float to the top. The widget is deliberately sort-based rather than date-filtered so it never goes stale.",
+   "module": "The Weekly Picture"
   },
   {
-   "q": "A PO arrives for a deal sitting at Proposal. What is the trap to avoid?",
+   "q": "Which of these can you NOT do through the API on our version of the CRM?",
    "o": [
-    "Updating the amount",
-    "Leaving the stage at Proposal",
-    "Adding the quote ref",
-    "Writing a note"
+    "Read opportunities",
+    "Create a saved view",
+    "Build a dashboard, star a favourite or reorder the sidebar",
+    "Update a case status"
    ],
-   "c": 1,
-   "e": "Move it to Customer, our won stage. Left at Proposal it inflates open pipeline and keeps showing up in quote follow-up lists.",
-   "module": "Getting It Right First Time"
+   "c": 2,
+   "e": "Dashboards are read-only through the API on our version, and favourites and sidebar order cannot be set that way either. They have to be built by hand in the browser.",
+   "module": "The Weekly Picture"
+  },
+  {
+   "q": "A case has no Received at value. What does that mean for the SLA numbers?",
+   "o": [
+    "It counts as a breach",
+    "It counts as passing",
+    "It is counted as unmeasurable",
+    "It is excluded from the case queue entirely"
+   ],
+   "c": 2,
+   "e": "Without a start time there is no clock, so the case is counted as unmeasurable rather than as a pass or a fail. It still appears in the queue and still needs working.",
+   "module": "The Weekly Picture"
+  },
+  {
+   "q": "Which forecast category means 'keep tracking it, but leave it out of the numbers'?",
+   "o": [
+    "Pipeline",
+    "Best Case",
+    "Omitted",
+    "Commit"
+   ],
+   "c": 2,
+   "e": "Omitted. Commit is essentially won, Best Case is winnable this period if things go our way, and Pipeline is real but earlier.",
+   "module": "The Weekly Picture"
   }
  ]
 }
