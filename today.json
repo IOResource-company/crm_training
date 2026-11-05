@@ -1,56 +1,56 @@
 {
- "d": 20761,
+ "d": 20762,
  "mode": "study",
- "module": "The Weekly Picture",
- "date": "Wednesday 4 November 2026",
+ "module": "CRM in Claude",
+ "date": "Thursday 5 November 2026",
  "questions": [
   {
-   "q": "The Next Actions widget sorts open opportunities by next-step date. Where do deals with no date at all appear?",
+   "q": "Claude offers to update the next step on twenty-three opportunities at once. What is the right move?",
    "o": [
-    "They are excluded",
-    "At the bottom",
-    "At the top, with the overdue ones",
-    "In a separate widget"
+    "Let it run - that is the point of connecting it",
+    "Ask it to list the records and the exact change, then confirm",
+    "Refuse and do them all by hand",
+    "Run it and check the Sales Pulse tomorrow"
    ],
-   "c": 2,
-   "e": "Overdue and undated deals float to the top. The widget is deliberately sort-based rather than date-filtered so it never goes stale.",
-   "module": "The Weekly Picture"
+   "c": 1,
+   "e": "It has full write access, so a wrong bulk change is a real mess. Read the list first, then let it proceed.",
+   "module": "CRM in Claude"
   },
   {
-   "q": "Which of these can you NOT do through the API on our version of the CRM?",
+   "q": "How do you get CRM access inside Claude?",
    "o": [
-    "Read opportunities",
-    "Create a saved view",
-    "Build a dashboard, star a favourite or reorder the sidebar",
-    "Update a case status"
+    "Set it up yourself from the CRM settings",
+    "Ask Stephen - it is issued per person",
+    "Use a shared team login",
+    "It is switched on for everyone by default"
    ],
-   "c": 2,
-   "e": "Dashboards are read-only through the API on our version, and favourites and sidebar order cannot be set that way either. They have to be built by hand in the browser.",
-   "module": "The Weekly Picture"
+   "c": 1,
+   "e": "It is issued individually by the administrator, with the setup instructions supplied alongside it. There is no self-service and no shared login.",
+   "module": "CRM in Claude"
   },
   {
-   "q": "A case has no Received at value. What does that mean for the SLA numbers?",
+   "q": "Which Claude app can connect to our CRM?",
    "o": [
-    "It counts as a breach",
-    "It counts as passing",
-    "It is counted as unmeasurable",
-    "It is excluded from the case queue entirely"
+    "The web app at claude.ai",
+    "The Claude desktop app",
+    "Claude Code",
+    "All of them"
    ],
    "c": 2,
-   "e": "Without a start time there is no clock, so the case is counted as unmeasurable rather than as a pass or a fail. It still appears in the queue and still needs working.",
-   "module": "The Weekly Picture"
+   "e": "Claude Code. The connector screens in the desktop and web apps authenticate differently and will not accept this kind of credential.",
+   "module": "CRM in Claude"
   },
   {
-   "q": "Which forecast category means 'keep tracking it, but leave it out of the numbers'?",
+   "q": "What does this access cover?",
    "o": [
-    "Pipeline",
-    "Best Case",
-    "Omitted",
-    "Commit"
+    "Only the accounts you own",
+    "Only what you can see in the CRM screens",
+    "The whole workspace, read and write",
+    "Read-only access to everything"
    ],
    "c": 2,
-   "e": "Omitted. Commit is essentially won, Best Case is winnable this period if things go our way, and Pipeline is real but earlier.",
-   "module": "The Weekly Picture"
+   "e": "The whole workspace, both read and write. It is not narrowed by your role in the interface, which is why it is only given to people trusted with all of it.",
+   "module": "CRM in Claude"
   }
  ]
 }
