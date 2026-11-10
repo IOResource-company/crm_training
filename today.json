@@ -1,56 +1,56 @@
 {
- "d": 20766,
+ "d": 20767,
  "mode": "study",
- "module": "Getting Started",
- "date": "Monday 9 November 2026",
+ "module": "People & Companies",
+ "date": "Tuesday 10 November 2026",
  "questions": [
   {
-   "q": "Why does an invitation email to the CRM never arrive?",
+   "q": "A contact signs off the budget. What Decision Role do you set?",
    "o": [
-    "It is caught by the spam filter",
-    "The CRM's own outbound email is not configured, so the invite link must be copied and sent by hand",
-    "Cloudflare blocks all mail from the CRM",
-    "The mailbox is unlicensed"
+    "CHAMPION",
+    "ECONOMIC_BUYER",
+    "TECHNICAL_EVALUATOR",
+    "INFLUENCER"
    ],
    "c": 1,
-   "e": "Admins use Settings, Members, Invite by link, then send the link themselves. Waiting for an automatic invitation is waiting forever.",
-   "module": "Getting Started"
+   "e": "Economic Buyer is whoever controls the money. Champion sells for us internally; Technical Evaluator tests the kit.",
+   "module": "People & Companies"
   },
   {
-   "q": "Which system is the system of record for quotations, invoices and real margin?",
+   "q": "Two of our resellers are both chasing the same supermarket group. Where does the supermarket group live?",
    "o": [
-    "Twenty CRM",
-    "Intact ERP",
-    "The sales@ mailbox",
-    "The weekly pipeline spreadsheet"
+    "As a Company with Account Type set to End Client",
+    "As an End Customer record, with each reseller's deal linked to it",
+    "As a note on each reseller's record",
+    "As two company records, one per reseller"
    ],
    "c": 1,
-   "e": "Intact owns money and documents. The CRM owns relationships and control; the mailbox carries information between them.",
-   "module": "Getting Started"
+   "e": "That is the two-horse race view. One End Customer record, every competing deal rolled up under it.",
+   "module": "People & Companies"
   },
   {
-   "q": "Which sidebar entry holds the businesses the equipment is ultimately for?",
+   "q": "Which field tells you who really owns an account?",
    "o": [
-    "Companies",
-    "People",
-    "End Customers",
-    "Sales Transactions"
-   ],
-   "c": 2,
-   "e": "Companies are who we sell to. End Customers are who the kit is for, so competing resellers' deals can roll up under one of them.",
-   "module": "Getting Started"
-  },
-  {
-   "q": "What is the join key that ties the mailbox, the CRM and Intact together?",
-   "o": [
-    "The customer's company name",
-    "The quotation, pro forma or order number in the email subject",
-    "The account tier",
-    "The sales rep code"
+    "Account Owner",
+    "Sales Rep",
+    "Created By",
+    "Account Tier"
    ],
    "c": 1,
-   "e": "The document number in the subject line is how an email links itself to the right record. It is the cheapest integration we have.",
-   "module": "Getting Started"
+   "e": "Sales Rep is the single field that decides whose book, whose pipeline and whose pulse email an account belongs to.",
+   "module": "People & Companies"
+  },
+  {
+   "q": "In our CRM, what does a Company record represent?",
+   "o": [
+    "Any business we deal with, including suppliers and end users",
+    "Who we sell to: the reseller, system integrator, VAR, IT team or software vendor",
+    "The business the equipment is installed for",
+    "Only accounts that have placed an order"
+   ],
+   "c": 1,
+   "e": "We are trade-only. Companies are who we sell to and who pays the invoice. Who the kit is for is an End Customer.",
+   "module": "People & Companies"
   }
  ]
 }
