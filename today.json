@@ -1,56 +1,56 @@
 {
- "d": 20767,
+ "d": 20768,
  "mode": "study",
- "module": "People & Companies",
- "date": "Tuesday 10 November 2026",
+ "module": "Opportunities & Pipeline",
+ "date": "Wednesday 11 November 2026",
  "questions": [
   {
-   "q": "A contact signs off the budget. What Decision Role do you set?",
+   "q": "You quote a customer today. Which field changes to QUOTED?",
    "o": [
-    "CHAMPION",
-    "ECONOMIC_BUYER",
-    "TECHNICAL_EVALUATOR",
-    "INFLUENCER"
+    "forecastCategory",
+    "amountBasis",
+    "quoteRef",
+    "probability"
    ],
    "c": 1,
-   "e": "Economic Buyer is whoever controls the money. Champion sells for us internally; Technical Evaluator tests the kit.",
-   "module": "People & Companies"
+   "e": "amountBasis moves from ESTIMATED to QUOTED. At the same time put the quotation number in quoteRef and move the stage to Proposal.",
+   "module": "Opportunities & Pipeline"
   },
   {
-   "q": "Two of our resellers are both chasing the same supermarket group. Where does the supermarket group live?",
+   "q": "A deal has gone to a competitor. What is the minimum you must record?",
    "o": [
-    "As a Company with Account Type set to End Client",
-    "As an End Customer record, with each reseller's deal linked to it",
-    "As a note on each reseller's record",
-    "As two company records, one per reseller"
+    "Stage Closed Lost",
+    "Stage Closed Lost plus a lostReason",
+    "A note on the company",
+    "Delete the opportunity"
    ],
    "c": 1,
-   "e": "That is the two-horse race view. One End Customer record, every competing deal rolled up under it.",
-   "module": "People & Companies"
+   "e": "Closed Lost plus a lostReason is mandatory - here, Lost to Competitor. Also set competitorDisplaced so the displacement picture stays accurate. Never delete the deal.",
+   "module": "Opportunities & Pipeline"
   },
   {
-   "q": "Which field tells you who really owns an account?",
+   "q": "Weighted pipeline is calculated as...",
    "o": [
-    "Account Owner",
-    "Sales Rep",
-    "Created By",
-    "Account Tier"
+    "amount divided by the number of stages",
+    "amount times probability",
+    "amount minus cost",
+    "the sum of Commit deals only"
    ],
    "c": 1,
-   "e": "Sales Rep is the single field that decides whose book, whose pipeline and whose pulse email an account belongs to.",
-   "module": "People & Companies"
+   "e": "amount times probability, held in weightedValue and summed on the Command Centre's Weighted Pipeline tile.",
+   "module": "Opportunities & Pipeline"
   },
   {
-   "q": "In our CRM, what does a Company record represent?",
+   "q": "What must be true before a deal sits at Proposal?",
    "o": [
-    "Any business we deal with, including suppliers and end users",
-    "Who we sell to: the reseller, system integrator, VAR, IT team or software vendor",
-    "The business the equipment is installed for",
-    "Only accounts that have placed an order"
+    "A meeting has happened",
+    "A formal quotation or proposal has been issued",
+    "The customer has verbally agreed",
+    "The close date is inside this quarter"
    ],
    "c": 1,
-   "e": "We are trade-only. Companies are who we sell to and who pays the invoice. Who the kit is for is an End Customer.",
-   "module": "People & Companies"
+   "e": "Proposal means the quote is in the customer's hands. That is also when the Intact quotation number goes into quoteRef and amountBasis flips to QUOTED.",
+   "module": "Opportunities & Pipeline"
   }
  ]
 }
