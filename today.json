@@ -1,32 +1,79 @@
 {
- "d": 20769,
- "mode": "study",
- "module": "Cases — the Customer Ops Queue",
- "date": "Thursday 12 November 2026",
+ "d": 20770,
+ "mode": "exam",
+ "date": "Friday 13 November 2026",
  "questions": [
   {
-   "q": "Which two views should read zero every morning?",
+   "q": "Which of these is safe to change by hand on an auto-created case?",
    "o": [
-    "Escalated and Waiting – Supplier",
-    "All Open (SLA) and Resolved — Last 30 Days",
-    "Unowned cases and Overdue cases",
-    "Open cases (by status) and the Command Centre"
+    "The received timestamp",
+    "The link to the source email thread",
+    "The owner, next action and due date",
+    "The acknowledgement timestamp"
    ],
    "c": 2,
-   "e": "Unowned cases means somebody has to claim it; Overdue cases means it has to be cleared or escalated. When both read zero, the queue is under control.",
+   "e": "Owner, next action and due date are yours to set. The timestamps are stamped from real events and drive the SLA numbers, and the source-thread link is what prevents duplicate cases.",
+   "module": "Email & the CRM"
+  },
+  {
+   "q": "Why does Received at matter so much?",
+   "o": [
+    "It sorts the queue",
+    "It is the start of the SLA clock — without it, acknowledgement and response times cannot be measured",
+    "It sets the due date automatically",
+    "It links the case to the Opportunity"
+   ],
+   "c": 1,
+   "e": "Every SLA measure is a subtraction from Received at. A case with it blank counts as unmeasurable and silently drops out of the medians.",
    "module": "Cases — the Customer Ops Queue"
   },
   {
-   "q": "Where do most cases come from?",
+   "q": "How often does the CRM check inbound sales@ mail and create Cases?",
    "o": [
-    "Ops types every one in by hand",
-    "They are auto-created from inbound sales@ mail every 15 minutes on weekdays",
-    "The salesperson creates them from the Opportunity",
-    "They are imported nightly from Intact"
+    "Once a night",
+    "Every 15 minutes during the working day on weekdays",
+    "Only when someone presses a button",
+    "In real time, always"
    ],
    "c": 1,
-   "e": "An automation reads the sales@ mailbox every 15 minutes on weekdays and opens one case per mail thread from a known customer contact, with Received at set to the real arrival time.",
-   "module": "Cases — the Customer Ops Queue"
+   "e": "The ingest runs every 15 minutes through working hours on weekdays. It creates one case per email thread, so a running conversation does not create duplicates.",
+   "module": "Email & the CRM"
+  },
+  {
+   "q": "How long do the buttons in a pulse email keep working?",
+   "o": [
+    "Forever",
+    "Until the next pulse is sent",
+    "21 days",
+    "One working day"
+   ],
+   "c": 2,
+   "e": "Every button link is signed and expires after 21 days. Work from today's pulse rather than an archived one.",
+   "module": "The Pulse Emails"
+  },
+  {
+   "q": "Who decides the price on a standard quotation?",
+   "o": [
+    "Customer Operations, within the agreed rules",
+    "The salesperson — Operations builds and sends the rest",
+    "The manager, on every quote",
+    "Whoever opens the email first"
+   ],
+   "c": 1,
+   "e": "Operations prepares the quotation in Intact and sends it from sales@; the salesperson decides the price only. If it is the same price as last time, Operations checks Intact and sends.",
+   "module": "Quote to Order"
+  },
+  {
+   "q": "Why is a blank lostReason a real problem?",
+   "o": [
+    "The deal cannot be reopened",
+    "The record will be deleted",
+    "We lose the pattern of why we lose — price, lead time, competitor",
+    "The stage will not save"
+   ],
+   "c": 2,
+   "e": "Lost reasons are the cheapest market research we get. Patterns in Price and Lead Time go straight into supplier conversations, and nothing else in the CRM records them.",
+   "module": "Getting It Right First Time"
   },
   {
    "q": "What are the four non-negotiables on every open case?",
@@ -41,16 +88,29 @@
    "module": "Cases — the Customer Ops Queue"
   },
   {
-   "q": "What stamps the Acknowledged at, First response at and Resolved at timestamps on a case?",
+   "q": "Why does that limitation matter for how you work?",
    "o": [
-    "You type them in when you have a moment",
-    "Moving the case Status — the workflow stamps them automatically",
-    "The Ops Pulse email at 08:00 and 18:00",
-    "The salesperson when they review the account"
+    "It does not, you can always forward it",
+    "Anything important from an email body must be written into a Note",
+    "It means email is not useful",
+    "It means you should copy everyone on everything"
    ],
    "c": 1,
-   "e": "Moving the status is the whole action. Acknowledged stamps Acknowledged at, In Progress stamps First response at, Resolved stamps Resolved at. They are stamped once and never overwritten.",
-   "module": "Cases — the Customer Ops Queue"
+   "e": "A Note is the only place the substance of an email can live in the CRM. Without it, the record proves a conversation happened but not what was agreed.",
+   "module": "Email & the CRM"
+  },
+  {
+   "scenario": "You take a call from a new contact at a company you are sure we deal with. Searching the Companies list for their full name on the email signature returns nothing, and you need to log an enquiry before your next meeting.",
+   "q": "What is the right next move?",
+   "o": [
+    "Create the company from the email signature and move on",
+    "Search again from the sidebar using a short fragment and the email domain before creating anything",
+    "Log the enquiry against a similar-sounding company",
+    "Email a colleague and deal with it tomorrow"
+   ],
+   "c": 1,
+   "e": "The list may still carry a filter, and the formal name on a signature is often not the name in the CRM. Search short, search the domain, and only create when it is genuinely absent.",
+   "module": "Getting It Right First Time"
   }
  ]
 }
