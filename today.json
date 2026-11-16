@@ -1,116 +1,56 @@
 {
- "d": 20770,
- "mode": "exam",
- "date": "Friday 13 November 2026",
+ "d": 20773,
+ "mode": "study",
+ "module": "Tasks, Notes & Follow-Ups",
+ "date": "Monday 16 November 2026",
  "questions": [
   {
-   "q": "Which of these is safe to change by hand on an auto-created case?",
+   "q": "An action from the sales meeting was not done. What happens to it?",
    "o": [
-    "The received timestamp",
-    "The link to the source email thread",
-    "The owner, next action and due date",
-    "The acknowledgement timestamp"
+    "It is deleted and has to be re-raised",
+    "It is renumbered and re-created",
+    "It is carried forward keeping its original number, with a 'Carried to' line and a new due date",
+    "It closes automatically after a week"
    ],
    "c": 2,
-   "e": "Owner, next action and due date are yours to set. The timestamps are stamped from real events and drive the SLA numbers, and the source-thread link is what prevents duplicate cases.",
-   "module": "Email & the CRM"
+   "e": "Carry-forward never renumbers. W28 #7 stays W28 #7 for life, gaining a 'Carried to W29' line and a new due date. Three carries is the escalation signal - kill it or commit a date.",
+   "module": "Tasks, Notes & Follow-Ups"
   },
   {
-   "q": "Why does Received at matter so much?",
+   "q": "A task is titled 'Sales mtg W28 #7 - Chase Urovo on DT50S lead times'. Where did it come from?",
    "o": [
-    "It sorts the queue",
-    "It is the start of the SLA clock — without it, acknowledgement and response times cannot be measured",
-    "It sets the due date automatically",
-    "It links the case to the Opportunity"
+    "A colleague typed it in",
+    "The weekly sales meeting action register, ingested automatically",
+    "The cadence engine",
+    "The Ops Pulse auto-case creation"
    ],
    "c": 1,
-   "e": "Every SLA measure is a subtraction from Received at. A case with it blank counts as unmeasurable and silently drops out of the medians.",
-   "module": "Cases — the Customer Ops Queue"
+   "e": "Weekly sales-meeting minutes are turned into Tasks automatically. The W-number is the meeting week and the #number is that action's permanent id, kept for its whole life even when it is carried forward.",
+   "module": "Tasks, Notes & Follow-Ups"
   },
   {
-   "q": "How often does the CRM check inbound sales@ mail and create Cases?",
+   "q": "Which of these is NOT something a Note is for?",
    "o": [
-    "Once a night",
-    "Every 15 minutes during the working day on weekdays",
-    "Only when someone presses a button",
-    "In real time, always"
-   ],
-   "c": 1,
-   "e": "The ingest runs every 15 minutes through working hours on weekdays. It creates one case per email thread, so a running conversation does not create duplicates.",
-   "module": "Email & the CRM"
-  },
-  {
-   "q": "How long do the buttons in a pulse email keep working?",
-   "o": [
-    "Forever",
-    "Until the next pulse is sent",
-    "21 days",
-    "One working day"
+    "A meeting write-up",
+    "A commitment we made on price or lead time",
+    "A dated action somebody has to complete",
+    "Competitor intelligence picked up on a call"
    ],
    "c": 2,
-   "e": "Every button link is signed and expires after 21 days. Work from today's pulse rather than an archived one.",
-   "module": "The Pulse Emails"
+   "e": "A dated action is a Task. Actions buried inside notes do not appear on anyone's worklist and do not get done.",
+   "module": "Tasks, Notes & Follow-Ups"
   },
   {
-   "q": "Who decides the price on a standard quotation?",
+   "q": "What does the sales cadence engine actually do when you set Outreach Cadence on a person?",
    "o": [
-    "Customer Operations, within the agreed rules",
-    "The salesperson — Operations builds and sends the rest",
-    "The manager, on every quote",
-    "Whoever opens the email first"
+    "It emails the prospect automatically on a schedule",
+    "It creates a series of Tasks with due dates for you to action",
+    "It moves the opportunity through the stages",
+    "It adds the person to a mailing list"
    ],
    "c": 1,
-   "e": "Operations prepares the quotation in Intact and sends it from sales@; the salesperson decides the price only. If it is the same price as last time, Operations checks Intact and sends.",
-   "module": "Quote to Order"
-  },
-  {
-   "q": "Why is a blank lostReason a real problem?",
-   "o": [
-    "The deal cannot be reopened",
-    "The record will be deleted",
-    "We lose the pattern of why we lose — price, lead time, competitor",
-    "The stage will not save"
-   ],
-   "c": 2,
-   "e": "Lost reasons are the cheapest market research we get. Patterns in Price and Lead Time go straight into supplier conversations, and nothing else in the CRM records them.",
-   "module": "Getting It Right First Time"
-  },
-  {
-   "q": "What are the four non-negotiables on every open case?",
-   "o": [
-    "Owner, status, next action, due date",
-    "Subject, type, priority, company",
-    "Owner, priority, contact, opportunity",
-    "Status, resolution note, due date, escalated flag"
-   ],
-   "c": 0,
-   "e": "One named owner, one current status, one next action and one due date. Everything else is helpful; those four are the standard.",
-   "module": "Cases — the Customer Ops Queue"
-  },
-  {
-   "q": "Why does that limitation matter for how you work?",
-   "o": [
-    "It does not, you can always forward it",
-    "Anything important from an email body must be written into a Note",
-    "It means email is not useful",
-    "It means you should copy everyone on everything"
-   ],
-   "c": 1,
-   "e": "A Note is the only place the substance of an email can live in the CRM. Without it, the record proves a conversation happened but not what was agreed.",
-   "module": "Email & the CRM"
-  },
-  {
-   "scenario": "You take a call from a new contact at a company you are sure we deal with. Searching the Companies list for their full name on the email signature returns nothing, and you need to log an enquiry before your next meeting.",
-   "q": "What is the right next move?",
-   "o": [
-    "Create the company from the email signature and move on",
-    "Search again from the sidebar using a short fragment and the email domain before creating anything",
-    "Log the enquiry against a similar-sounding company",
-    "Email a colleague and deal with it tomorrow"
-   ],
-   "c": 1,
-   "e": "The list may still carry a filter, and the formal name on a signature is often not the name in the CRM. Search short, search the domain, and only create when it is genuinely absent.",
-   "module": "Getting It Right First Time"
+   "e": "The engine is an internal nudge only. It creates one Task per touch with a real due date and never emails a prospect - you send every touch yourself from Outlook.",
+   "module": "Tasks, Notes & Follow-Ups"
   }
  ]
 }
