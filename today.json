@@ -1,56 +1,56 @@
 {
- "d": 20773,
+ "d": 20774,
  "mode": "study",
- "module": "Tasks, Notes & Follow-Ups",
- "date": "Monday 16 November 2026",
+ "module": "Search, Filters & Views",
+ "date": "Tuesday 17 November 2026",
  "questions": [
   {
-   "q": "An action from the sales meeting was not done. What happens to it?",
+   "q": "Which view do Customer Operations start the day on?",
    "o": [
-    "It is deleted and has to be re-raised",
-    "It is renumbered and re-created",
-    "It is carried forward keeping its original number, with a 'Carried to' line and a new due date",
-    "It closes automatically after a week"
-   ],
-   "c": 2,
-   "e": "Carry-forward never renumbers. W28 #7 stays W28 #7 for life, gaining a 'Carried to W29' line and a new due date. Three carries is the escalation signal - kill it or commit a date.",
-   "module": "Tasks, Notes & Follow-Ups"
-  },
-  {
-   "q": "A task is titled 'Sales mtg W28 #7 - Chase Urovo on DT50S lead times'. Where did it come from?",
-   "o": [
-    "A colleague typed it in",
-    "The weekly sales meeting action register, ingested automatically",
-    "The cadence engine",
-    "The Ops Pulse auto-case creation"
+    "Open Pipeline",
+    "All Open (SLA)",
+    "Resolved - Last 30 Days",
+    "Recently Added"
    ],
    "c": 1,
-   "e": "Weekly sales-meeting minutes are turned into Tasks automatically. The W-number is the meeting week and the #number is that action's permanent id, kept for its whole life even when it is carried forward.",
-   "module": "Tasks, Notes & Follow-Ups"
+   "e": "All Open (SLA) is the live case worklist, sorted by due date so the most urgent sits at the top. Unowned and Overdue are then driven to zero.",
+   "module": "Search, Filters & Views"
   },
   {
-   "q": "Which of these is NOT something a Note is for?",
+   "q": "Quotes - Missing Quote Ref shows zero, but you know most proposals have no quote number on them. What should you suspect?",
    "o": [
-    "A meeting write-up",
-    "A commitment we made on price or lead time",
-    "A dated action somebody has to complete",
-    "Competitor intelligence picked up on a call"
-   ],
-   "c": 2,
-   "e": "A dated action is a Task. Actions buried inside notes do not appear on anyone's worklist and do not get done.",
-   "module": "Tasks, Notes & Follow-Ups"
-  },
-  {
-   "q": "What does the sales cadence engine actually do when you set Outreach Cadence on a person?",
-   "o": [
-    "It emails the prospect automatically on a schedule",
-    "It creates a series of Tasks with due dates for you to action",
-    "It moves the opportunity through the stages",
-    "It adds the person to a mailing list"
+    "Somebody filled them all in",
+    "The filter may be matching on empty rather than blank, or the other way round",
+    "The view is for cases, not deals",
+    "Quote refs are optional so the view is irrelevant"
    ],
    "c": 1,
-   "e": "The engine is an internal nudge only. It creates one Task per touch with a real due date and never emails a prospect - you send every touch yourself from Outlook.",
-   "module": "Tasks, Notes & Follow-Ups"
+   "e": "Quote references have historically been stored as an empty string rather than nothing at all, so a filter written one way can undercount badly. Cross-check the count against the number of open proposals.",
+   "module": "Search, Filters & Views"
+  },
+  {
+   "q": "Which of these views is meant to read zero?",
+   "o": [
+    "Open Pipeline",
+    "Top Prizes",
+    "HOUSE - Unassigned",
+    "By Stage"
+   ],
+   "c": 2,
+   "e": "HOUSE - Unassigned lists accounts with no owner and is a hygiene list. So are Open Opps - No Next Action, Data Gaps - no amount, and the Unowned and Overdue case views. Open Pipeline, Top Prizes and By Stage are working views.",
+   "module": "Search, Filters & Views"
+  },
+  {
+   "q": "What is the safest first move when a search for a company returns nothing?",
+   "o": [
+    "Create the company",
+    "Search again using the trading name, the legal name or the contact's email domain",
+    "Ask someone to create it for you",
+    "Raise a case"
+   ],
+   "c": 1,
+   "e": "Search a second and third way before creating anything. Our accounts are recorded under a mix of trading and legal names, and a duplicate splits the spend history, deals and email trail.",
+   "module": "Search, Filters & Views"
   }
  ]
 }
