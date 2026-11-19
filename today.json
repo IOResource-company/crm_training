@@ -1,56 +1,56 @@
 {
- "d": 20775,
+ "d": 20776,
  "mode": "study",
- "module": "Email & the CRM",
- "date": "Wednesday 18 November 2026",
+ "module": "Quote to Order",
+ "date": "Thursday 19 November 2026",
  "questions": [
   {
-   "q": "An email arrives at sales@ from someone who is not in People. What happens?",
+   "q": "Where are quotes, orders, invoices and credit notes created and stored?",
    "o": [
-    "A case is created and a person record is created",
-    "A case is created with no contact",
-    "No case is created - the sender surfaces in the Pulse email for a human to triage",
-    "The email is deleted"
-   ],
-   "c": 2,
-   "e": "Auto-casing only fires for known contacts who are linked to a company. Unknown senders are triaged by a person, which is also the prompt to add them to People.",
-   "module": "Email & the CRM"
-  },
-  {
-   "q": "Why do we insist on the Intact document number in the email subject?",
-   "o": [
-    "It looks professional",
-    "It is how CRM activity and the ERP transaction record are tied together",
-    "The email system requires it",
-    "It speeds up delivery"
+    "In the CRM, on the Opportunity",
+    "In Intact — the CRM has no order object at all",
+    "In both, kept in sync automatically",
+    "In the sales@ inbox"
    ],
    "c": 1,
-   "e": "Intact owns money and documents; the CRM owns relationships and control. The document number in the subject is the join between the two, so a mistyped or missing number breaks the link.",
-   "module": "Email & the CRM"
+   "e": "Intact is the system of record for money and documents. The CRM holds the relationship and the control layer. There is no order object in the CRM and you should not try to build one.",
+   "module": "Quote to Order"
   },
   {
-   "q": "Why does that limitation matter for how you work?",
+   "q": "What joins a CRM company to its Intact account?",
    "o": [
-    "It does not, you can always forward it",
-    "Anything important from an email body must be written into a Note",
-    "It means email is not useful",
-    "It means you should copy everyone on everything"
-   ],
-   "c": 1,
-   "e": "A Note is the only place the substance of an email can live in the CRM. Without it, the record proves a conversation happened but not what was agreed.",
-   "module": "Email & the CRM"
-  },
-  {
-   "q": "Which of these is safe to change by hand on an auto-created case?",
-   "o": [
-    "The received timestamp",
-    "The link to the source email thread",
-    "The owner, next action and due date",
-    "The acknowledgement timestamp"
+    "The company name",
+    "The domain name",
+    "The Account code — the Intact A/C code stored on the company",
+    "The account owner's initials"
    ],
    "c": 2,
-   "e": "Owner, next action and due date are yours to set. The timestamps are stamped from real events and drive the SLA numbers, and the source-thread link is what prevents duplicate cases.",
-   "module": "Email & the CRM"
+   "e": "Account code is the join key. Names and domains drift and duplicate; the A/C code does not.",
+   "module": "Quote to Order"
+  },
+  {
+   "q": "The rule of thumb for who owns what?",
+   "o": [
+    "Whoever opened the email owns everything",
+    "If it is about winning the money it is sales; if it is about delivering on the promise it is Customer Operations",
+    "Sales owns the customer, Ops owns the system",
+    "Ops owns everything until the order is placed"
+   ],
+   "c": 1,
+   "e": "Sales keeps the relationship, the pricing and every commercial decision. Ops owns the quoting admin, order processing, supplier and courier chasing, and keeping the customer informed. When in doubt it goes through sales@ and gets an owner either way.",
+   "module": "Quote to Order"
+  },
+  {
+   "q": "A customer returns a faulty scanner under warranty. What do you create?",
+   "o": [
+    "A Case of type Return",
+    "A Case of type Technical",
+    "An Aftercare record with Service type Warranty",
+    "An Opportunity with a negative amount"
+   ],
+   "c": 2,
+   "e": "RMA and warranty are deliberately not case types. They go in Aftercare as a slim log with the RMA reference, because the separate technical system is the source of truth.",
+   "module": "Quote to Order"
   }
  ]
 }
