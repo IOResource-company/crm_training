@@ -1,31 +1,54 @@
 {
- "d": 20776,
- "mode": "study",
- "module": "Quote to Order",
- "date": "Thursday 19 November 2026",
+ "d": 20777,
+ "mode": "exam",
+ "date": "Friday 20 November 2026",
  "questions": [
   {
-   "q": "Where are quotes, orders, invoices and credit notes created and stored?",
+   "q": "Which sidebar entry holds the businesses the equipment is ultimately for?",
    "o": [
-    "In the CRM, on the Opportunity",
-    "In Intact — the CRM has no order object at all",
-    "In both, kept in sync automatically",
-    "In the sales@ inbox"
-   ],
-   "c": 1,
-   "e": "Intact is the system of record for money and documents. The CRM holds the relationship and the control layer. There is no order object in the CRM and you should not try to build one.",
-   "module": "Quote to Order"
-  },
-  {
-   "q": "What joins a CRM company to its Intact account?",
-   "o": [
-    "The company name",
-    "The domain name",
-    "The Account code — the Intact A/C code stored on the company",
-    "The account owner's initials"
+    "Companies",
+    "People",
+    "End Customers",
+    "Sales Transactions"
    ],
    "c": 2,
-   "e": "Account code is the join key. Names and domains drift and duplicate; the A/C code does not.",
+   "e": "Companies are who we sell to. End Customers are who the kit is for, so competing resellers' deals can roll up under one of them.",
+   "module": "Getting Started"
+  },
+  {
+   "q": "The Next Actions widget sorts open opportunities by next-step date. Where do deals with no date at all appear?",
+   "o": [
+    "They are excluded",
+    "At the bottom",
+    "At the top, with the overdue ones",
+    "In a separate widget"
+   ],
+   "c": 2,
+   "e": "Overdue and undated deals float to the top. The widget is deliberately sort-based rather than date-filtered so it never goes stale.",
+   "module": "The Weekly Picture"
+  },
+  {
+   "q": "A contact signs off the budget. What Decision Role do you set?",
+   "o": [
+    "CHAMPION",
+    "ECONOMIC_BUYER",
+    "TECHNICAL_EVALUATOR",
+    "INFLUENCER"
+   ],
+   "c": 1,
+   "e": "Economic Buyer is whoever controls the money. Champion sells for us internally; Technical Evaluator tests the kit.",
+   "module": "People & Companies"
+  },
+  {
+   "q": "A prepay account places an order. What is issued?",
+   "o": [
+    "A Sales Order confirmation",
+    "A Pro Forma, paid before anything is dispatched",
+    "An invoice on 30 day terms",
+    "A quotation"
+   ],
+   "c": 1,
+   "e": "Prepay accounts get a Pro Forma for payment before dispatch. Credit accounts get a Sales Order confirmation and are invoiced on terms after dispatch.",
    "module": "Quote to Order"
   },
   {
@@ -41,16 +64,53 @@
    "module": "Quote to Order"
   },
   {
-   "q": "A customer returns a faulty scanner under warranty. What do you create?",
+   "q": "What does the Kill the Zebra view track?",
    "o": [
-    "A Case of type Return",
-    "A Case of type Technical",
-    "An Aftercare record with Service type Warranty",
-    "An Opportunity with a negative amount"
+    "Deals about to be lost",
+    "Live competitor-displacement deals",
+    "Deals with no amount",
+    "Cases waiting on a supplier"
    ],
-   "c": 2,
-   "e": "RMA and warranty are deliberately not case types. They go in Aftercare as a slim log with the RMA reference, because the separate technical system is the source of truth.",
-   "module": "Quote to Order"
+   "c": 1,
+   "e": "It collects live displacement plays, tagged with the competitor displaced. It is a strategic scoreboard rather than a revenue view.",
+   "module": "The Weekly Picture"
+  },
+  {
+   "q": "Where does an order live once it is placed?",
+   "o": [
+    "The CRM opportunity record",
+    "Intact ERP",
+    "The sales@ inbox",
+    "A note on the company"
+   ],
+   "c": 1,
+   "e": "Intact is the system of record for orders, stock and invoicing. The CRM holds the pursuit; quoteRef and accountCode are how the two tie together.",
+   "module": "Getting It Right First Time"
+  },
+  {
+   "q": "What must be true before a deal sits at Proposal?",
+   "o": [
+    "A meeting has happened",
+    "A formal quotation or proposal has been issued",
+    "The customer has verbally agreed",
+    "The close date is inside this quarter"
+   ],
+   "c": 1,
+   "e": "Proposal means the quote is in the customer's hands. That is also when the Intact quotation number goes into quoteRef and amountBasis flips to QUOTED.",
+   "module": "Opportunities & Pipeline"
+  },
+  {
+   "scenario": "You meet a reseller on Tuesday. They want pricing on a fleet of rugged handhelds for one of their retail clients, roughly a hundred units, and they need it in for their client's Q1. You have not quoted anything yet.",
+   "q": "What do you do before the end of the day?",
+   "o": [
+    "Wait until the quote is ready, then create the opportunity at Proposal",
+    "Create the opportunity at Screening with an estimated amount, a close date, the end customer linked and a dated next step",
+    "Email yourself a reminder and create it at the Monday review",
+    "Create it at New with just the company name and fill the rest in later"
+   ],
+   "c": 1,
+   "e": "Same day, from the company record. Screening is right - there is a real need, a named contact and a rough size. An estimated amount with amountBasis ESTIMATED, a realistic closeDate, the endCustomer link and one dated next step is a minute's work and makes the deal real.",
+   "module": "Opportunities & Pipeline"
   }
  ]
 }
