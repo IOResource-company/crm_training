@@ -1,116 +1,56 @@
 {
- "d": 20777,
- "mode": "exam",
- "date": "Friday 20 November 2026",
+ "d": 20781,
+ "mode": "study",
+ "module": "Common Daily Workflows",
+ "date": "Tuesday 24 November 2026",
  "questions": [
   {
-   "q": "Which sidebar entry holds the businesses the equipment is ultimately for?",
+   "q": "You spoke to a contact who is not yet in People. Why does it matter?",
    "o": [
-    "Companies",
-    "People",
-    "End Customers",
-    "Sales Transactions"
+    "It does not - the email is stored anyway",
+    "Their email history is stored but shows on no record until the person exists",
+    "The CRM will reject the email",
+    "It blocks the opportunity from being created"
+   ],
+   "c": 1,
+   "e": "The mail is captured, but with no matching person it attaches to nothing. Two clicks - name, email, company - and the whole thread appears on the record.",
+   "module": "Common Daily Workflows"
+  },
+  {
+   "q": "An order lands. What is the correct stage?",
+   "o": [
+    "Closed Won",
+    "Proposal with probability 100",
+    "Customer",
+    "Order"
    ],
    "c": 2,
-   "e": "Companies are who we sell to. End Customers are who the kit is for, so competing resellers' deals can roll up under one of them.",
-   "module": "Getting Started"
+   "e": "Customer is our won stage. Then correct the amount, fill quoteRef, set closeDate to the day the order landed and probability to 100.",
+   "module": "Common Daily Workflows"
   },
   {
-   "q": "The Next Actions widget sorts open opportunities by next-step date. Where do deals with no date at all appear?",
+   "q": "Moving a deal to Customer in the CRM...",
    "o": [
-    "They are excluded",
-    "At the bottom",
-    "At the top, with the overdue ones",
-    "In a separate widget"
+    "Raises the order in Intact automatically",
+    "Creates a Case for Customer Operations",
+    "Does not create anything in Intact - the order is still raised there by hand",
+    "Emails the customer a confirmation"
    ],
    "c": 2,
-   "e": "Overdue and undated deals float to the top. The widget is deliberately sort-based rather than date-filtered so it never goes stale.",
-   "module": "The Weekly Picture"
+   "e": "The CRM stage change is a record of the win. Someone still raises the order in Intact and Customer Operations runs the delivery.",
+   "module": "Common Daily Workflows"
   },
   {
-   "q": "A contact signs off the budget. What Decision Role do you set?",
+   "q": "You are closing a deal as lost. What must you not do?",
    "o": [
-    "CHAMPION",
-    "ECONOMIC_BUYER",
-    "TECHNICAL_EVALUATOR",
-    "INFLUENCER"
+    "Set lostReason",
+    "Blank out the amount and close date",
+    "Set competitorDisplaced if we lost to a competitor",
+    "Clear the next step"
    ],
    "c": 1,
-   "e": "Economic Buyer is whoever controls the money. Champion sells for us internally; Technical Evaluator tests the kit.",
-   "module": "People & Companies"
-  },
-  {
-   "q": "A prepay account places an order. What is issued?",
-   "o": [
-    "A Sales Order confirmation",
-    "A Pro Forma, paid before anything is dispatched",
-    "An invoice on 30 day terms",
-    "A quotation"
-   ],
-   "c": 1,
-   "e": "Prepay accounts get a Pro Forma for payment before dispatch. Credit accounts get a Sales Order confirmation and are invoiced on terms after dispatch.",
-   "module": "Quote to Order"
-  },
-  {
-   "q": "The rule of thumb for who owns what?",
-   "o": [
-    "Whoever opened the email owns everything",
-    "If it is about winning the money it is sales; if it is about delivering on the promise it is Customer Operations",
-    "Sales owns the customer, Ops owns the system",
-    "Ops owns everything until the order is placed"
-   ],
-   "c": 1,
-   "e": "Sales keeps the relationship, the pricing and every commercial decision. Ops owns the quoting admin, order processing, supplier and courier chasing, and keeping the customer informed. When in doubt it goes through sales@ and gets an owner either way.",
-   "module": "Quote to Order"
-  },
-  {
-   "q": "What does the Kill the Zebra view track?",
-   "o": [
-    "Deals about to be lost",
-    "Live competitor-displacement deals",
-    "Deals with no amount",
-    "Cases waiting on a supplier"
-   ],
-   "c": 1,
-   "e": "It collects live displacement plays, tagged with the competitor displaced. It is a strategic scoreboard rather than a revenue view.",
-   "module": "The Weekly Picture"
-  },
-  {
-   "q": "Where does an order live once it is placed?",
-   "o": [
-    "The CRM opportunity record",
-    "Intact ERP",
-    "The sales@ inbox",
-    "A note on the company"
-   ],
-   "c": 1,
-   "e": "Intact is the system of record for orders, stock and invoicing. The CRM holds the pursuit; quoteRef and accountCode are how the two tie together.",
-   "module": "Getting It Right First Time"
-  },
-  {
-   "q": "What must be true before a deal sits at Proposal?",
-   "o": [
-    "A meeting has happened",
-    "A formal quotation or proposal has been issued",
-    "The customer has verbally agreed",
-    "The close date is inside this quarter"
-   ],
-   "c": 1,
-   "e": "Proposal means the quote is in the customer's hands. That is also when the Intact quotation number goes into quoteRef and amountBasis flips to QUOTED.",
-   "module": "Opportunities & Pipeline"
-  },
-  {
-   "scenario": "You meet a reseller on Tuesday. They want pricing on a fleet of rugged handhelds for one of their retail clients, roughly a hundred units, and they need it in for their client's Q1. You have not quoted anything yet.",
-   "q": "What do you do before the end of the day?",
-   "o": [
-    "Wait until the quote is ready, then create the opportunity at Proposal",
-    "Create the opportunity at Screening with an estimated amount, a close date, the end customer linked and a dated next step",
-    "Email yourself a reminder and create it at the Monday review",
-    "Create it at New with just the company name and fill the rest in later"
-   ],
-   "c": 1,
-   "e": "Same day, from the company record. Screening is right - there is a real need, a named contact and a rough size. An estimated amount with amountBasis ESTIMATED, a realistic closeDate, the endCustomer link and one dated next step is a minute's work and makes the deal real.",
-   "module": "Opportunities & Pipeline"
+   "e": "Leave the amount and close date exactly as they were. They are the raw material for win-rate and pricing analysis - blanking them destroys the evidence.",
+   "module": "Common Daily Workflows"
   }
  ]
 }
