@@ -1,56 +1,56 @@
 {
- "d": 20782,
+ "d": 20783,
  "mode": "study",
- "module": "The Pulse Emails",
- "date": "Wednesday 25 November 2026",
+ "module": "Recommended Daily Routine",
+ "date": "Thursday 26 November 2026",
  "questions": [
   {
-   "q": "Which of these is NOT a button on an Ops Pulse row?",
+   "q": "What is the target for the first meaningful response on a case?",
    "o": [
-    "Create case",
-    "Handled - hide",
-    "Snooze +3d",
-    "Mark deal Won"
-   ],
-   "c": 3,
-   "e": "Won and Lost are Sales Pulse deal buttons. Ops rows carry Create case, Handled - hide, Comment, Open in CRM, and on overdue cases Resolve and Snooze +3d.",
-   "module": "The Pulse Emails"
-  },
-  {
-   "q": "Where does a comment left through a pulse actually end up?",
-   "o": [
-    "In a spreadsheet the automation keeps",
-    "Only in the next pulse email",
-    "As a CRM Note titled [Ops Pulse] or [Sales Pulse], attached to the record and its company",
-    "As a reply in the sales@ mailbox"
-   ],
-   "c": 2,
-   "e": "Comments are stored as CRM Notes with an [Ops Pulse] or [Sales Pulse] title prefix. The prefix is how the pulse reads them back and re-renders them under the item.",
-   "module": "The Pulse Emails"
-  },
-  {
-   "q": "What does pressing Handled - hide on an awaiting-reply row do?",
-   "o": [
-    "Hides the thread until the customer mails again",
-    "Hides it permanently and resolves its auto-created case if that case is still New or Acknowledged",
-    "Deletes the email from the mailbox",
-    "Assigns the thread to a colleague"
+    "1 working hour",
+    "4 working hours",
+    "Same day",
+    "2 working days"
    ],
    "c": 1,
-   "e": "Handled means handled - the thread is suppressed permanently. A deliberately parked case at In Progress or a Waiting status is left open, and a genuinely new request from the same sender still arrives as fresh mail.",
-   "module": "The Pulse Emails"
+   "e": "Acknowledgement within 1 working hour, first meaningful response within 4 working hours. Both are measured from the case timestamps, which are stamped automatically.",
+   "module": "Recommended Daily Routine"
   },
   {
-   "q": "Which edition of the Sales Pulse carries the data-quality audit and a pipeline attachment?",
+   "q": "How quickly should a new inbound customer item be acknowledged?",
    "o": [
-    "Monday's",
-    "Wednesday's",
-    "Friday's",
-    "Every edition"
+    "Within 1 working hour, or 15 minutes if it is urgent",
+    "By the end of the day",
+    "Within 4 working hours",
+    "Within one working day"
    ],
    "c": 0,
-   "e": "Monday's Sales Pulse adds the weekly data check: a line-by-line pipeline file attached, a per-stage reconciliation, and AI timing proposals with a one-tap Apply.",
-   "module": "The Pulse Emails"
+   "e": "Acknowledge within 1 working hour, 15 minutes for an urgent operational problem. The first meaningful response follows within 4 working hours.",
+   "module": "Recommended Daily Routine"
+  },
+  {
+   "q": "In the Tuesday pipeline sweep, which side wins on stage and close date?",
+   "o": [
+    "The rep's spreadsheet",
+    "The CRM",
+    "Whichever is more recent",
+    "Neither - both are flagged"
+   ],
+   "c": 1,
+   "e": "The CRM wins on stage and close date; the sheet wins on amount, probability and next step. That way the sweep never silently moves a deal's stage or invents a close date.",
+   "module": "Recommended Daily Routine"
+  },
+  {
+   "q": "A deal will genuinely not close until next year. What is the right thing to do?",
+   "o": [
+    "Leave the next-step date in the past so it keeps appearing",
+    "Close it as lost and recreate it later",
+    "Set the next-step date months out to its real cadence",
+    "Remove the next step altogether"
+   ],
+   "c": 2,
+   "e": "A long-cycle deal is not overdue, it is mis-dated. Push the date out to the real touch cadence - the pulse gives you plus-one-month and plus-three-month buttons for exactly this.",
+   "module": "Recommended Daily Routine"
   }
  ]
 }
