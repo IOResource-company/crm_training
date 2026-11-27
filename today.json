@@ -1,56 +1,116 @@
 {
- "d": 20783,
- "mode": "study",
- "module": "Recommended Daily Routine",
- "date": "Thursday 26 November 2026",
+ "d": 20784,
+ "mode": "exam",
+ "date": "Friday 27 November 2026",
  "questions": [
   {
-   "q": "What is the target for the first meaningful response on a case?",
+   "q": "A prepay account places an order. What is issued?",
    "o": [
-    "1 working hour",
-    "4 working hours",
-    "Same day",
-    "2 working days"
+    "A Sales Order confirmation",
+    "A Pro Forma, paid before anything is dispatched",
+    "An invoice on 30 day terms",
+    "A quotation"
    ],
    "c": 1,
-   "e": "Acknowledgement within 1 working hour, first meaningful response within 4 working hours. Both are measured from the case timestamps, which are stamped automatically.",
-   "module": "Recommended Daily Routine"
+   "e": "Prepay accounts get a Pro Forma for payment before dispatch. Credit accounts get a Sales Order confirmation and are invoiced on terms after dispatch.",
+   "module": "Quote to Order"
   },
   {
-   "q": "How quickly should a new inbound customer item be acknowledged?",
+   "q": "Where are comments typed into the daily Pulse emails stored?",
    "o": [
-    "Within 1 working hour, or 15 minutes if it is urgent",
-    "By the end of the day",
-    "Within 4 working hours",
-    "Within one working day"
-   ],
-   "c": 0,
-   "e": "Acknowledge within 1 working hour, 15 minutes for an urgent operational problem. The first meaningful response follows within 4 working hours.",
-   "module": "Recommended Daily Routine"
-  },
-  {
-   "q": "In the Tuesday pipeline sweep, which side wins on stage and close date?",
-   "o": [
-    "The rep's spreadsheet",
-    "The CRM",
-    "Whichever is more recent",
-    "Neither - both are flagged"
+    "In the Pulse system only",
+    "As a Note on the record, titled with an [Ops Pulse] or [Sales Pulse] prefix",
+    "As a Task assigned to Stephen",
+    "In the case resolution note"
    ],
    "c": 1,
-   "e": "The CRM wins on stage and close date; the sheet wins on amount, probability and next step. That way the sweep never silently moves a deal's stage or invents a close date.",
-   "module": "Recommended Daily Routine"
+   "e": "Every Pulse comment becomes a CRM Note titled '[Ops Pulse] ...' or '[Sales Pulse] <date> - <record>', attached to the record and its company. The title prefix is how the Pulse reads them back, so it must not be edited.",
+   "module": "Tasks, Notes & Follow-Ups"
   },
   {
-   "q": "A deal will genuinely not close until next year. What is the right thing to do?",
+   "q": "Which set of fields feeds the Kill the Zebra view?",
    "o": [
-    "Leave the next-step date in the past so it keeps appearing",
-    "Close it as lost and recreate it later",
-    "Set the next-step date months out to its real cadence",
-    "Remove the next step altogether"
+    "leadSource and vertical",
+    "displacementTarget, competitorDisplaced, priceExceptionStatus and vertical",
+    "quoteRef and amountBasis",
+    "forecastCategory and probability"
+   ],
+   "c": 1,
+   "e": "Those four turn a displacement play from a story in someone's head into a countable deal on the scoreboard.",
+   "module": "Opportunities & Pipeline"
+  },
+  {
+   "q": "A customer email contains the delivery date they have committed to their own client. What must you do?",
+   "o": [
+    "Nothing — the synced email carries the body onto the record",
+    "Type it into a Note or the deal's next step",
+    "Forward it to sales@ and rely on the sync",
+    "Flag the email in your mailbox"
+   ],
+   "c": 1,
+   "e": "The CRM shows subject and participants only. If it is in the body, it does not exist in the CRM until somebody types it in.",
+   "module": "Getting It Right First Time"
+  },
+  {
+   "q": "You need to see whether two of our resellers are chasing the same deployment site.",
+   "o": [
+    "Filter Opportunities by company",
+    "Open the End Customer record and use In Play (Two-Horse)",
+    "Search the end customer's name in Companies",
+    "Check the Accounts by Status kanban"
+   ],
+   "c": 1,
+   "e": "End Customers are the sites the kit is actually for. Every deal chasing that site rolls up on the one End Customer record, which is the whole point of the two-horse view.",
+   "module": "Search, Filters & Views"
+  },
+  {
+   "q": "You log in and see sample records about Google, Pets and Rockets. What has happened?",
+   "o": [
+    "The CRM has been reset",
+    "You are in a stray demo workspace; switch to IOResource from the workspace menu at the top-left",
+    "Somebody imported test data into our workspace",
+    "Your account has no permissions yet"
+   ],
+   "c": 1,
+   "e": "A stray Twenty demo workspace has appeared on first login before. Our workspace has Companies, People, Opportunities, End Customers and Cases in the sidebar.",
+   "module": "Getting Started"
+  },
+  {
+   "q": "What sits in front of the CRM login page?",
+   "o": [
+    "Nothing, it is open to the internet",
+    "Cloudflare Access, which only admits identities ending in @ioresource.com",
+    "A VPN you must install",
+    "Intact single sign-on"
+   ],
+   "c": 1,
+   "e": "There are two gates: Cloudflare Access first, then Twenty's own sign-in. A restricted-to-members message is the Cloudflare layer, not the CRM.",
+   "module": "Getting Started"
+  },
+  {
+   "q": "An action from the sales meeting was not done. What happens to it?",
+   "o": [
+    "It is deleted and has to be re-raised",
+    "It is renumbered and re-created",
+    "It is carried forward keeping its original number, with a 'Carried to' line and a new due date",
+    "It closes automatically after a week"
    ],
    "c": 2,
-   "e": "A long-cycle deal is not overdue, it is mis-dated. Push the date out to the real touch cadence - the pulse gives you plus-one-month and plus-three-month buttons for exactly this.",
-   "module": "Recommended Daily Routine"
+   "e": "Carry-forward never renumbers. W28 #7 stays W28 #7 for life, gaining a 'Carried to W29' line and a new due date. Three carries is the escalation signal - kill it or commit a date.",
+   "module": "Tasks, Notes & Follow-Ups"
+  },
+  {
+   "scenario": "A reseller tells you they are quoting a national pharmacy chain for a multi-site POS rollout, and you know another of our resellers is talking to the same chain.",
+   "q": "How do you record it?",
+   "o": [
+    "One opportunity on each reseller, and nothing else",
+    "Create the pharmacy chain as a Company so it appears in the book of business",
+    "Keep the reseller as the Company, make sure the pharmacy chain exists as an End Customer, and link both opportunities to it",
+    "Record it as a note so we do not tip off either reseller"
+   ],
+   "c": 2,
+   "e": "The resellers stay the Companies because they place the orders. The chain is an End Customer, and linking both deals to it is exactly what produces the two-horse race view.",
+   "module": "People & Companies"
   }
  ]
 }
